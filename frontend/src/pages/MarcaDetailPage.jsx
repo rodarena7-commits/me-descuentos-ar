@@ -11,7 +11,8 @@ function useMarcaDiscounts(keywords) {
   useEffect(() => {
     setLoading(true)
     setError(null)
-    fetch('/api/discounts/?limit=300')
+    const BASE = import.meta.env.VITE_API_URL ?? ''
+    fetch(`${BASE}/api/discounts/?limit=300`)
       .then(r => { if (!r.ok) throw new Error(); return r.json() })
       .then(all => {
         const q = keywords.map(k => k.toLowerCase())

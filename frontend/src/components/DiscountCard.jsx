@@ -58,19 +58,27 @@ const CATEGORY_LABELS = {
   varios:           'Varios',
 }
 
-function googleFavicon(domain) {
-  return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+// Usa la API de favicons de Google (alta resolución, no bloqueada por ad blockers)
+function gFavicon(domain) {
+  return `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${domain}&size=128`
 }
 
 function SourceLogo({ source, logoUrl }) {
   const brand = BRAND[source]
-  const [src, setSrc] = useState(logoUrl || (brand ? googleFavicon(brand.domain) : null))
+  // Si el source está en BRAND, usar Google Favicon API directamente (ignora clearbit bloqueado)
+  // Si tiene URL propia (Pinterest, etc.), usarla como primaria
+  const isPinterest = logoUrl?.includes('pinimg.com')
+  const initialSrc = isPinterest
+    ? logoUrl
+    : (brand ? gFavicon(brand.domain) : logoUrl)
+
+  const [src, setSrc] = useState(initialSrc)
   const [triedFallback, setTriedFallback] = useState(false)
 
   function handleError() {
-    if (!triedFallback && brand) {
+    if (!triedFallback && isPinterest && brand) {
       setTriedFallback(true)
-      setSrc(googleFavicon(brand.domain))
+      setSrc(gFavicon(brand.domain))
     } else {
       setSrc(null)
     }
