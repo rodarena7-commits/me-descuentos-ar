@@ -1,10 +1,12 @@
 import { useState, useMemo, useEffect } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import StatsBar from './components/StatsBar'
 import FilterBar from './components/FilterBar'
 import DiscountCard from './components/DiscountCard'
 import UserMenu from './components/UserMenu'
 import OnlineCounter from './components/OnlineCounter'
+import MarcasPage from './pages/MarcasPage'
+import MarcaDetailPage from './pages/MarcaDetailPage'
 import { useDiscounts } from './hooks/useDiscounts'
 import { usePresence } from './hooks/usePresence'
 import { useAuth } from './contexts/AuthContext'
@@ -31,6 +33,9 @@ function Skeleton() {
 
 export default function App() {
   const { user, loading } = useAuth()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const isMarcas = location.pathname.startsWith('/marcas')
   const [filters, setFilters] = useState({})
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
@@ -80,10 +85,33 @@ export default function App() {
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/* Nav tabs */}
+            <nav className="hidden sm:flex items-center gap-1">
+              <button
+                onClick={() => navigate('/')}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                  !isMarcas
+                    ? 'bg-violet-600/20 text-violet-300'
+                    : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                Descuentos
+              </button>
+              <button
+                onClick={() => navigate('/marcas')}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                  isMarcas
+                    ? 'bg-violet-600/20 text-violet-300'
+                    : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                Multi Marcas
+              </button>
+            </nav>
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse" />
-              <span className="hidden sm:inline">En vivo</span>
+              <span className="hidden md:inline">En vivo</span>
             </div>
             <UserMenu />
           </div>
@@ -91,6 +119,16 @@ export default function App() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 py-8">
+        {/* ── SECCIÓN MULTI MARCAS ── */}
+        {isMarcas && (
+          <Routes>
+            <Route path="/marcas" element={<MarcasPage />} />
+            <Route path="/marcas/:slug" element={<MarcaDetailPage />} />
+          </Routes>
+        )}
+
+        {/* ── SECCIÓN DESCUENTOS (homepage) ── */}
+        {!isMarcas && (<>
         {/* Hero + Search */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -246,6 +284,7 @@ export default function App() {
             )}
           </>
         )}
+        </>)}
       </main>
 
       <OnlineCounter count={onlineCount} />
