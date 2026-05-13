@@ -233,21 +233,246 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.bbva.com.ar/beneficios",
         "logo_url": "https://logo.clearbit.com/bbva.com.ar",
     },
+    # ── BANCO NACIÓN / BNA+ — datos reales verificados (mayo 2026) ──────────
     {
-        "title": "15% OFF en restaurantes — Banco Nación",
-        "description": "Descuento en restaurantes adheridos con BNA.",
+        "title": "30% de reintegro en supermercados los miércoles — BNA+",
+        "description": (
+            "Reintegro pagando con QR MODO o BNA+ en Carrefour, Coto, Disco, Vea, "
+            "Chango Más, Diarco, Maxiconsumo y Vital. Tope $12.000 por semana."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 12000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "20% de reintegro en Chango Más los lunes — BNA+",
+        "description": (
+            "Reintegro con tarjeta de crédito BNA+ en Chango Más. "
+            "Mínimo de compra $75.000. Tope $25.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "20% de reintegro en Coto los martes — BNA+",
+        "description": (
+            "Reintegro con tarjeta de crédito BNA+ en Coto. "
+            "Mínimo de compra $60.000. Tope $25.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "20% de reintegro en Disco, Vea y Jumbo (vie–dom) — BNA+",
+        "description": (
+            "Reintegro en Disco, Vea y Jumbo de viernes a domingo con BNA+. "
+            "Mínimo de compra $100.000. Tope $25.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "viernes,sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "20% de reintegro en Supermercado Día (vie–sáb) — BNA+",
+        "description": (
+            "Reintegro en Supermercado Día los viernes y sábados con BNA+. "
+            "Mínimo de compra $35.000. Tope $20.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 20000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "viernes,sabado",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "20% de reintegro en combustible los viernes — BNA+",
+        "description": (
+            "Reintegro en YPF, Shell, Axion Energy, Gulf y Dapsa los viernes "
+            "con QR MODO o BNA+. Shell suma 5% adicional. Tope $10.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 10000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "50% de reintegro en transporte público — BNA+",
+        "description": (
+            "Reintegro en colectivos y subtes usando tarjeta Visa/Mastercard BNA+ "
+            "con tecnología contactless. Tope $8.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 50.0,
+        "max_amount": 8000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "transporte",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "10% en farmacias los lunes + 3 cuotas — BNA+",
+        "description": (
+            "10% de descuento en farmacias adheridas los lunes con BNA+, "
+            "más 3 cuotas sin interés."
+        ),
         "discount_type": "descuento",
-        "percentage": 15.0,
-        "max_amount": 2500.0,
+        "percentage": 10.0,
+        "max_amount": None,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "20% de descuento en gastronomía — BNA+",
+        "description": (
+            "20% de descuento en restaurantes y gastronomía adherida todos los días "
+            "con BNA+. Tope $10.000 por compra, máximo 5 transacciones por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 10000.0,
         "source": "Banco Nación",
         "source_type": "banco",
         "category": "gastronomia",
-        "days_of_week": "lunes,miercoles,viernes",
-        "valid_until": _HOY + timedelta(days=45),
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
         "is_limited_stock": False,
-        "is_new": False,
+        "is_new": True,
         "is_active": True,
-        "url": "https://www.bna.com.ar/Personas/Beneficios",
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "10% en ópticas los jueves sin tope — BNA+",
+        "description": (
+            "10% de reintegro en ópticas adheridas los jueves con BNA+, "
+            "sin tope de reintegro, más 3 cuotas sin interés."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 10.0,
+        "max_amount": None,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "opticas",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "10% en librerías los sábados — BNA+",
+        "description": (
+            "10% de reintegro en librerías adheridas los sábados con BNA+, "
+            "más 3 cuotas sin interés. Tope $10.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 10.0,
+        "max_amount": 10000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "librerias",
+        "days_of_week": "sabado",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
+        "logo_url": "https://logo.clearbit.com/bna.com.ar",
+    },
+    {
+        "title": "Reintegro del 100% para empleados estatales — BNA+",
+        "description": (
+            "Reintegro del 100% para cuentas sueldo del Estado (Jefatura de Gabinete, "
+            "CONICET y convenios específicos). Tope hasta $105.000. "
+            "Acumula con otras promos del banco. Vigente hasta 03/07/2026."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 100.0,
+        "max_amount": 105000.0,
+        "source": "Banco Nación",
+        "source_type": "banco",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 7, 3),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
         "logo_url": "https://logo.clearbit.com/bna.com.ar",
     },
     {
