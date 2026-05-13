@@ -1754,21 +1754,187 @@ SAMPLE_DISCOUNTS = [
         "url": "https://lemon.me/beneficios",
         "logo_url": "https://logo.clearbit.com/lemon.me",
     },
+    # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────
     {
-        "title": "30% OFF los jueves en supermercados — Naranja X",
-        "description": "30% OFF los jueves en supermercados con NaranjaX.",
-        "discount_type": "descuento",
-        "percentage": 30.0,
-        "max_amount": 2000.0,
+        "title": "25% en supermercados los martes — Naranja X Plan Turbo",
+        "description": (
+            "25% de reintegro en Chango Más, Disco, Vea, Jumbo, Carrefour, Día y Coto "
+            "los martes con tarjeta de crédito Naranja X (Plan Turbo). Tope $12.000/mes. "
+            "Sin Plan Turbo: 10%, tope $3.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 12000.0,
         "source": "Naranja X",
         "source_type": "fintech",
         "category": "supermercados",
-        "days_of_week": "jueves",
-        "valid_until": _HOY + timedelta(days=20),
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
         "is_limited_stock": False,
-        "is_new": False,
+        "is_new": True,
         "is_active": True,
-        "url": "https://www.naranjax.com/beneficios",
+        "url": "https://www.naranjax.com/plan-turbo",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "4 cuotas sin interés en Carrefour y Diarco — Naranja X",
+        "description": (
+            "4 cuotas sin interés todos los días en Carrefour y Diarco "
+            "pagando con tarjeta Naranja X crédito."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/promociones",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "20% en indumentaria deportiva (lun y mar) — Naranja X",
+        "description": (
+            "20% de descuento los lunes y martes en Dexter, Moov, Stock Center y Adidas "
+            "con tarjeta Naranja X. Tope $30.000/mes ($40.000 en Adidas)."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 30000.0,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "indumentaria",
+        "days_of_week": "lunes,martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/promociones",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "25% en McDonald's los viernes — Naranja X Plan Turbo",
+        "description": (
+            "25% de reintegro en McDonald's todos los viernes "
+            "con tarjeta de crédito Naranja X (Plan Turbo). Tope $12.000/mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 12000.0,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/plan-turbo",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "30% en KFC, Wendy's y heladerías (vie y sáb) — Naranja X",
+        "description": (
+            "30% de reintegro los viernes y sábados en KFC, Wendy's, Ave Cesar, "
+            "Sushi Pop, heladerías adheridas con tarjeta Naranja X. Tope $15.000/mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 15000.0,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "viernes,sabado",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/promociones",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "10% en GULF los fines de semana — Naranja X",
+        "description": (
+            "10% de descuento en estaciones GULF los sábados y domingos "
+            "con tarjeta Naranja X. Tope $3.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": 3000.0,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "combustible",
+        "days_of_week": "sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/promociones",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "100% de reintegro en subte y colectivo — Naranja X",
+        "description": (
+            "100% de reintegro en subtes y colectivos todos los días "
+            "pagando con NFC o débito Naranja X. "
+            "Tope $10.000 con débito/NFC, $5.000 con saldo en cuenta. Hasta 31/05/2026."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 100.0,
+        "max_amount": 10000.0,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "transporte",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/promociones",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "6 cuotas sin interés en Aerolíneas Argentinas — Naranja X",
+        "description": (
+            "6 cuotas sin interés en compras de vuelos Aerolíneas Argentinas "
+            "todos los días con tarjeta de crédito Naranja X."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/promociones",
+        "logo_url": "https://logo.clearbit.com/naranjax.com",
+    },
+    {
+        "title": "Promos Relámpago: descuentos sorpresa el último sábado — Naranja X",
+        "description": (
+            "Cada último sábado del mes, Naranja X lanza promos relámpago con hasta 40% OFF "
+            "en rubros sorpresa: combustible, farmacias, indumentaria, jugueterías y más."
+        ),
+        "discount_type": "descuento",
+        "percentage": 40.0,
+        "max_amount": 9000.0,
+        "source": "Naranja X",
+        "source_type": "fintech",
+        "category": "varios",
+        "days_of_week": "sabado",
+        "valid_until": datetime(2026, 5, 30),
+        "is_limited_stock": True,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.naranjax.com/promos-relampago",
         "logo_url": "https://logo.clearbit.com/naranjax.com",
     },
     # ── MODO — datos reales verificados (mayo 2026) ─────────────────────────

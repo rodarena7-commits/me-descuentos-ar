@@ -34,11 +34,11 @@ export default function App() {
       <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center text-white font-bold text-sm">
-              M
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-700 flex items-center justify-center text-white font-black text-xs tracking-tight shadow-lg shadow-violet-500/30">
+              AI
             </div>
             <div>
-              <span className="text-white font-bold text-lg">Me</span>
+              <span className="text-white font-bold text-lg">Ahorro Inteligente</span>
               <span className="text-slate-500 text-sm ml-2 hidden sm:inline">
                 Descuentos · Argentina
               </span>
@@ -55,11 +55,11 @@ export default function App() {
         {/* Hero */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-            Todos los descuentos,{' '}
-            <span className="text-violet-400">en un solo lugar</span>
+            Ahorro Inteligente{' '}
+            <span className="text-violet-400">— AI</span>
           </h1>
           <p className="text-slate-400 text-sm md:text-base">
-            Bancos, fintechs y billeteras digitales de Argentina
+            Todos los descuentos, promos y reintegros de bancos y billeteras de Argentina
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function App() {
       </main>
 
       <footer className="border-t border-slate-800/50 mt-16 py-6 text-center text-xs text-slate-600">
-        Me — Descuentos Argentina · Los datos son informativos, verificá en el sitio oficial
+        Ahorro Inteligente (AI) · Descuentos Argentina · Los datos son informativos, verificá en el sitio oficial
       </footer>
     </div>
   )

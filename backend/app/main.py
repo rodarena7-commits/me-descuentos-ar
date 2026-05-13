@@ -25,7 +25,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Me — Descuentos Argentina",
+    title="Ahorro Inteligente (AI) — Descuentos Argentina",
     description="API para consultar descuentos, promociones y reintegros de bancos y fintechs argentinas.",
     version="0.1.0",
     lifespan=lifespan,
