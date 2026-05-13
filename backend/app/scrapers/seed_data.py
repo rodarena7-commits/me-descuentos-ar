@@ -2091,6 +2091,74 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.mercadopago.com.ar/beneficios",
         "logo_url": "https://logo.clearbit.com/mercadopago.com",
     },
+    # ── RIPIO — datos reales verificados (2026) ─────────────────────────────
+    # Ripio es una exchange/billetera crypto. El cashback se devuelve en UXD, ETH o BTC.
+    # Tarjeta Visa prepaga, gratuita, sin costo de mantenimiento.
+    {
+        "title": "0.5% cashback en cripto pagando con pesos — Ripio Card Visa",
+        "description": (
+            "Con la Ripio Card Visa prepaga: 0.5% de cashback en UXD, ETH o BTC "
+            "en cada compra pagando con pesos en cualquier comercio Visa del mundo. "
+            "Se acredita en tu billetera Ripio. Tope $50.000 ARS por mes. "
+            "Tarjeta gratuita, sin mantenimiento, envío gratis a todo el país."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 0.5,
+        "max_amount": 50000.0,
+        "source": "Ripio",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.ripio.com/ar/productos/ripio-card",
+        "logo_url": "https://logo.clearbit.com/ripio.com",
+    },
+    {
+        "title": "2% cashback en cripto pagando con crypto — Ripio Card Visa",
+        "description": (
+            "Con la Ripio Card Visa: 2% de cashback en UXD, ETH o BTC "
+            "en cada compra pagando con criptomonedas en cualquier comercio Visa. "
+            "Cashback instantáneo en tu billetera. Tope $50.000 ARS por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 2.0,
+        "max_amount": 50000.0,
+        "source": "Ripio",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.ripio.com/ar/productos/ripio-card",
+        "logo_url": "https://logo.clearbit.com/ripio.com",
+    },
+    {
+        "title": "4% cashback primeros 30 días — Ripio Card (nuevos usuarios)",
+        "description": (
+            "Nuevos en Ripio Card: 4% de cashback en UXD/ETH/BTC pagando con cripto "
+            "y 1% pagando con pesos durante los primeros 30 días desde la activación. "
+            "Tarjeta Visa prepaga, gratuita y sin costo de mantenimiento."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 4.0,
+        "max_amount": 50000.0,
+        "source": "Ripio",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.ripio.com/ar/productos/ripio-card",
+        "logo_url": "https://logo.clearbit.com/ripio.com",
+    },
+
     # ── LEMON — datos reales verificados (2026) ─────────────────────────────
     # Lemon es una billetera crypto. El cashback se devuelve siempre en BTC.
     {

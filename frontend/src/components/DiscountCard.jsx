@@ -33,6 +33,7 @@ const BRAND = {
   'Supervielle':    { domain: 'supervielle.com.ar',   color: 'bg-red-800',      text: 'text-white' },
   'Banco Ciudad':   { domain: 'bancociudad.com.ar',   color: 'bg-green-600',    text: 'text-white' },
   'ICBC':           { domain: 'icbc.com.ar',           color: 'bg-red-700',      text: 'text-white' },
+  'Ripio':          { domain: 'ripio.com',             color: 'bg-indigo-500',   text: 'text-white' },
 }
 
 

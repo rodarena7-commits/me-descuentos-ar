@@ -11,7 +11,6 @@ const SOURCE_TYPE_OPTIONS = [
   { value: '', label: 'Todas las entidades' },
   { value: 'banco', label: 'Bancos' },
   { value: 'fintech', label: 'Fintechs' },
-  { value: 'prepaga', label: 'Prepagas' },
 ]
 
 const DAY_OPTIONS = [

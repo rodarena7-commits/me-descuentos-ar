@@ -75,12 +75,15 @@ export const MARCAS = [
   // ── Hogar / Construcción ─────────────────────────────────────────────────
   { id: 'easy',       name: 'Easy',           categoria: 'Hogar',         keywords: ['easy'],                   logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://easy.com.ar&size=128' },
   { id: 'natura',     name: 'Natura',         categoria: 'Hogar',         keywords: ['natura'],                 logo: 'https://i.pinimg.com/1200x/12/ea/5f/12ea5f3612861d9d80493a207e67f33d.jpg' },
+
+  // ── Crypto / Fintech ─────────────────────────────────────────────────────
+  { id: 'ripio',      name: 'Ripio',          categoria: 'Crypto',        keywords: ['ripio'],                  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ripio.com&size=128' },
 ]
 
 export const CATEGORIAS_MARCA = [
   'Supermercados', 'Combustible', 'Farmacias', 'Gastronomía',
   'Indumentaria', 'Electrónica', 'Viajes', 'Entretenimiento',
-  'Librerías', 'Hogar',
+  'Librerías', 'Hogar', 'Crypto',
 ]
 
 export function getMarca(slug) {
