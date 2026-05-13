@@ -80,7 +80,22 @@ export default function FilterBar({ filters, onChange }) {
 
         <select className={selectClass} value={filters.category || ''} onChange={e => set('category', e.target.value)}>
           <option value="" className="bg-slate-800">Todas las categorías</option>
-          {categories.map(c => <option key={c} value={c} className="bg-slate-800 capitalize">{c}</option>)}
+          <option value="supermercados" className="bg-slate-800">Supermercados</option>
+          <option value="combustible" className="bg-slate-800">Combustible</option>
+          <option value="gastronomia" className="bg-slate-800">Gastronomía</option>
+          <option value="farmacias" className="bg-slate-800">Farmacias</option>
+          <option value="transporte" className="bg-slate-800">Transporte</option>
+          <option value="indumentaria" className="bg-slate-800">Indumentaria</option>
+          <option value="electronica" className="bg-slate-800">Electrónica</option>
+          <option value="entretenimiento" className="bg-slate-800">Entretenimiento</option>
+          <option value="viajes" className="bg-slate-800">Viajes</option>
+          <option value="farmacias" className="bg-slate-800">Farmacias</option>
+          <option value="librerias" className="bg-slate-800">Librerías</option>
+          <option value="servicios" className="bg-slate-800">Servicios públicos</option>
+          <option value="educacion" className="bg-slate-800">Educación</option>
+          <option value="hogar" className="bg-slate-800">Hogar</option>
+          <option value="neumaticos" className="bg-slate-800">Neumáticos</option>
+          <option value="todos" className="bg-slate-800">Todos los rubros</option>
         </select>
 
         <select className={selectClass} value={filters.day || ''} onChange={e => set('day', e.target.value)}>
