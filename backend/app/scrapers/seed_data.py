@@ -694,6 +694,475 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.bbva.com/es/ar/economia-y-finanzas/hot-sale-2026-con-bbva-viajes-turismo-electro-y-tecnologia/",
         "logo_url": "https://logo.clearbit.com/bbva.com.ar",
     },
+    # ── CUENTA DNI (Banco Provincia) — datos reales verificados (mayo 2026) ──
+    {
+        "title": "20% en comercios de cercanía lun–vie — Cuenta DNI",
+        "description": (
+            "20% de descuento de lunes a viernes en carnicerías, granjas, pescaderías "
+            "y comercios de cercanía adheridos, pagando con QR o Clave DNI. "
+            "Tope $5.000 por semana."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 5000.0,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "lunes,martes,miercoles,jueves,viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "40% en ferias y mercados bonaerenses todos los días — Cuenta DNI",
+        "description": (
+            "40% de reintegro en ferias y mercados de la provincia de Buenos Aires "
+            "todos los días pagando con QR o Clave DNI. Tope $6.000 por semana."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 40.0,
+        "max_amount": 6000.0,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "40% en universidades, clubes y entidades educativas — Cuenta DNI",
+        "description": (
+            "40% de descuento todos los días en universidades, clubes deportivos "
+            "y entidades educativas adheridas con QR o Clave DNI. "
+            "Tope $6.000 por semana. Mínimo $15.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 40.0,
+        "max_amount": 6000.0,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "educacion",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "25% en gastronomía los fines de semana — Cuenta DNI",
+        "description": (
+            "25% de descuento en restaurantes, bares y gastronomía adherida "
+            "los sábados y domingos con QR o Clave DNI. "
+            "Incluye Full YPF (gastronomía, NO combustible). Tope $8.000 por semana."
+        ),
+        "discount_type": "descuento",
+        "percentage": 25.0,
+        "max_amount": 8000.0,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "30% en marcas destacadas todos los días — Cuenta DNI",
+        "description": (
+            "30% de descuento en marcas destacadas adheridas todos los días "
+            "pagando con QR o Clave DNI. Tope $15.000 por mes. Mínimo $50.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 15000.0,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "10% en Supermercado Día los lunes sin tope — Cuenta DNI",
+        "description": (
+            "10% de descuento en Supermercado Día los lunes "
+            "pagando con QR o Clave DNI. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": None,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "20% en Chango Más los jueves sin tope — Cuenta DNI",
+        "description": (
+            "20% de descuento en Chango Más los jueves "
+            "pagando con QR o Clave DNI. Sin tope de reintegro. Sin mínimo de compra."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": None,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "30% en Coto con NFC los jueves sin límite — Cuenta DNI",
+        "description": (
+            "30% de descuento en Coto los jueves pagando con NFC (pago sin contacto). "
+            "Sin límite de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": None,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "10% en Carrefour los miércoles sin tope — Cuenta DNI",
+        "description": (
+            "10% de descuento en Carrefour los miércoles "
+            "pagando con QR o Clave DNI. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": None,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "15% en supermercados adheridos (mar y mié) — Cuenta DNI",
+        "description": (
+            "15% de descuento martes y miércoles en supermercados del interior bonaerense "
+            "adheridos (Josimar, Toledo y otros) con QR o Clave DNI. "
+            "Mínimo $30.000. Tope $6.000 por semana."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": 6000.0,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes,miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "10% en librerías los lunes y martes sin tope — Cuenta DNI",
+        "description": (
+            "10% de descuento en librerías de texto los lunes y martes "
+            "con QR o Clave DNI. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": None,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "librerias",
+        "days_of_week": "lunes,martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "10% en farmacias y perfumerías (mié y jue) sin tope — Cuenta DNI",
+        "description": (
+            "10% de descuento los miércoles y jueves en farmacias y perfumerías adheridas "
+            "pagando con QR o Clave DNI. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": None,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "miercoles,jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+    {
+        "title": "+5% adicional en supermercados para jubilados — Cuenta DNI",
+        "description": (
+            "Jubilados y pensionados obtienen un 5% adicional de descuento "
+            "en supermercados adheridos con Cuenta DNI. Tope unificado $5.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 5.0,
+        "max_amount": 5000.0,
+        "source": "Cuenta DNI",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.cuentadni.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+    },
+
+    # ── BANCO PATAGONIA (Patagonia ON) — datos reales verificados (mayo 2026) ─
+    {
+        "title": "30% en bares los viernes — Banco Patagonia",
+        "description": (
+            "30% de descuento en bares adheridos los viernes "
+            "con tarjeta de crédito Mastercard Patagonia. Tope $10.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 10000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "50% en educación IT todos los días sin tope — Banco Patagonia",
+        "description": (
+            "50% de descuento en institutos de educación IT adheridos todos los días "
+            "con débito o crédito Mastercard Patagonia. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 50.0,
+        "max_amount": None,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "educacion",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "15% en Carrefour los miércoles — Banco Patagonia",
+        "description": (
+            "15% de descuento en Carrefour los miércoles "
+            "con débito o crédito Mastercard Patagonia. Tope $10.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": 10000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "50% en cines los viernes — Banco Patagonia",
+        "description": (
+            "50% de descuento en cines adheridos los viernes "
+            "con tarjeta de débito Mastercard Patagonia. Tope $10.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 50.0,
+        "max_amount": 10000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "entretenimiento",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "20% en Havanna todos los días — Banco Patagonia",
+        "description": (
+            "20% de descuento en Havanna todos los días "
+            "con crédito Mastercard Patagonia. Tope $10.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 10000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "20% en Farmacity los viernes — Banco Patagonia",
+        "description": (
+            "20% de descuento en Farmacity los viernes "
+            "con crédito Mastercard Patagonia. Tope $20.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 20000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "20% en Get the Look los viernes — Banco Patagonia",
+        "description": (
+            "20% de descuento en Get the Look (indumentaria/belleza) los viernes "
+            "con crédito Mastercard Patagonia. Tope $20.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 20000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "indumentaria",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "15% en Adidas, Stock Center y Dexter los jueves — Banco Patagonia",
+        "description": (
+            "15% de descuento en Adidas, Stock Center y Dexter los jueves "
+            "con débito o crédito Mastercard Patagonia. Tope $10.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": 10000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "indumentaria",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "25% en Pedidos Ya los jueves — Banco Patagonia",
+        "description": (
+            "25% de descuento en Pedidos Ya los jueves "
+            "con crédito Mastercard Patagonia. Tope $10.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 25.0,
+        "max_amount": 10000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+    {
+        "title": "20–25% en combustible los jueves — Banco Patagonia",
+        "description": (
+            "20% de reintegro en combustible los jueves con tarjetas Patagonia "
+            "(tope $10.000/mes). Clientes con cuenta sueldo: 25% (tope $15.000/mes). "
+            "En YPF, Shell, Axion, Puma y Gulf."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 15000.0,
+        "source": "Banco Patagonia",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+    },
+
     # ── BANCO NACIÓN / BNA+ — datos reales verificados (mayo 2026) ──────────
     {
         "title": "30% de reintegro en supermercados los miércoles — BNA+",

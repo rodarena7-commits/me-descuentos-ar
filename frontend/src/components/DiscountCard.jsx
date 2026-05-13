@@ -25,7 +25,10 @@ const BRAND = {
   'Naranja X':      { domain: 'naranjax.com',        color: 'bg-orange-500',   text: 'text-white' },
   'Lemon':          { domain: 'lemon.me',            color: 'bg-lime-400',     text: 'text-slate-900' },
   'MODO':           { domain: 'modo.com.ar',         color: 'bg-indigo-600',   text: 'text-white' },
+  'Cuenta DNI':     { domain: 'cuentadni.ar',        color: 'bg-sky-500',      text: 'text-white' },
+  'Banco Patagonia':{ domain: 'bancopatagonia.com.ar',color: 'bg-emerald-700', text: 'text-white' },
 }
+
 
 const CATEGORY_LABELS = {
   supermercados:    'Supermercados',
@@ -43,6 +46,7 @@ const CATEGORY_LABELS = {
   opticas:          'Ópticas',
   transporte:       'Transporte',
   servicios:        'Servicios públicos',
+  educacion:        'Educación',
   todos:            'Todos',
   varios:           'Varios',
 }
