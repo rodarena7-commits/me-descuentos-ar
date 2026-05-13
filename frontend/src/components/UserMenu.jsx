@@ -1,16 +1,47 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { collection, getCountFromServer } from 'firebase/firestore'
+import { ref, onValue } from 'firebase/database'
+import { db, rtdb } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
+
+const ADMIN_EMAIL = 'rodrigo.n.arena@hotmail.com'
+
+function useAdminStats(isAdmin) {
+  const [registered, setRegistered] = useState(null)
+  const [online, setOnline] = useState(null)
+
+  useEffect(() => {
+    if (!isAdmin) return
+
+    // Usuarios registrados (Firestore count)
+    getCountFromServer(collection(db, 'users'))
+      .then(snap => setRegistered(snap.data().count))
+      .catch(() => setRegistered('—'))
+
+    // Usuarios online en tiempo real (RTDB)
+    const presenceRef = ref(rtdb, '/presence')
+    const unsub = onValue(presenceRef, (snap) => {
+      const val = snap.val()
+      setOnline(val ? Object.keys(val).length : 0)
+    })
+    return () => unsub()
+  }, [isAdmin])
+
+  return { registered, online }
+}
 
 export default function UserMenu() {
   const { user, profile, logout } = useAuth()
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
-  const ref = useRef(null)
+  const menuRef = useRef(null)
+  const isAdmin = user?.email === ADMIN_EMAIL
+  const { registered, online } = useAdminStats(isAdmin)
 
   useEffect(() => {
     function handler(e) {
-      if (ref.current && !ref.current.contains(e.target)) setOpen(false)
+      if (menuRef.current && !menuRef.current.contains(e.target)) setOpen(false)
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
@@ -23,7 +54,7 @@ export default function UserMenu() {
     : user.email[0].toUpperCase()
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative" ref={menuRef}>
       <button
         onClick={() => setOpen(o => !o)}
         className="flex items-center gap-2 hover:opacity-80 transition-opacity"
@@ -45,7 +76,8 @@ export default function UserMenu() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-xl z-50 overflow-hidden">
+        <div className="absolute right-0 top-full mt-2 w-72 bg-slate-900 border border-slate-800 rounded-xl shadow-xl z-50 overflow-hidden">
+
           {/* Profile header */}
           <div className="flex items-center gap-3 p-4 border-b border-slate-800">
             {user.photoURL ? (
@@ -58,8 +90,39 @@ export default function UserMenu() {
             <div className="min-w-0">
               <p className="text-white text-sm font-semibold truncate">{user.displayName}</p>
               <p className="text-slate-500 text-xs truncate">{user.email}</p>
+              {isAdmin && (
+                <span className="text-[10px] bg-violet-500/20 text-violet-400 border border-violet-500/30 px-1.5 py-0.5 rounded-full font-medium mt-0.5 inline-block">
+                  Admin
+                </span>
+              )}
             </div>
           </div>
+
+          {/* Admin stats — solo para rodrigo.n.arena@hotmail.com */}
+          {isAdmin && (
+            <div className="px-4 py-3 border-b border-slate-800 bg-slate-950/40">
+              <p className="text-[10px] text-slate-500 uppercase tracking-wider mb-2 font-medium">
+                Panel de administración
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-slate-800/60 rounded-lg p-2.5 text-center">
+                  <p className="text-lg font-bold text-violet-400 tabular-nums">
+                    {registered ?? '…'}
+                  </p>
+                  <p className="text-[10px] text-slate-500">Registrados</p>
+                </div>
+                <div className="bg-slate-800/60 rounded-lg p-2.5 text-center">
+                  <div className="flex items-center justify-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <p className="text-lg font-bold text-emerald-400 tabular-nums">
+                      {online ?? '…'}
+                    </p>
+                  </div>
+                  <p className="text-[10px] text-slate-500">Online ahora</p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Profile info */}
           {profile && (
@@ -79,7 +142,7 @@ export default function UserMenu() {
               {profile.banks?.length > 0 && (
                 <div className="flex items-center gap-2 text-xs text-slate-400">
                   <span>🏦</span>
-                  <span className="truncate">{profile.banks.join(', ')}</span>
+                  <span className="truncate">{profile.banks.slice(0, 3).join(', ')}{profile.banks.length > 3 ? ` +${profile.banks.length - 3}` : ''}</span>
                 </div>
               )}
               {profile.fintechs?.length > 0 && (

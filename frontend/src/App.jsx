@@ -4,7 +4,9 @@ import StatsBar from './components/StatsBar'
 import FilterBar from './components/FilterBar'
 import DiscountCard from './components/DiscountCard'
 import UserMenu from './components/UserMenu'
+import OnlineCounter from './components/OnlineCounter'
 import { useDiscounts } from './hooks/useDiscounts'
+import { usePresence } from './hooks/usePresence'
 import { useAuth } from './contexts/AuthContext'
 import './index.css'
 
@@ -32,6 +34,7 @@ export default function App() {
   const [filters, setFilters] = useState({})
   const [search, setSearch] = useState('')
   const { discounts, loading: discLoading, error } = useDiscounts(filters)
+  const onlineCount = usePresence()
 
   // Client-side search filter
   const filtered = useMemo(() => {
@@ -156,6 +159,8 @@ export default function App() {
           </>
         )}
       </main>
+
+      <OnlineCounter count={onlineCount} />
 
       <footer className="border-t border-slate-800/50 mt-16 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center space-y-2">
