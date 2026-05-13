@@ -65,10 +65,11 @@ function gFavicon(domain) {
 
 function SourceLogo({ source, logoUrl }) {
   const brand = BRAND[source]
-  // Si el source está en BRAND, usar Google Favicon API directamente (ignora clearbit bloqueado)
-  // Si tiene URL propia (Pinterest, etc.), usarla como primaria
-  const isPinterest = logoUrl?.includes('pinimg.com')
-  const initialSrc = isPinterest
+  // Clearbit está bloqueado por ad blockers → usar Google Favicon en su lugar.
+  // URLs propias (Pinterest, Wikipedia, etc.) se usan directamente como primaria.
+  const isClearbit = logoUrl?.includes('clearbit.com')
+  const isCustom = logoUrl && !isClearbit
+  const initialSrc = isCustom
     ? logoUrl
     : (brand ? gFavicon(brand.domain) : logoUrl)
 
@@ -76,7 +77,7 @@ function SourceLogo({ source, logoUrl }) {
   const [triedFallback, setTriedFallback] = useState(false)
 
   function handleError() {
-    if (!triedFallback && isPinterest && brand) {
+    if (!triedFallback && brand) {
       setTriedFallback(true)
       setSrc(gFavicon(brand.domain))
     } else {

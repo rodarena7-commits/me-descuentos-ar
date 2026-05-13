@@ -1182,7 +1182,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.beneficios.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "20% en Coto Digital los lunes — ICBC",
@@ -1202,7 +1202,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.beneficios.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "20% en Farmacity los viernes + 3 cuotas — ICBC",
@@ -1222,7 +1222,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.beneficios.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "15% en Farmaonline los viernes con MODO — ICBC",
@@ -1242,7 +1242,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.beneficios.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "20% en gastronomía con MODO — ICBC",
@@ -1263,7 +1263,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.beneficios.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "30% en combustible — ICBC",
@@ -1283,7 +1283,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.beneficios.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "20% en Dexter + 6 cuotas — ICBC Exclusive Banking",
@@ -1304,7 +1304,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.beneficios.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "Hasta 18 cuotas + $50.000 de reintegro — ICBC Mall Hot Sale 2026",
@@ -1325,7 +1325,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://mall.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
     {
         "title": "50% en Gift Cards de moda — ICBC Mall Hot Sale 2026",
@@ -1345,7 +1345,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://mall.icbc.com.ar/",
-        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/d3/2d/01/d32d018136507dc5697d02974c927300.jpg",
     },
 
     # ── BANCO NACIÓN / BNA+ — datos reales verificados (mayo 2026) ──────────
@@ -2894,7 +2894,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos",
-        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Banco_Supervielle.svg",
     },
     {
         "title": "25% en Jumbo, Vea y Disco los martes — Supervielle Plan Sueldo/Identité",
@@ -2915,7 +2915,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos",
-        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Banco_Supervielle.svg",
     },
     {
         "title": "20% en gastronomía (vie y sáb) — Supervielle",
@@ -2938,7 +2938,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos/restaurantes",
-        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Banco_Supervielle.svg",
     },
     {
         "title": "30% en gastronomía (vie y sáb) — Supervielle Identité",
@@ -2959,7 +2959,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos/restaurantes",
-        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Banco_Supervielle.svg",
     },
     {
         "title": "10% en combustible los domingos — Supervielle",
@@ -2979,7 +2979,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos/combustible",
-        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Banco_Supervielle.svg",
     },
     {
         "title": "50% en farmacias adheridas — Supervielle",
@@ -2999,7 +2999,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos",
-        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Banco_Supervielle.svg",
     },
 
     # ── BANCO CIUDAD (Buepp) — datos reales verificados (mayo 2026) ──────────
