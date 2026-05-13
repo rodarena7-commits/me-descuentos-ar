@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 import StatsBar from './components/StatsBar'
 import FilterBar from './components/FilterBar'
@@ -30,9 +30,12 @@ function Skeleton() {
 }
 
 export default function App() {
+  const ITEMS_PER_PAGE = 12
+
   const { user, loading } = useAuth()
   const [filters, setFilters] = useState({})
   const [search, setSearch] = useState('')
+  const [page, setPage] = useState(1)
   const { discounts, loading: discLoading, error } = useDiscounts(filters)
   const onlineCount = usePresence()
 
@@ -45,6 +48,12 @@ export default function App() {
         .some(f => f?.toLowerCase().includes(q))
     )
   }, [discounts, search])
+
+  // Reset page when filters or search change
+  useEffect(() => { setPage(1) }, [filters, search])
+
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
+  const paginated = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
 
   if (loading) {
     return (
@@ -150,12 +159,75 @@ export default function App() {
 
         {!discLoading && !error && filtered.length > 0 && (
           <>
-            <p className="text-xs text-slate-600 mb-4 uppercase tracking-wide">
-              {filtered.length} descuentos encontrados
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filtered.map(d => <DiscountCard key={d.id} discount={d} />)}
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-xs text-slate-600 uppercase tracking-wide">
+                {filtered.length} descuentos · página {page} de {totalPages}
+              </p>
+              {totalPages > 1 && (
+                <p className="text-xs text-slate-600">
+                  Mostrando {(page - 1) * ITEMS_PER_PAGE + 1}–{Math.min(page * ITEMS_PER_PAGE, filtered.length)}
+                </p>
+              )}
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {paginated.map(d => <DiscountCard key={d.id} discount={d} />)}
+            </div>
+
+            {/* Paginación */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-8">
+                <button
+                  onClick={() => { setPage(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+                  disabled={page === 1}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:bg-slate-700 hover:border-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Anterior
+                </button>
+
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1)
+                    .filter(p => p === 1 || p === totalPages || Math.abs(p - page) <= 1)
+                    .reduce((acc, p, idx, arr) => {
+                      if (idx > 0 && p - arr[idx - 1] > 1) acc.push('…')
+                      acc.push(p)
+                      return acc
+                    }, [])
+                    .map((p, i) =>
+                      p === '…' ? (
+                        <span key={`gap-${i}`} className="w-8 text-center text-slate-600 text-sm">…</span>
+                      ) : (
+                        <button
+                          key={p}
+                          onClick={() => { setPage(p); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+                          className={`w-9 h-9 rounded-xl text-sm font-medium transition-all ${
+                            p === page
+                              ? 'bg-violet-600 text-white border border-violet-500'
+                              : 'bg-slate-800/80 border border-slate-700 text-slate-400 hover:bg-slate-700 hover:text-slate-200'
+                          }`}
+                        >
+                          {p}
+                        </button>
+                      )
+                    )
+                  }
+                </div>
+
+                <button
+                  onClick={() => { setPage(p => Math.min(totalPages, p + 1)); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+                  disabled={page === totalPages}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:bg-slate-700 hover:border-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                >
+                  Siguiente
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            )}
           </>
         )}
       </main>

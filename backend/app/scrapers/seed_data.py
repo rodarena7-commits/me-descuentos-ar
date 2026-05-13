@@ -1420,7 +1420,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": False,
         "is_active": True,
         "url": "https://www.macro.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/macro.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
     },
 
     # ── MERCADOPAGO — datos reales verificados (mayo 2026) ──────────────────
@@ -2348,7 +2348,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "Hasta $15.000 de reintegro semanal — Personal Pay Nivel 4 (Personal Flow)",
@@ -2369,7 +2369,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/reintegro-plus",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "15% sin tope en factura Personal Flow — Reintegro Plus",
@@ -2391,7 +2391,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/reintegro-plus",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "Hasta $55.000 de reintegro en Tienda Personal — Personal Pay",
@@ -2411,7 +2411,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/reintegro-plus",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "Hasta 25% en supermercados Día y Chango Más — Personal Pay",
@@ -2432,7 +2432,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "Hasta 50% en gastronomía — Personal Pay",
@@ -2453,7 +2453,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "2x1 en cines (Cinemark, Hoyts, Multiplex) — Personal Pay",
@@ -2473,7 +2473,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "20% en primera recarga semanal de celular prepago — Personal Pay",
@@ -2493,7 +2493,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
     {
         "title": "Reintegro en recarga SUBE con NFC — Personal Pay",
@@ -2514,7 +2514,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.personalpay.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+        "logo_url": "https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg",
     },
 
     # ── SUPERVIELLE — datos reales verificados (mayo 2026) ──────────────────
@@ -2671,7 +2671,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
     {
         "title": "30% en supermercados los lunes — Buepp / Banco Ciudad",
@@ -2692,7 +2692,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
     {
         "title": "30% en comercios vecinos seleccionados — Buepp / Banco Ciudad",
@@ -2713,7 +2713,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
     {
         "title": "30% en gastronomía (jue–dom) — Buepp / Banco Ciudad",
@@ -2734,7 +2734,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
     {
         "title": "30% en Farmacity los miércoles — Buepp / Banco Ciudad",
@@ -2754,7 +2754,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
     {
         "title": "10% en combustible los domingos — Buepp / Banco Ciudad",
@@ -2774,7 +2774,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
     {
         "title": "100% de reintegro en subte y colectivo — Buepp / Banco Ciudad",
@@ -2795,7 +2795,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
     {
         "title": "20% de descuento en ABL — Buepp / Banco Ciudad",
@@ -2816,7 +2816,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.buepp.com.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+        "logo_url": "https://i.pinimg.com/736x/7f/17/b7/7f17b77306a1b93f8101467298908188.jpg",
     },
 
     # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────
