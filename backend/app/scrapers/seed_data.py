@@ -1737,21 +1737,69 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.mercadopago.com.ar/beneficios",
         "logo_url": "https://logo.clearbit.com/mercadopago.com",
     },
+    # ── LEMON — datos reales verificados (2026) ─────────────────────────────
+    # Lemon es una billetera crypto. El cashback se devuelve siempre en BTC.
     {
-        "title": "5% cashback en compras con Lemon",
-        "description": "Cashback en crypto en todas tus compras con la tarjeta Lemon.",
+        "title": "0.5% cashback en BTC en todas las compras con pesos — Lemon",
+        "description": (
+            "Con la Lemon Card Visa: 0.5% de cashback en Bitcoin en cada compra "
+            "pagando con pesos en cualquier comercio del mundo que acepte Visa. "
+            "Tope $40.000 ARS en BTC por mes. Se acredita en el acto en tu billetera."
+        ),
         "discount_type": "reintegro",
-        "percentage": 5.0,
+        "percentage": 0.5,
+        "max_amount": 40000.0,
+        "source": "Lemon",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://lemon.me/tarjeta",
+        "logo_url": "https://logo.clearbit.com/lemon.me",
+    },
+    {
+        "title": "2% cashback en BTC pagando con cripto — Lemon Card",
+        "description": (
+            "Con la Lemon Card Visa: 2% de cashback en Bitcoin en cada compra "
+            "pagando con crypto (BTC, ETH, USDT, USDC) en cualquier comercio Visa. "
+            "Aplica comisión del 0.5% al pagar. Tope $40.000 ARS en BTC por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 2.0,
+        "max_amount": 40000.0,
+        "source": "Lemon",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://lemon.me/tarjeta",
+        "logo_url": "https://logo.clearbit.com/lemon.me",
+    },
+    {
+        "title": "1% cashback en BTC pagando con QR cripto — Lemon",
+        "description": (
+            "Pagá con QR desde la app Lemon usando crypto (BTC, ETH, USDT, USDC) "
+            "en cualquier comercio con QR interoperable de Argentina "
+            "y recibí 1% de cashback en Bitcoin automáticamente."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 1.0,
         "max_amount": None,
         "source": "Lemon",
         "source_type": "fintech",
         "category": "todos",
         "days_of_week": "todos",
-        "valid_until": _HOY + timedelta(days=60),
+        "valid_until": datetime(2026, 12, 31),
         "is_limited_stock": False,
-        "is_new": False,
+        "is_new": True,
         "is_active": True,
-        "url": "https://lemon.me/beneficios",
+        "url": "https://lemon.me/tarjeta",
         "logo_url": "https://logo.clearbit.com/lemon.me",
     },
     # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────

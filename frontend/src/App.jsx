@@ -100,8 +100,18 @@ export default function App() {
         )}
       </main>
 
-      <footer className="border-t border-slate-800/50 mt-16 py-6 text-center text-xs text-slate-600">
-        Ahorro Inteligente (AI) · Descuentos Argentina · Los datos son informativos, verificá en el sitio oficial
+      <footer className="border-t border-slate-800/50 mt-16 py-8">
+        <div className="max-w-6xl mx-auto px-4 text-center space-y-2">
+          <p className="text-xs text-slate-500">
+            Los datos son informativos. Verificá condiciones vigentes en el sitio oficial de cada entidad antes de realizar una compra.
+          </p>
+          <p className="text-xs text-slate-600">
+            © {new Date().getFullYear()} <span className="text-slate-500 font-medium">Ahorro Inteligente (AI)</span> — Todos los derechos reservados.
+          </p>
+          <p className="text-xs text-slate-700">
+            Desarrollado por <span className="text-slate-600">Asociación Hermanos Arena</span> · Argentina
+          </p>
+        </div>
       </footer>
     </div>
   )
