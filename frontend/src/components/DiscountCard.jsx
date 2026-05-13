@@ -1,10 +1,11 @@
+import { useState } from 'react'
 import { format, differenceInDays, isPast } from 'date-fns'
 import { es } from 'date-fns/locale'
 
 const TYPE_STYLES = {
-  descuento: 'bg-blue-100 text-blue-700',
-  reintegro: 'bg-green-100 text-green-700',
-  promocion: 'bg-purple-100 text-purple-700',
+  descuento: 'bg-blue-500/20 text-blue-400 border border-blue-500/30',
+  reintegro: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30',
+  promocion: 'bg-violet-500/20 text-violet-400 border border-violet-500/30',
 }
 
 const TYPE_LABELS = {
@@ -13,14 +14,90 @@ const TYPE_LABELS = {
   promocion: 'Promoción',
 }
 
+// Dominios para Google Favicons API como segundo intento
+const BRAND = {
+  'Banco Galicia':  { domain: 'galicia.ar',         color: 'bg-red-600',      text: 'text-white' },
+  'Santander':      { domain: 'santander.com.ar',    color: 'bg-red-600',      text: 'text-white' },
+  'BBVA':           { domain: 'bbva.com.ar',         color: 'bg-blue-600',     text: 'text-white' },
+  'Banco Nación':   { domain: 'bna.com.ar',          color: 'bg-sky-700',      text: 'text-white' },
+  'Banco Macro':    { domain: 'macro.com.ar',        color: 'bg-yellow-500',   text: 'text-slate-900' },
+  'MercadoPago':    { domain: 'mercadopago.com',     color: 'bg-sky-400',      text: 'text-white' },
+  'Naranja X':      { domain: 'naranjax.com',        color: 'bg-orange-500',   text: 'text-white' },
+  'Lemon':          { domain: 'lemon.me',            color: 'bg-lime-400',     text: 'text-slate-900' },
+  'MODO':           { domain: 'modo.com.ar',         color: 'bg-indigo-600',   text: 'text-white' },
+}
+
+function googleFavicon(domain) {
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+}
+
+function SourceLogo({ source, logoUrl }) {
+  const brand = BRAND[source]
+  const [src, setSrc] = useState(logoUrl || (brand ? googleFavicon(brand.domain) : null))
+  const [triedFallback, setTriedFallback] = useState(false)
+
+  function handleError() {
+    if (!triedFallback && brand) {
+      setTriedFallback(true)
+      setSrc(googleFavicon(brand.domain))
+    } else {
+      setSrc(null)
+    }
+  }
+
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt={source}
+        className="w-11 h-11 rounded-lg object-contain bg-white p-1 border border-slate-700 flex-shrink-0"
+        onError={handleError}
+      />
+    )
+  }
+
+  const color = brand?.color || 'bg-violet-600'
+  const textColor = brand?.text || 'text-white'
+  return (
+    <div className={`w-11 h-11 rounded-lg ${color} flex items-center justify-center ${textColor} font-bold text-lg flex-shrink-0`}>
+      {source[0]}
+    </div>
+  )
+}
+
 function ExpiryBadge({ validUntil }) {
   if (!validUntil) return null
   const date = new Date(validUntil)
-  if (isPast(date)) return <span className="text-xs text-red-500 font-medium">Vencido</span>
+  if (isPast(date)) return <span className="text-xs text-red-400 font-medium">Vencido</span>
   const days = differenceInDays(date, new Date())
   if (days <= 3)
-    return <span className="text-xs text-amber-600 font-medium">⏰ Vence en {days === 0 ? 'hoy' : `${days}d`}</span>
-  return <span className="text-xs text-slate-400">{format(date, "d MMM", { locale: es })}</span>
+    return (
+      <span className="text-xs text-amber-400 font-medium">
+        ⏰ Vence {days === 0 ? 'hoy' : `en ${days}d`}
+      </span>
+    )
+  return <span className="text-xs text-slate-500">{format(date, "d MMM", { locale: es })}</span>
+}
+
+const DAY_LABELS = {
+  lunes: 'Lunes',
+  martes: 'Martes',
+  miercoles: 'Miércoles',
+  jueves: 'Jueves',
+  viernes: 'Viernes',
+  sabado: 'Sábado',
+  domingo: 'Domingo',
+  todos: null,
+}
+
+function DayBadge({ daysOfWeek }) {
+  if (!daysOfWeek || daysOfWeek === 'todos') return null
+  const days = daysOfWeek.split(',').map(d => DAY_LABELS[d.trim()] || d.trim()).filter(Boolean)
+  return (
+    <span className="text-xs px-2 py-0.5 rounded-full bg-slate-700/60 text-slate-400 border border-slate-600/50">
+      {days.join(' · ')}
+    </span>
+  )
 }
 
 export default function DiscountCard({ discount }) {
@@ -35,40 +112,29 @@ export default function DiscountCard({ discount }) {
       href={url || '#'}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-white rounded-xl border border-slate-200 p-4 hover:shadow-md hover:border-indigo-300 transition-all group"
+      className="group block bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-violet-500/50 hover:bg-slate-800/60 transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/5"
     >
       <div className="flex items-start gap-3">
-        {logo_url ? (
-          <img
-            src={logo_url}
-            alt={source}
-            className="w-10 h-10 rounded-lg object-contain border border-slate-100 p-1 flex-shrink-0"
-            onError={e => { e.target.style.display = 'none' }}
-          />
-        ) : (
-          <div className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold flex-shrink-0">
-            {source[0]}
-          </div>
-        )}
+        <SourceLogo source={source} logoUrl={logo_url} />
 
         <div className="flex-1 min-w-0">
-          <div className="flex flex-wrap items-center gap-1.5 mb-1">
-            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${TYPE_STYLES[discount_type] || 'bg-slate-100 text-slate-600'}`}>
+          <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${TYPE_STYLES[discount_type] || 'bg-slate-700 text-slate-400'}`}>
               {TYPE_LABELS[discount_type] || discount_type}
             </span>
             {is_new && (
-              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                 Nuevo
               </span>
             )}
             {is_limited_stock && (
-              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600">
-                ⚡ Stock limitado
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">
+                ⚡ Stock
               </span>
             )}
           </div>
 
-          <h3 className="font-semibold text-slate-800 text-sm leading-snug group-hover:text-indigo-600 transition-colors">
+          <h3 className="font-semibold text-slate-200 text-sm leading-snug group-hover:text-violet-300 transition-colors">
             {title}
           </h3>
 
@@ -76,19 +142,22 @@ export default function DiscountCard({ discount }) {
             <p className="text-xs text-slate-500 mt-1 line-clamp-2">{description}</p>
           )}
 
-          <div className="flex flex-wrap items-center gap-3 mt-2">
+          <div className="flex flex-wrap items-center gap-2 mt-2">
             {percentage && (
-              <span className="text-lg font-bold text-indigo-600">{percentage}%</span>
+              <span className="text-xl font-bold text-violet-400">{percentage}%</span>
             )}
             {max_amount && (
-              <span className="text-xs text-slate-500">tope ${max_amount.toLocaleString('es-AR')}</span>
+              <span className="text-xs text-slate-500">
+                tope <span className="text-slate-400">${max_amount.toLocaleString('es-AR')}</span>
+              </span>
             )}
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 mt-2 text-xs text-slate-400">
-            <span className="font-medium text-slate-600">{source}</span>
-            {category && <span>· {category}</span>}
-            {days_of_week && days_of_week !== 'todos' && <span>· {days_of_week}</span>}
+          <div className="flex flex-wrap items-center gap-2 mt-2 text-xs">
+            <span className="font-medium text-slate-400">{source}</span>
+            {category && <span className="text-slate-600">·</span>}
+            {category && <span className="text-slate-500 capitalize">{category}</span>}
+            <DayBadge daysOfWeek={days_of_week} />
             <ExpiryBadge validUntil={valid_until} />
           </div>
         </div>

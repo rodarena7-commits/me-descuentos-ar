@@ -17,6 +17,7 @@ def get_discounts(
     source: Optional[str] = Query(None),
     source_type: Optional[str] = Query(None),
     category: Optional[str] = Query(None),
+    day: Optional[str] = Query(None),
     is_limited_stock: Optional[bool] = Query(None),
     is_new: Optional[bool] = Query(None),
     expiring_soon: Optional[bool] = Query(None),
@@ -34,6 +35,13 @@ def get_discounts(
         query = query.filter(Discount.source_type == source_type)
     if category:
         query = query.filter(Discount.category.ilike(f"%{category}%"))
+    if day:
+        query = query.filter(
+            or_(
+                Discount.days_of_week == "todos",
+                Discount.days_of_week.contains(day),
+            )
+        )
     if is_limited_stock is not None:
         query = query.filter(Discount.is_limited_stock == is_limited_stock)
     if is_new:
