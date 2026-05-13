@@ -2114,7 +2114,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.astropay.com/card",
-        "logo_url": "https://logo.clearbit.com/astropay.com",
+        "logo_url": "https://i.pinimg.com/736x/a5/a6/00/a5a600775bff34cd9842e3555110c144.jpg",
     },
     {
         "title": "5% cashback presencial para usuarios seleccionados — AstroPay",
@@ -2136,7 +2136,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.astropay.com/card",
-        "logo_url": "https://logo.clearbit.com/astropay.com",
+        "logo_url": "https://i.pinimg.com/736x/a5/a6/00/a5a600775bff34cd9842e3555110c144.jpg",
     },
     {
         "title": "26% anual en pesos + 4.13% en dólares — Rendimiento AstroPay",
@@ -2157,7 +2157,74 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.astropay.com/card",
-        "logo_url": "https://logo.clearbit.com/astropay.com",
+        "logo_url": "https://i.pinimg.com/736x/a5/a6/00/a5a600775bff34cd9842e3555110c144.jpg",
+    },
+
+    # ── LET'SBIT (LB Finanzas) — datos reales verificados (2026) ────────────
+    # Tarjeta Mastercard prepaga gratuita. Cashback directo en pesos, instantaneo.
+    {
+        "title": "2.5% cashback en todas las compras — Let'sBit Card",
+        "description": (
+            "2.5% de cashback directo en pesos en cada compra con la tarjeta "
+            "Mastercard prepaga Let'sBit (LB Finanzas), en cualquier comercio del mundo. "
+            "Cashback instantaneo, sin necesidad de vender nada. "
+            "Tope $30.000 ARS por mes. Tarjeta gratuita y sin costo de mantenimiento."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 2.5,
+        "max_amount": 30000.0,
+        "source": "Let'sBit",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://lbfinanzas.com/crypto-tarjeta-virtual",
+        "logo_url": "https://logo.clearbit.com/letsbit.io",
+    },
+    {
+        "title": "5% cashback en pago de servicios — Let'sBit (Plus/Max)",
+        "description": (
+            "Hasta 5% de cashback en pago de servicios (luz, gas, internet, etc.) "
+            "con la app Let'sBit (LB Finanzas). "
+            "Nivel Plus: tope $500/mes. Nivel Max: tope $1.500/mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 5.0,
+        "max_amount": 1500.0,
+        "source": "Let'sBit",
+        "source_type": "fintech",
+        "category": "servicios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://lbfinanzas.com/pagar-servicios",
+        "logo_url": "https://logo.clearbit.com/letsbit.io",
+    },
+    {
+        "title": "~70% TNA en nuARS (rendimiento diario) — Let'sBit",
+        "description": (
+            "El saldo en nuARS (stablecoin de Let'sBit, 1 nuARS = 1 peso) "
+            "genera aproximadamente 70% TNA acreditados diariamente. "
+            "Sin plazo fijo ni bloqueo. Rendimiento puede variar segun mercado."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Let'sBit",
+        "source_type": "fintech",
+        "category": "servicios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://lbfinanzas.com/",
+        "logo_url": "https://logo.clearbit.com/letsbit.io",
     },
 
     # ── RIPIO — datos reales verificados (2026) ─────────────────────────────

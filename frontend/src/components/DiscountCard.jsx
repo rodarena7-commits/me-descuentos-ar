@@ -35,6 +35,7 @@ const BRAND = {
   'ICBC':           { domain: 'icbc.com.ar',           color: 'bg-red-700',      text: 'text-white' },
   'Ripio':          { domain: 'ripio.com',             color: 'bg-indigo-500',   text: 'text-white' },
   'AstroPay':       { domain: 'astropay.com',          color: 'bg-purple-600',   text: 'text-white' },
+  "Let'sBit":       { domain: 'letsbit.io',            color: 'bg-blue-700',     text: 'text-white' },
 }
 
 

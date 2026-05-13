@@ -34,7 +34,7 @@ const BANKS = [
 
 const FINTECHS = [
   'MercadoPago', 'Naranja X', 'Lemon', 'MODO', 'Ualá',
-  'Personal Pay', 'Ripio', 'AstroPay', 'Bimo', 'Prex',
+  'Personal Pay', 'Ripio', 'AstroPay', "Let'sBit", 'Bimo', 'Prex',
 ]
 
 const TOTAL_STEPS = 5

@@ -78,7 +78,8 @@ export const MARCAS = [
 
   // ── Crypto / Fintech ─────────────────────────────────────────────────────
   { id: 'ripio',     name: 'Ripio',           categoria: 'Crypto',        keywords: ['ripio'],                  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ripio.com&size=128' },
-  { id: 'astropay',  name: 'AstroPay',        categoria: 'Crypto',        keywords: ['astropay'],               logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://astropay.com&size=128' },
+  { id: 'astropay',  name: 'AstroPay',        categoria: 'Crypto',        keywords: ['astropay'],               logo: 'https://i.pinimg.com/736x/a5/a6/00/a5a600775bff34cd9842e3555110c144.jpg' },
+  { id: 'letsbit',   name: "Let'sBit",        categoria: 'Crypto',        keywords: ["let'sbit", 'letsbit', 'lb finanzas'], logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://letsbit.io&size=128' },
 ]
 
 export const CATEGORIAS_MARCA = [
