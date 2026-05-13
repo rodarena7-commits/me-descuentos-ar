@@ -29,6 +29,7 @@ const BRAND = {
   'Banco Patagonia':{ domain: 'bancopatagonia.com.ar',color: 'bg-emerald-700', text: 'text-white' },
   'Ualá':           { domain: 'uala.com.ar',          color: 'bg-violet-800',   text: 'text-white' },
   'Brubank':        { domain: 'brubank.com',           color: 'bg-teal-600',     text: 'text-white' },
+  'Personal Pay':   { domain: 'personalpay.com.ar',   color: 'bg-purple-700',   text: 'text-white' },
 }
 
 

@@ -2325,6 +2325,198 @@ SAMPLE_DISCOUNTS = [
         "logo_url": "https://logo.clearbit.com/brubank.com",
     },
 
+    # ── PERSONAL PAY — datos reales verificados (mayo 2026) ─────────────────
+    # Personal Pay tiene sistema de NIVELES según consumo mensual:
+    # Nivel 1 (todos): hasta $6.000/sem | Nivel 2 ($125k/mes): $8.000/sem
+    # Nivel 3 ($350k/mes): $12.000/sem  | Nivel 4 ($400k/mes + Flow): $15.000/sem
+    {
+        "title": "Reintegro semanal en todos los comercios — Personal Pay Nivel 1",
+        "description": (
+            "Reintegro semanal de hasta $6.000 en compras con tarjeta Visa Personal Pay "
+            "en supermercados, gastronomía y más. Nivel 1: disponible para todos los usuarios. "
+            "Acreditado dentro de las 48 hs. hábiles posteriores a la compra."
+        ),
+        "discount_type": "reintegro",
+        "percentage": None,
+        "max_amount": 6000.0,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "Hasta $15.000 de reintegro semanal — Personal Pay Nivel 4 (Personal Flow)",
+        "description": (
+            "Clientes Personal Flow con consumo mensual ≥ $400.000: reintegro semanal "
+            "de hasta $15.000 en todos los comercios con tarjeta Visa Personal Pay. "
+            "Nivel 2 ($125k/mes): $8.000/sem | Nivel 3 ($350k/mes): $12.000/sem."
+        ),
+        "discount_type": "reintegro",
+        "percentage": None,
+        "max_amount": 15000.0,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/reintegro-plus",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "15% sin tope en factura Personal Flow — Reintegro Plus",
+        "description": (
+            "Reintegro Plus: hasta 15% del valor de tu factura mensual de Personal + Flow "
+            "sin tope, acreditado en tu cuenta Personal Pay. "
+            "Más $7.000 adicionales pagando desde la app. "
+            "Requiere factura unificada (móvil + hogar). Activar en personalpay.com.ar/reintegro-plus."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": None,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "servicios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/reintegro-plus",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "Hasta $55.000 de reintegro en Tienda Personal — Personal Pay",
+        "description": (
+            "Comprando en Tienda Personal con Personal Pay obtenés hasta $55.000 "
+            "de reintegro adicional por mes. Combina con Reintegro Plus."
+        ),
+        "discount_type": "reintegro",
+        "percentage": None,
+        "max_amount": 55000.0,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/reintegro-plus",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "Hasta 25% en supermercados Día y Chango Más — Personal Pay",
+        "description": (
+            "Hasta 25% de reintegro en Supermercado Día y Chango Más "
+            "pagando con tarjeta Visa Personal Pay. "
+            "El reintegro semanal queda dentro del tope de tu nivel."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": None,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "Hasta 50% en gastronomía — Personal Pay",
+        "description": (
+            "Hasta 50% de reintegro en restaurantes y gastronomía adherida "
+            "(McDonald's, Burger King, Empanadas Morita, Solo Empanadas y más) "
+            "pagando con tarjeta Visa Personal Pay."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 50.0,
+        "max_amount": None,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "2x1 en cines (Cinemark, Hoyts, Multiplex) — Personal Pay",
+        "description": (
+            "2x1 en entradas generales en Cinemark, Hoyts, Multiplex y más cines "
+            "pagando con tarjeta Visa Personal Pay."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "entretenimiento",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "20% en primera recarga semanal de celular prepago — Personal Pay",
+        "description": (
+            "20% de reintegro en la primera recarga semanal de celular prepago Personal "
+            "desde la app Personal Pay."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": None,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "servicios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+    {
+        "title": "Reintegro en recarga SUBE con NFC — Personal Pay",
+        "description": (
+            "Reintegro en recargas de SUBE y viajes en transporte público "
+            "pagando con NFC (tarjeta Visa Personal Pay en Apple Pay / Google Pay). "
+            "El monto del reintegro depende del nivel de consumo mensual."
+        ),
+        "discount_type": "reintegro",
+        "percentage": None,
+        "max_amount": 3000.0,
+        "source": "Personal Pay",
+        "source_type": "fintech",
+        "category": "transporte",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.personalpay.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
+    },
+
     # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────
     {
         "title": "25% en supermercados los martes — Naranja X Plan Turbo",
