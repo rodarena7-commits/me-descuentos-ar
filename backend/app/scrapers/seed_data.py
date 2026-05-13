@@ -2648,6 +2648,177 @@ SAMPLE_DISCOUNTS = [
         "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
     },
 
+    # ── BANCO CIUDAD (Buepp) — datos reales verificados (mayo 2026) ──────────
+    # Buepp es la billetera digital del Banco Ciudad de Buenos Aires (CABA).
+    # No requiere ser cliente del banco — cualquiera puede descargarse la app.
+    # Beneficios principalmente disponibles en CABA.
+    {
+        "title": "30% en comercios y ferias de alimentos — Buepp / Banco Ciudad",
+        "description": (
+            "30% de descuento los lunes, martes, jueves y sábados en comercios adheridos "
+            "y ferias de alimentos frescos de CABA pagando con QR de Buepp. "
+            "Tope $20.000 por mes. Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 20000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "lunes,martes,jueves,sabado",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+    {
+        "title": "30% en supermercados los lunes — Buepp / Banco Ciudad",
+        "description": (
+            "Hasta 30% de descuento los lunes en Coto, Chango Más, Libertad, La Amistad, "
+            "Cordiez y Mercamax en CABA pagando con QR de Buepp. "
+            "Tope $13.000 por semana."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 13000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+    {
+        "title": "30% en comercios vecinos seleccionados — Buepp / Banco Ciudad",
+        "description": (
+            "30% de descuento en Res, Cúspide, La Tablita, Punto Sano Dietética, "
+            "El Topo, Mis Mascotas Petshop, verdulerías y granjas adheridas de CABA "
+            "pagando con QR de Buepp. Tope $15.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 15000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+    {
+        "title": "30% en gastronomía (jue–dom) — Buepp / Banco Ciudad",
+        "description": (
+            "30% de descuento en bares, cafés y gastronomía adherida en CABA "
+            "los jueves, viernes, sábados y domingos pagando con QR de Buepp. "
+            "Tope $10.000 por mes. Los sáb–dom de 7 a 12 hs hay promo especial $5.000/mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 10000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "jueves,viernes,sabado,domingo",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+    {
+        "title": "30% en Farmacity los miércoles — Buepp / Banco Ciudad",
+        "description": (
+            "30% de descuento en Farmacity los miércoles pagando con QR de Buepp. "
+            "Tope $5.000 por día."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 5000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+    {
+        "title": "10% en combustible los domingos — Buepp / Banco Ciudad",
+        "description": (
+            "10% de descuento en combustible los domingos en Shell, Axion y YPF "
+            "pagando con QR de Buepp. Tope $10.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": 10000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "domingo",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+    {
+        "title": "100% de reintegro en subte y colectivo — Buepp / Banco Ciudad",
+        "description": (
+            "100% de reintegro en subtes y colectivos de CABA pagando con la "
+            "tarjeta Mastercard digital de Buepp (Banco Ciudad). "
+            "Tope $15.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 100.0,
+        "max_amount": 15000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "transporte",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+    {
+        "title": "20% de descuento en ABL — Buepp / Banco Ciudad",
+        "description": (
+            "20% de descuento en el pago del ABL (Alumbrado, Barrido y Limpieza) "
+            "de CABA pagando con QR o NFC de Buepp. "
+            "Tope $10.000 por mes. Todos los días."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 10000.0,
+        "source": "Banco Ciudad",
+        "source_type": "banco",
+        "category": "servicios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.buepp.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/bancociudad.com.ar",
+    },
+
     # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────
     {
         "title": "25% en supermercados los martes — Naranja X Plan Turbo",

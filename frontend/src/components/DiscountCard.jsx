@@ -31,6 +31,7 @@ const BRAND = {
   'Brubank':        { domain: 'brubank.com',           color: 'bg-teal-600',     text: 'text-white' },
   'Personal Pay':   { domain: 'personalpay.com.ar',   color: 'bg-purple-700',   text: 'text-white' },
   'Supervielle':    { domain: 'supervielle.com.ar',   color: 'bg-red-800',      text: 'text-white' },
+  'Banco Ciudad':   { domain: 'bancociudad.com.ar',   color: 'bg-green-600',    text: 'text-white' },
 }
 
 
