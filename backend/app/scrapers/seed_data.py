@@ -1802,6 +1802,281 @@ SAMPLE_DISCOUNTS = [
         "url": "https://lemon.me/tarjeta",
         "logo_url": "https://logo.clearbit.com/lemon.me",
     },
+    # ── UALÁ — datos reales verificados (mayo 2026) ─────────────────────────
+    # Supermercados — cada cadena tiene su día y condiciones NFC vs tarjeta física
+    {
+        "title": "25% en Coto los lunes — Ualá",
+        "description": (
+            "25% de reintegro en Coto los lunes con tarjeta de crédito o prepaga Ualá. "
+            "Tope $15.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 15000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "25% en Carrefour Express los lunes con NFC — Ualá",
+        "description": (
+            "25% de reintegro en Carrefour Express los lunes pagando con celular vía NFC "
+            "(Apple Pay / Google Pay) con Ualá. Tope $8.000 por semana. "
+            "Con tarjeta física sin contacto: 15%, tope $3.000/sem."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 8000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "25% en Jumbo, Vea y Disco los martes con NFC — Ualá",
+        "description": (
+            "25% de reintegro en Jumbo, Vea y Disco los martes pagando con NFC "
+            "(Apple Pay / Google Pay) con Ualá. Tope $8.000 por semana. "
+            "Con tarjeta física: 15%, tope $6.000/sem."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 8000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "25% en Supermercado Día los viernes — Ualá",
+        "description": (
+            "25% de reintegro en Supermercado Día los viernes (presencial y online) "
+            "con tarjeta de crédito Mastercard Ualá. "
+            "Reintegro en 30 días corridos."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": None,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "25% en Chango Más los jueves — Ualá",
+        "description": (
+            "25% de reintegro en Chango Más los jueves "
+            "con tarjeta de crédito Ualá (exclusivamente crédito). "
+            "Tope $15.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 15000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "15% en Carrefour online los jueves sin tope — Ualá",
+        "description": (
+            "15% de descuento en carrefour.com.ar todos los jueves con tarjeta Ualá. "
+            "Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": None,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "60% en Open 25h (vie–dom) con NFC — Ualá",
+        "description": (
+            "60% de reintegro en Open 25h los viernes, sábados y domingos "
+            "pagando con NFC (Apple Pay / Google Pay) con Ualá. Tope $5.000 por día. "
+            "Con tarjeta física: 40%, tope $4.000/día."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 60.0,
+        "max_amount": 5000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "viernes,sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    # Gastronomía
+    {
+        "title": "30% en gastronomía los fines de semana con NFC — Ualá",
+        "description": (
+            "30% de reintegro los sábados y domingos en restaurantes, comida rápida, "
+            "cervecerías y cafeterías de todo el país pagando con NFC con Ualá. "
+            "Tope $30.000 por mes ($7.500 por semana)."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 30000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "30% en McDonald's todos los días con NFC — Ualá",
+        "description": (
+            "30% de reintegro en McDonald's todos los días "
+            "pagando con NFC (Apple Pay / Google Pay) con Ualá. "
+            "Tope $10.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 10000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    {
+        "title": "35% en delivery los jueves — Ualá",
+        "description": (
+            "35% de reintegro los jueves en pedidos de delivery "
+            "con tarjeta Ualá. Tope $4.000 por día."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 35.0,
+        "max_amount": 4000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    # Farmacias
+    {
+        "title": "25% en Farmacity y Simplicity los sábados — Ualá",
+        "description": (
+            "25% de reintegro los sábados en Farmacity, Simplicity y Get the Look "
+            "con tarjeta de crédito o prepaga Ualá. Tope $10.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 10000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "farmacias",
+        "days_of_week": "sabado",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    # Transporte
+    {
+        "title": "Hasta 100% de reintegro en subte y colectivo — Ualá",
+        "description": (
+            "Hasta 100% de reintegro en subte y colectivos habilitados todos los días "
+            "pagando con NFC (Apple Pay o Google Pay) con tarjeta Ualá. "
+            "Tope $20.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 100.0,
+        "max_amount": 20000.0,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "transporte",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+    # Entretenimiento
+    {
+        "title": "20% en Sportclub (planes mensual) — Ualá",
+        "description": (
+            "20% de descuento en los planes mensual Total y Plus de Sportclub "
+            "con tarjeta prepaga o de crédito Ualá."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": None,
+        "source": "Ualá",
+        "source_type": "fintech",
+        "category": "entretenimiento",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.uala.com.ar/promociones",
+        "logo_url": "https://logo.clearbit.com/uala.com.ar",
+    },
+
     # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────
     {
         "title": "25% en supermercados los martes — Naranja X Plan Turbo",
