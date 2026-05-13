@@ -30,12 +30,11 @@ function Skeleton() {
 }
 
 export default function App() {
-  const ITEMS_PER_PAGE = 12
-
   const { user, loading } = useAuth()
   const [filters, setFilters] = useState({})
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
+  const [perPage, setPerPage] = useState(20)
   const { discounts, loading: discLoading, error } = useDiscounts(filters)
   const onlineCount = usePresence()
 
@@ -49,11 +48,11 @@ export default function App() {
     )
   }, [discounts, search])
 
-  // Reset page when filters or search change
-  useEffect(() => { setPage(1) }, [filters, search])
+  // Reset page when filters, search or perPage change
+  useEffect(() => { setPage(1) }, [filters, search, perPage])
 
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
-  const paginated = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
+  const totalPages = Math.ceil(filtered.length / perPage)
+  const paginated = filtered.slice((page - 1) * perPage, page * perPage)
 
   if (loading) {
     return (
@@ -103,9 +102,9 @@ export default function App() {
           </p>
 
           {/* Search bar */}
-          <div className="relative max-w-xl mx-auto">
+          <div className="relative max-w-2xl mx-auto">
             <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-              <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
               </svg>
@@ -115,17 +114,21 @@ export default function App() {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="¿Qué descuento estás buscando?"
-              className="w-full bg-slate-900/80 border border-slate-700 rounded-2xl pl-11 pr-4 py-3.5 text-slate-200 text-sm placeholder-slate-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 transition-all backdrop-blur-sm"
+              className="w-full bg-slate-800 border-2 border-violet-500/50 rounded-2xl pl-12 pr-12 py-4 text-slate-100 text-base placeholder-slate-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20 transition-all shadow-lg shadow-violet-500/10"
             />
-            {search && (
+            {search ? (
               <button
                 onClick={() => setSearch('')}
-                className="absolute inset-y-0 right-4 flex items-center text-slate-500 hover:text-slate-300 transition-colors"
+                className="absolute inset-y-0 right-4 flex items-center text-slate-400 hover:text-white transition-colors"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+            ) : (
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                <span className="text-xs text-slate-500 bg-slate-700 px-1.5 py-0.5 rounded font-mono">⌘K</span>
+              </div>
             )}
           </div>
         </div>
@@ -159,15 +162,28 @@ export default function App() {
 
         {!discLoading && !error && filtered.length > 0 && (
           <>
-            <div className="flex items-center justify-between mb-4">
-              <p className="text-xs text-slate-600 uppercase tracking-wide">
-                {filtered.length} descuentos · página {page} de {totalPages}
+            <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
+              <p className="text-xs text-slate-500 uppercase tracking-wide">
+                {filtered.length} descuentos
+                {totalPages > 1 && ` · página ${page} de ${totalPages}`}
               </p>
-              {totalPages > 1 && (
-                <p className="text-xs text-slate-600">
-                  Mostrando {(page - 1) * ITEMS_PER_PAGE + 1}–{Math.min(page * ITEMS_PER_PAGE, filtered.length)}
-                </p>
-              )}
+              {/* Per-page selector */}
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-slate-600">Ver:</span>
+                {[20, 50, 100].map(n => (
+                  <button
+                    key={n}
+                    onClick={() => setPerPage(n)}
+                    className={`px-3 py-1 rounded-lg text-xs font-medium border transition-all cursor-pointer ${
+                      perPage === n
+                        ? 'bg-violet-600/20 text-violet-300 border-violet-500/50'
+                        : 'bg-slate-800/60 text-slate-500 border-slate-700 hover:text-slate-300 hover:border-slate-500'
+                    }`}
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

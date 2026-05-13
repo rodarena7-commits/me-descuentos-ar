@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { doc, setDoc } from 'firebase/firestore'
-import { db } from '../firebase'
+import { ref, set } from 'firebase/database'
+import { db, rtdb } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
 
 const SHOPPING_ITEMS = [
@@ -100,6 +101,8 @@ export default function OnboardingPage() {
       createdAt: new Date().toISOString(),
     }
     await setDoc(doc(db, 'users', user.uid), profile)
+    // Registrar en RTDB para el contador de admin (no requiere reglas especiales)
+    await set(ref(rtdb, `/registrations/${user.uid}`), true)
     setProfile(profile)
     navigate('/')
   }

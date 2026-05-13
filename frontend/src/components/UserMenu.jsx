@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { collection, getCountFromServer } from 'firebase/firestore'
 import { ref, onValue } from 'firebase/database'
-import { db, rtdb } from '../firebase'
+import { rtdb } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
 
 const ADMIN_EMAIL = 'rodrigo.n.arena@hotmail.com'
@@ -14,18 +13,21 @@ function useAdminStats(isAdmin) {
   useEffect(() => {
     if (!isAdmin) return
 
-    // Usuarios registrados (Firestore count)
-    getCountFromServer(collection(db, 'users'))
-      .then(snap => setRegistered(snap.data().count))
-      .catch(() => setRegistered('—'))
+    // Usuarios registrados: contados desde /registrations en RTDB
+    const regRef = ref(rtdb, '/registrations')
+    const unsubReg = onValue(regRef, (snap) => {
+      const val = snap.val()
+      setRegistered(val ? Object.keys(val).length : 0)
+    })
 
-    // Usuarios online en tiempo real (RTDB)
-    const presenceRef = ref(rtdb, '/presence')
-    const unsub = onValue(presenceRef, (snap) => {
+    // Usuarios online en tiempo real desde /presence
+    const presRef = ref(rtdb, '/presence')
+    const unsubPres = onValue(presRef, (snap) => {
       const val = snap.val()
       setOnline(val ? Object.keys(val).length : 0)
     })
-    return () => unsub()
+
+    return () => { unsubReg(); unsubPres() }
   }, [isAdmin])
 
   return { registered, online }

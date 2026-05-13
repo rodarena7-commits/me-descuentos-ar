@@ -28,7 +28,6 @@ const DAY_OPTIONS = [
 const QUICK_FILTERS = [
   { key: 'is_new', label: '🆕 Nuevos', activeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' },
   { key: 'expiring_soon', label: '⏰ Por vencerse', activeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/50' },
-  { key: 'is_limited_stock', label: '⚡ Stock limitado', activeColor: 'bg-red-500/20 text-red-400 border-red-500/50' },
 ]
 
 const selectClass =
