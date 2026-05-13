@@ -1771,21 +1771,112 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.naranjax.com/beneficios",
         "logo_url": "https://logo.clearbit.com/naranjax.com",
     },
+    # ── MODO — datos reales verificados (mayo 2026) ─────────────────────────
+    # MODO es una plataforma de pago cross-bank. Sus promos aplican a tarjetas
+    # de cualquier banco adherido (Galicia, Nación, Santander, BBVA, Macro, etc.)
     {
-        "title": "20% OFF en viajes pagando con MODO",
-        "description": "20% OFF en plataformas de turismo pagando con MODO.",
-        "discount_type": "descuento",
+        "title": "20% de reintegro en shoppings — MODO Shopping Fest 2026",
+        "description": (
+            "Shopping Fest (8–10/05): 20% de reintegro pagando con MODO "
+            "en más de 65 shoppings de todo el país: Alto Palermo, Abasto, "
+            "Galerías Pacífico, Patio Bullrich, Unicenter y más. "
+            "Tope $50.000 por banco. Aplica con tarjeta de cualquier banco adherido a MODO."
+        ),
+        "discount_type": "reintegro",
         "percentage": 20.0,
+        "max_amount": 50000.0,
+        "source": "MODO",
+        "source_type": "fintech",
+        "category": "indumentaria",
+        "days_of_week": "sabado,domingo",
+        "valid_until": datetime(2026, 5, 10),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://shoppingfest.com.ar/",
+        "logo_url": "https://logo.clearbit.com/modo.com.ar",
+    },
+    {
+        "title": "20% de reintegro + 18 cuotas en electro e indumentaria — MODO Hot Sale",
+        "description": (
+            "Hot Sale (11–17/05): 20% de reintegro y hasta 18 cuotas sin interés "
+            "en electrónica, hogar, indumentaria, perfumería y farmacias "
+            "en comercios online adheridos, pagando con MODO desde la app de tu banco."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": None,
+        "source": "MODO",
+        "source_type": "fintech",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 17),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.modo.com.ar/promos",
+        "logo_url": "https://logo.clearbit.com/modo.com.ar",
+    },
+    {
+        "title": "30% en gastronomía todos los días — MODO",
+        "description": (
+            "30% de descuento en restaurantes, bares, cafeterías y heladerías "
+            "adheridos pagando con QR de MODO con tarjetas de cualquier banco. "
+            "Tope $10.000 por semana."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
         "max_amount": 10000.0,
         "source": "MODO",
         "source_type": "fintech",
-        "category": "viajes",
+        "category": "gastronomia",
         "days_of_week": "todos",
-        "valid_until": _HOY + timedelta(days=3),
-        "is_limited_stock": True,
-        "is_new": False,
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
         "is_active": True,
-        "url": "https://www.modo.com.ar/beneficios",
+        "url": "https://www.modo.com.ar/promos",
+        "logo_url": "https://logo.clearbit.com/modo.com.ar",
+    },
+    {
+        "title": "Hasta 20 cuotas sin interés en electrónica — MODO",
+        "description": (
+            "Hasta 20 cuotas sin interés en Frávega, Samsung, On City, LG, "
+            "Tienda Newsan, Megatone, Naldo y Motorola pagando con MODO "
+            "con tarjetas de crédito de bancos adheridos."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MODO",
+        "source_type": "fintech",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.modo.com.ar/promos",
+        "logo_url": "https://logo.clearbit.com/modo.com.ar",
+    },
+    {
+        "title": "50% de reintegro en indumentaria — MODO + Banco Provincia",
+        "description": (
+            "50% de reintegro en indumentaria y calzado con tarjetas del Banco Provincia "
+            "pagando con MODO. Hasta 6 cuotas sin interés. Tope $50.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 50.0,
+        "max_amount": 50000.0,
+        "source": "MODO",
+        "source_type": "fintech",
+        "category": "indumentaria",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.modo.com.ar/promos",
         "logo_url": "https://logo.clearbit.com/modo.com.ar",
     },
 ]
