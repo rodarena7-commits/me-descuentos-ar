@@ -1405,19 +1405,188 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.bna.com.ar/Personas/DescuentosYPromociones",
         "logo_url": "https://logo.clearbit.com/bna.com.ar",
     },
+    # ── BANCO MACRO — datos reales verificados (mayo 2026) ──────────────────
+    # Macro tiene dos segmentos: General/Platinum y Selecta (mayores beneficios)
     {
-        "title": "30% reintegro en indumentaria — Macro",
-        "description": "Reintegro en tiendas de ropa y calzado con Macro.",
+        "title": "20% de reintegro en supermercados con MODO — Banco Macro",
+        "description": (
+            "20% de reintegro en Coto (martes) y Jumbo, Vea, Disco "
+            "pagando con MODO con tarjeta Visa Banco Macro. Tope $25.000 por mes. "
+            "Mínimo $60.000 en Coto."
+        ),
         "discount_type": "reintegro",
-        "percentage": 30.0,
-        "max_amount": 5000.0,
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/beneficios",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "Hasta 12 cuotas sin interés en Coto y Chango Más — Banco Macro",
+        "description": (
+            "De 2 a 12 cuotas sin interés todos los días en Coto y Chango Más "
+            "con tarjetas Amex, Mastercard o Visa Banco Macro. Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/beneficios",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "20–30% en YPF los miércoles — Banco Macro",
+        "description": (
+            "Miércoles en YPF: 20% de ahorro para clientes Platinum "
+            "y 30% para Selecta con tarjetas Banco Macro. Tope $25.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/beneficios",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "20% en Farmacity + 3 cuotas sin interés — Banco Macro",
+        "description": (
+            "20% de descuento en Farmacity presencial y online "
+            "con tarjeta Mastercard Banco Macro. Tope $20.000. "
+            "3 cuotas sin interés pagando con QR."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 20000.0,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/beneficios",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "Hasta 12 cuotas sin interés en electro — Banco Macro",
+        "description": (
+            "Hasta 12 cuotas sin interés todos los días en Cetrogar, Frávega y Megatone "
+            "con tarjetas Amex, Mastercard o Visa Banco Macro. Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/beneficios",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "Hasta 6 cuotas sin interés en indumentaria — Banco Macro",
+        "description": (
+            "Hasta 6 cuotas sin interés todos los días en Dexter, Caro Cuore y Devré "
+            "con tarjetas Banco Macro en locales físicos. Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
         "source": "Banco Macro",
         "source_type": "banco",
         "category": "indumentaria",
-        "days_of_week": "sabado,domingo",
-        "valid_until": _HOY + timedelta(days=10),
-        "is_limited_stock": True,
-        "is_new": False,
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/beneficios",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "Hasta 6 cuotas sin interés en Yenny — Banco Macro",
+        "description": (
+            "Hasta 6 cuotas sin interés todos los días en Yenny / El Ateneo "
+            "con tarjetas Amex, Mastercard o Visa Banco Macro. Vigente hasta 31/05/2026."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "librerias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/beneficios",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "3 y 6 cuotas sin interés en gastronomía viüMi — Banco Macro",
+        "description": (
+            "3 y 6 cuotas sin interés en restaurantes y gastronomía adherida "
+            "a través de viüMi con tarjetas Banco Macro. "
+            "Vigente del 01/05/2026 al 31/05/2026. Excluye viajes y turismo."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.macro.com.ar/personas/viumi",
+        "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
+    },
+    {
+        "title": "20% de descuento con MODO — Banco Macro Selecta (Hot Sale)",
+        "description": (
+            "Hot Sale (11–13/05): 20% de descuento pagando con MODO "
+            "con tarjetas de crédito Macro Selecta. Tope $30.000. "
+            "Tarjeta general/crédito: 10%, tope $10.000."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 30000.0,
+        "source": "Banco Macro",
+        "source_type": "banco",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 13),
+        "is_limited_stock": False,
+        "is_new": True,
         "is_active": True,
         "url": "https://www.macro.com.ar/beneficios",
         "logo_url": "https://i.pinimg.com/736x/cf/bd/f0/cfbdf0a13b75a09b4a0e21805b087124.jpg",
