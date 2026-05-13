@@ -2517,6 +2517,137 @@ SAMPLE_DISCOUNTS = [
         "logo_url": "https://logo.clearbit.com/personalpay.com.ar",
     },
 
+    # ── SUPERVIELLE — datos reales verificados (mayo 2026) ──────────────────
+    # Beneficios escalan según tipo de cuenta:
+    # Cartera General < Plan Sueldo < Identité (porcentajes y topes distintos)
+    {
+        "title": "20% en Jumbo, Vea y Disco los martes — Supervielle",
+        "description": (
+            "20% de reintegro en Jumbo, Vea y Disco los martes con tarjeta de crédito "
+            "Visa o Mastercard, o débito Visa vía MODO. "
+            "Cartera General: tope $8.000/mes. "
+            "Plan Sueldo/Identité: 25%, tope $15.000/mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 8000.0,
+        "source": "Supervielle",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos",
+        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+    },
+    {
+        "title": "25% en Jumbo, Vea y Disco los martes — Supervielle Plan Sueldo/Identité",
+        "description": (
+            "25% de reintegro en Jumbo, Vea y Disco los martes para clientes "
+            "Plan Sueldo o Identité con tarjeta Visa/Mastercard o débito vía MODO. "
+            "Tope $15.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 15000.0,
+        "source": "Supervielle",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos",
+        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+    },
+    {
+        "title": "20% en gastronomía (vie y sáb) — Supervielle",
+        "description": (
+            "20% de reintegro en bares y restaurantes adheridos los viernes y sábados "
+            "pagando con MODO con tarjetas Supervielle. "
+            "Cartera General: tope $8.000/mes. "
+            "Plan Sueldo: 25%, tope $20.000/mes. "
+            "Identité: 30%, tope $50.000/mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 8000.0,
+        "source": "Supervielle",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "viernes,sabado",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos/restaurantes",
+        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+    },
+    {
+        "title": "30% en gastronomía (vie y sáb) — Supervielle Identité",
+        "description": (
+            "30% de reintegro en bares y restaurantes adheridos los viernes y sábados "
+            "para clientes Identité con tarjetas Supervielle vía MODO. "
+            "Tope $50.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 50000.0,
+        "source": "Supervielle",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "viernes,sabado",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos/restaurantes",
+        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+    },
+    {
+        "title": "10% en combustible los domingos — Supervielle",
+        "description": (
+            "10% de reintegro en combustible los domingos pagando con "
+            "Visa Débito Supervielle vía MODO. Todas las marcas. Tope $10.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 10.0,
+        "max_amount": 10000.0,
+        "source": "Supervielle",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos/combustible",
+        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+    },
+    {
+        "title": "50% en farmacias adheridas — Supervielle",
+        "description": (
+            "50% de descuento en farmacias adheridas con tarjetas Supervielle. "
+            "Consultá el buscador de beneficios en la app o web para ver los locales."
+        ),
+        "discount_type": "descuento",
+        "percentage": 50.0,
+        "max_amount": None,
+        "source": "Supervielle",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.supervielle.com.ar/personas/beneficios/descuentos",
+        "logo_url": "https://logo.clearbit.com/supervielle.com.ar",
+    },
+
     # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────
     {
         "title": "25% en supermercados los martes — Naranja X Plan Turbo",
