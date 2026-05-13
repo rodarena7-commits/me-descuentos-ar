@@ -121,7 +121,7 @@ export default function App() {
         <div className="sm:hidden px-4 pb-4 flex items-center gap-2">
           <button
             onClick={() => navigate('/')}
-            className={`flex-1 px-3 py-2 rounded-lg text-sm font-center justify-center font-medium transition-all ${
+            className={`flex-1 flex justify-center items-center px-3 py-2 rounded-lg text-sm font-medium transition-all ${
               !isMarcas
                 ? 'bg-violet-600/20 text-violet-300'
                 : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'
@@ -131,7 +131,7 @@ export default function App() {
           </button>
           <button
             onClick={() => navigate('/marcas')}
-            className={`flex-1 px-3 py-2 rounded-lg text-sm font-center justify-center font-medium transition-all ${
+            className={`flex-1 flex justify-center items-center px-3 py-2 rounded-lg text-sm font-medium transition-all ${
               isMarcas
                 ? 'bg-violet-600/20 text-violet-300'
                 : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'

@@ -8,17 +8,17 @@ export const MARCAS = [
   { id: 'coto',       name: 'Coto',           categoria: 'Supermercados', keywords: ['coto'],                   logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://coto.com.ar&size=128' },
   { id: 'jumbo',      name: 'Jumbo',          categoria: 'Supermercados', keywords: ['jumbo'],                  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://jumbo.com.ar&size=128' },
   { id: 'disco',      name: 'Disco / Vea',    categoria: 'Supermercados', keywords: ['disco', 'vea'],           logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://disco.com.ar&size=128' },
-  { id: 'dia',        name: 'Supermercado Día', categoria: 'Supermercados', keywords: ['supermercado día', 'supermercado dia', 'en día', 'en dia'], logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://dia.com.ar&size=128' },
+  { id: 'dia',        name: 'Supermercado Día', categoria: 'Supermercados', keywords: ['supermercado día', 'supermercado dia', 'en día', 'en dia'], logo: 'https://i.pinimg.com/736x/a9/3a/17/a93a17ad28f3edc51c08cbf28130bc27.jpg' },
   { id: 'changomas',  name: 'Chango Más',     categoria: 'Supermercados', keywords: ['chango más', 'chango mas', 'changomás'], logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://changomas.com.ar&size=128' },
-  { id: 'open25h',    name: 'Open 25h',       categoria: 'Supermercados', keywords: ['open 25h'],               logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://open25h.com.ar&size=128' },
+  { id: 'open25h',    name: 'Open 25h',       categoria: 'Supermercados', keywords: ['open 25h'],               logo: 'https://acdn-us.mitiendanube.com/stores/006/038/294/themes/common/logo-275663435-1756774944-d0b736e82b0746e83bb9a0f6136eb3d91756774944-480-0.webp' },
   { id: 'lanónima',   name: 'La Anónima',     categoria: 'Supermercados', keywords: ['anónima', 'anonima'],     logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://laanonimaonline.com&size=128' },
   { id: 'diarco',     name: 'Diarco',         categoria: 'Supermercados', keywords: ['diarco'],                 logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://diarco.com.ar&size=128' },
 
   // ── Combustible ──────────────────────────────────────────────────────────
-  { id: 'ypf',        name: 'YPF',            categoria: 'Combustible',   keywords: ['ypf'],                    logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ypf.com&size=128' },
+  { id: 'ypf',        name: 'YPF',            categoria: 'Combustible',   keywords: ['ypf'],                    logo: 'https://i.pinimg.com/736x/67/05/1e/67051edb05b11de24cea7f39a5253545.jpg' },
   { id: 'shell',      name: 'Shell',          categoria: 'Combustible',   keywords: ['shell'],                  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://shell.com&size=128' },
-  { id: 'axion',      name: 'Axion Energy',   categoria: 'Combustible',   keywords: ['axion'],                  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://axionenergy.com.ar&size=128' },
-  { id: 'gulf',       name: 'GULF',           categoria: 'Combustible',   keywords: ['gulf'],                   logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://gulf.com&size=128' },
+  { id: 'axion',      name: 'Axion Energy',   categoria: 'Combustible',   keywords: ['axion'],                  logo: 'https://i.pinimg.com/736x/86/e6/46/86e64634d8cf26f7432e2bc09403798d.jpg' },
+  { id: 'gulf',       name: 'GULF',           categoria: 'Combustible',   keywords: ['gulf'],                   logo: 'https://i.pinimg.com/1200x/f3/07/6f/f3076fdd21cdc09d79f3403502ed9769.jpg' },
   { id: 'puma',       name: 'Puma Energy',    categoria: 'Combustible',   keywords: ['puma energy'],            logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://pumaenergy.com&size=128' },
 
   // ── Farmacias / Salud ────────────────────────────────────────────────────
@@ -26,16 +26,16 @@ export const MARCAS = [
   { id: 'simplicity', name: 'Simplicity',     categoria: 'Farmacias',     keywords: ['simplicity'],             logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://simplicity.com.ar&size=128' },
   { id: 'farmaonline',name: 'Farmaonline',    categoria: 'Farmacias',     keywords: ['farmaonline'],            logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://farmaonline.com&size=128' },
   { id: 'gethelook',  name: 'Get The Look',   categoria: 'Farmacias',     keywords: ['get the look'],           logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://getthelook.com.ar&size=128' },
-  { id: 'drahorro',   name: 'Dr Ahorro',      categoria: 'Farmacias',     keywords: ['dr ahorro'],              logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://drdrives.com.ar&size=128' },
+  { id: 'drahorro',   name: 'Dr Ahorro',      categoria: 'Farmacias',     keywords: ['dr ahorro'],              logo: 'https://images.seeklogo.com/logo-png/43/1/farmacias-dr-ahorro-logo-png_seeklogo-430759.png' },
 
   // ── Gastronomía ──────────────────────────────────────────────────────────
   { id: 'mcdonalds',  name: "McDonald's",     categoria: 'Gastronomía',   keywords: ["mcdonald"],               logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://mcdonalds.com&size=128' },
   { id: 'burgerking', name: 'Burger King',    categoria: 'Gastronomía',   keywords: ['burger king'],            logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://burgerking.com&size=128' },
-  { id: 'mostaza',    name: 'Mostaza',        categoria: 'Gastronomía',   keywords: ['mostaza'],                logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://mostaza.com.ar&size=128' },
+  { id: 'mostaza',    name: 'Mostaza',        categoria: 'Gastronomía',   keywords: ['mostaza'],                logo: 'https://i.pinimg.com/1200x/7c/e7/02/7ce702c6dddebcb54817cc28b5bc9afd.jpg' },
   { id: 'kfc',        name: 'KFC',            categoria: 'Gastronomía',   keywords: ['kfc'],                    logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://kfc.com&size=128' },
   { id: 'wendys',     name: "Wendy's",        categoria: 'Gastronomía',   keywords: ["wendy"],                  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://wendys.com&size=128' },
-  { id: 'rapanui',    name: 'Rapanui',        categoria: 'Gastronomía',   keywords: ['rapanui'],                logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rapanuihelados.com&size=128' },
-  { id: 'havanna',    name: 'Havanna',        categoria: 'Gastronomía',   keywords: ['havanna'],                logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://havanna.com&size=128' },
+  { id: 'rapanui',    name: 'Rapanui',        categoria: 'Gastronomía',   keywords: ['rapanui'],                logo: 'https://i.pinimg.com/736x/c2/a6/2f/c2a62f711b21dc13d8ffd7b3e425fc4a.jpg' },
+  { id: 'havanna',    name: 'Havanna',        categoria: 'Gastronomía',   keywords: ['havanna'],                logo: 'https://i.pinimg.com/736x/9c/12/ee/9c12eece72840c999014efa99faa994e.jpg' },
   { id: 'luccianos',  name: "Lucciano's",     categoria: 'Gastronomía',   keywords: ["lucciano"],               logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://luccianos.com.ar&size=128' },
   { id: 'pedidosya',  name: 'PedidosYa',      categoria: 'Gastronomía',   keywords: ['pedidos ya'],             logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://pedidosya.com&size=128' },
 
@@ -66,15 +66,15 @@ export const MARCAS = [
   // ── Entretenimiento ──────────────────────────────────────────────────────
   { id: 'cinemark',   name: 'Cinemark / Hoyts', categoria: 'Entretenimiento', keywords: ['cinemark', 'hoyts'],  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cinemark.com.ar&size=128' },
   { id: 'sportclub',  name: 'Sportclub',      categoria: 'Entretenimiento', keywords: ['sportclub'],            logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://sportclub.com.ar&size=128' },
-  { id: 'newman',     name: 'Newman',         categoria: 'Entretenimiento', keywords: ['newman'],               logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://newman.com.ar&size=128' },
+  { id: 'newman',     name: 'Newman',         categoria: 'Entretenimiento', keywords: ['newman'],               logo: 'https://i.pinimg.com/736x/c9/1d/c9/c91dc94730f6ff65c110a0d06b786194.jpg' },
 
   // ── Librerías ────────────────────────────────────────────────────────────
-  { id: 'yenny',      name: 'Yenny / El Ateneo', categoria: 'Librerías',  keywords: ['yenny', 'ateneo'],        logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://elateneo.com&size=128' },
+  { id: 'yenny',      name: 'Yenny / El Ateneo', categoria: 'Librerías',  keywords: ['yenny', 'ateneo'],        logo: 'https://acdn-us.mitiendanube.com/stores/004/088/117/themes/common/logo-810418616-1731438736-7b6920ff653fd2214af40085c6145fea1731438737-320-0.webp' },
   { id: 'cuspide',    name: 'Cúspide',        categoria: 'Librerías',     keywords: ['cúspide', 'cuspide'],     logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cuspide.com&size=128' },
 
   // ── Hogar / Construcción ─────────────────────────────────────────────────
   { id: 'easy',       name: 'Easy',           categoria: 'Hogar',         keywords: ['easy'],                   logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://easy.com.ar&size=128' },
-  { id: 'natura',     name: 'Natura',         categoria: 'Hogar',         keywords: ['natura'],                 logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://natura.com.ar&size=128' },
+  { id: 'natura',     name: 'Natura',         categoria: 'Hogar',         keywords: ['natura'],                 logo: 'https://i.pinimg.com/1200x/12/ea/5f/12ea5f3612861d9d80493a207e67f33d.jpg' },
 ]
 
 export const CATEGORIAS_MARCA = [

@@ -7,30 +7,40 @@ import { useAuth } from '../contexts/AuthContext'
 const ADMIN_EMAIL = 'rodrigo.n.arena@hotmail.com'
 
 function useAdminStats(isAdmin) {
-  const [registered, setRegistered] = useState(null)
-  const [online, setOnline] = useState(null)
+  const [registered, setRegistered] = useState(0)
+  const [online, setOnline]         = useState(0)
+  const [error, setError]           = useState(null)
 
   useEffect(() => {
     if (!isAdmin) return
 
-    // Usuarios registrados: contados desde /registrations en RTDB
+    // Usuarios registrados desde /registrations
     const regRef = ref(rtdb, '/registrations')
-    const unsubReg = onValue(regRef, (snap) => {
-      const val = snap.val()
-      setRegistered(val ? Object.keys(val).length : 0)
-    })
+    const unsubReg = onValue(
+      regRef,
+      (snap) => {
+        const val = snap.val()
+        setRegistered(val ? Object.keys(val).length : 0)
+        setError(null)
+      },
+      (err) => setError(err.code),
+    )
 
-    // Usuarios online en tiempo real desde /presence
+    // Usuarios online desde /presence
     const presRef = ref(rtdb, '/presence')
-    const unsubPres = onValue(presRef, (snap) => {
-      const val = snap.val()
-      setOnline(val ? Object.keys(val).length : 0)
-    })
+    const unsubPres = onValue(
+      presRef,
+      (snap) => {
+        const val = snap.val()
+        setOnline(val ? Object.keys(val).length : 0)
+      },
+      () => {},
+    )
 
     return () => { unsubReg(); unsubPres() }
   }, [isAdmin])
 
-  return { registered, online }
+  return { registered, online, error }
 }
 
 export default function UserMenu() {
@@ -38,8 +48,9 @@ export default function UserMenu() {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const menuRef = useRef(null)
-  const isAdmin = user?.email === ADMIN_EMAIL
-  const { registered, online } = useAdminStats(isAdmin)
+  // Case-insensitive: funciona aunque Google devuelva el email en otro case
+  const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase()
+  const { registered, online, error: rtdbError } = useAdminStats(isAdmin)
 
   useEffect(() => {
     function handler(e) {
@@ -106,23 +117,34 @@ export default function UserMenu() {
               <p className="text-[10px] text-slate-500 uppercase tracking-wider mb-2 font-medium">
                 Panel de administración
               </p>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="bg-slate-800/60 rounded-lg p-2.5 text-center">
-                  <p className="text-lg font-bold text-violet-400 tabular-nums">
-                    {registered ?? '…'}
+              {rtdbError ? (
+                <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-2.5">
+                  <p className="text-[10px] text-red-400 text-center">
+                    ⚠️ Configurá las reglas de Firebase RTDB
                   </p>
-                  <p className="text-[10px] text-slate-500">Registrados</p>
+                  <p className="text-[9px] text-red-400/60 text-center mt-0.5">
+                    {rtdbError}
+                  </p>
                 </div>
-                <div className="bg-slate-800/60 rounded-lg p-2.5 text-center">
-                  <div className="flex items-center justify-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <p className="text-lg font-bold text-emerald-400 tabular-nums">
-                      {online ?? '…'}
+              ) : (
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="bg-slate-800/60 rounded-lg p-2.5 text-center">
+                    <p className="text-lg font-bold text-violet-400 tabular-nums">
+                      {registered}
                     </p>
+                    <p className="text-[10px] text-slate-500">Registrados</p>
                   </div>
-                  <p className="text-[10px] text-slate-500">Online ahora</p>
+                  <div className="bg-slate-800/60 rounded-lg p-2.5 text-center">
+                    <div className="flex items-center justify-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <p className="text-lg font-bold text-emerald-400 tabular-nums">
+                        {online}
+                      </p>
+                    </div>
+                    <p className="text-[10px] text-slate-500">Online ahora</p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
 
