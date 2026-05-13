@@ -24,7 +24,7 @@ export const MARCAS = [
   // ── Farmacias / Salud ────────────────────────────────────────────────────
   { id: 'farmacity',  name: 'Farmacity',      categoria: 'Farmacias',     keywords: ['farmacity'],              logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://farmacity.com&size=128' },
   { id: 'simplicity', name: 'Simplicity',     categoria: 'Farmacias',     keywords: ['simplicity'],             logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://simplicity.com.ar&size=128' },
-  { id: 'farmaonline',name: 'Farmaonline',    categoria: 'Farmacias',     keywords: ['farmaonline'],            logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://farmaonline.com&size=128' },
+  { id: 'farmaonline',name: 'Farmaonline',    categoria: 'Farmacias',     keywords: ['farmaonline'],            logo: 'https://assets.hotsale.com.ar/uploads/brands/18860/orig-1776281185-farmaonline.jpg' },
   { id: 'gethelook',  name: 'Get The Look',   categoria: 'Farmacias',     keywords: ['get the look'],           logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://getthelook.com.ar&size=128' },
   { id: 'drahorro',   name: 'Dr Ahorro',      categoria: 'Farmacias',     keywords: ['dr ahorro'],              logo: 'https://images.seeklogo.com/logo-png/43/1/farmacias-dr-ahorro-logo-png_seeklogo-430759.png' },
 
@@ -58,19 +58,19 @@ export const MARCAS = [
 
   // ── Viajes / Transporte ──────────────────────────────────────────────────
   { id: 'despegar',   name: 'Despegar',       categoria: 'Viajes',        keywords: ['despegar'],               logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://despegar.com&size=128' },
-  { id: 'aerolineas', name: 'Aerolíneas Argentinas', categoria: 'Viajes', keywords: ['aerolíneas', 'aerolineas'], logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://aerolineas.com.ar&size=128' },
+  { id: 'aerolineas', name: 'Aerolíneas Argentinas', categoria: 'Viajes', keywords: ['aerolíneas', 'aerolineas'], logo: 'https://i.pinimg.com/1200x/7c/cb/a8/7ccba809b9309e29383287a7c94a6978.jpg' },
   { id: 'cabify',     name: 'Cabify',         categoria: 'Viajes',        keywords: ['cabify'],                 logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cabify.com&size=128' },
   { id: 'flechabus',  name: 'Flechabus',      categoria: 'Viajes',        keywords: ['flechabus'],              logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://flechabus.com.ar&size=128' },
-  { id: 'almundo',    name: 'Almundo',        categoria: 'Viajes',        keywords: ['almundo'],                logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://almundo.com&size=128' },
+  { id: 'almundo',    name: 'Almundo',        categoria: 'Viajes',        keywords: ['almundo'],                logo: 'https://i.pinimg.com/280x280_RS/87/78/19/877819af49b541c7157872048d9be78d.jpg' },
 
   // ── Entretenimiento ──────────────────────────────────────────────────────
-  { id: 'cinemark',   name: 'Cinemark / Hoyts', categoria: 'Entretenimiento', keywords: ['cinemark', 'hoyts'],  logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cinemark.com.ar&size=128' },
-  { id: 'sportclub',  name: 'Sportclub',      categoria: 'Entretenimiento', keywords: ['sportclub'],            logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://sportclub.com.ar&size=128' },
+  { id: 'cinemark',   name: 'Cinemark / Hoyts', categoria: 'Entretenimiento', keywords: ['cinemark', 'hoyts'],  logo: 'https://i.pinimg.com/1200x/2c/aa/6f/2caa6f67d1111a8731dc8d05bb64ac40.jpg' },
+  { id: 'sportclub',  name: 'Sportclub',      categoria: 'Entretenimiento', keywords: ['sportclub'],            logo: 'https://images.seeklogo.com/logo-png/62/1/sportclub-logo-png_seeklogo-626111.png' },
   { id: 'newman',     name: 'Newman',         categoria: 'Entretenimiento', keywords: ['newman'],               logo: 'https://i.pinimg.com/736x/c9/1d/c9/c91dc94730f6ff65c110a0d06b786194.jpg' },
 
   // ── Librerías ────────────────────────────────────────────────────────────
   { id: 'yenny',      name: 'Yenny / El Ateneo', categoria: 'Librerías',  keywords: ['yenny', 'ateneo'],        logo: 'https://acdn-us.mitiendanube.com/stores/004/088/117/themes/common/logo-810418616-1731438736-7b6920ff653fd2214af40085c6145fea1731438737-320-0.webp' },
-  { id: 'cuspide',    name: 'Cúspide',        categoria: 'Librerías',     keywords: ['cúspide', 'cuspide'],     logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cuspide.com&size=128' },
+  { id: 'cuspide',    name: 'Cúspide',        categoria: 'Librerías',     keywords: ['cúspide', 'cuspide'],     logo: 'https://i.pinimg.com/736x/f3/bc/44/f3bc44ab765d51e227b0c31955d8a35f.jpg' },
 
   // ── Hogar / Construcción ─────────────────────────────────────────────────
   { id: 'easy',       name: 'Easy',           categoria: 'Hogar',         keywords: ['easy'],                   logo: 'https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://easy.com.ar&size=128' },
