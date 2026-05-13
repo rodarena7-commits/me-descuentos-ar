@@ -1163,6 +1163,191 @@ SAMPLE_DISCOUNTS = [
         "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
 
+    # ── ICBC — datos reales verificados (mayo 2026) ─────────────────────────
+    {
+        "title": "20% en Coto los jueves sin tope — ICBC",
+        "description": (
+            "20% de reintegro en Coto todos los jueves pagando con Visa Débito ICBC. "
+            "Sin tope de reintegro."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": None,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.beneficios.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "20% en Coto Digital los lunes — ICBC",
+        "description": (
+            "20% de reintegro en cotoonline.com.ar los lunes con tarjetas ICBC. "
+            "Tope $15.000/mes (cuenta sueldo) o $10.000/mes (general)."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 15000.0,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.beneficios.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "20% en Farmacity los viernes + 3 cuotas — ICBC",
+        "description": (
+            "20% de reintegro en Farmacity los viernes con Visa o Mastercard ICBC, "
+            "más 3 cuotas sin interés. Tope $4.000 por compra."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 4000.0,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.beneficios.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "15% en Farmaonline los viernes con MODO — ICBC",
+        "description": (
+            "15% de reintegro en Farmaonline los viernes pagando con MODO "
+            "con tarjetas ICBC. Tope $5.000 por transacción."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": 5000.0,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.beneficios.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "20% en gastronomía con MODO — ICBC",
+        "description": (
+            "20% de reintegro en restaurantes y gastronomía adherida pagando con MODO "
+            "con tarjetas ICBC. Tope $15.000 por transacción. "
+            "Exclusive Banking: 30%, tope $20.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 15000.0,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.beneficios.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "30% en combustible — ICBC",
+        "description": (
+            "30% de reintegro en combustible en estaciones adheridas "
+            "con tarjetas ICBC. Tope $25.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 25000.0,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.beneficios.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "20% en Dexter + 6 cuotas — ICBC Exclusive Banking",
+        "description": (
+            "20% de reintegro en Dexter más 6 cuotas sin interés "
+            "con tarjetas ICBC Exclusive Banking. "
+            "Válido todos los días."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": None,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "indumentaria",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.beneficios.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "Hasta 18 cuotas + $50.000 de reintegro — ICBC Mall Hot Sale 2026",
+        "description": (
+            "Hot Sale (11–17/05): hasta 18 cuotas sin interés con tarjetas ICBC en ICBC Mall. "
+            "Reintegro de hasta $50.000 pagando en 3 cuotas vía MODO o Mobile Banking. "
+            "Envíos gratis y cupones acumulables."
+        ),
+        "discount_type": "reintegro",
+        "percentage": None,
+        "max_amount": 50000.0,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 17),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://mall.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+    {
+        "title": "50% en Gift Cards de moda — ICBC Mall Hot Sale 2026",
+        "description": (
+            "Hot Sale (11–17/05): hasta 50% de ahorro en Gift Cards de moda seleccionadas "
+            "en ICBC Mall. Pagable en hasta 6 cuotas con tarjetas ICBC."
+        ),
+        "discount_type": "descuento",
+        "percentage": 50.0,
+        "max_amount": None,
+        "source": "ICBC",
+        "source_type": "banco",
+        "category": "indumentaria",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 17),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://mall.icbc.com.ar/",
+        "logo_url": "https://logo.clearbit.com/icbc.com.ar",
+    },
+
     # ── BANCO NACIÓN / BNA+ — datos reales verificados (mayo 2026) ──────────
     {
         "title": "30% de reintegro en supermercados los miércoles — BNA+",
