@@ -714,7 +714,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "40% en ferias y mercados bonaerenses todos los días — Cuenta DNI",
@@ -734,7 +734,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "40% en universidades, clubes y entidades educativas — Cuenta DNI",
@@ -755,7 +755,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "25% en gastronomía los fines de semana — Cuenta DNI",
@@ -776,7 +776,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "30% en marcas destacadas todos los días — Cuenta DNI",
@@ -796,7 +796,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "10% en Supermercado Día los lunes sin tope — Cuenta DNI",
@@ -816,7 +816,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "20% en Chango Más los jueves sin tope — Cuenta DNI",
@@ -836,7 +836,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "30% en Coto con NFC los jueves sin límite — Cuenta DNI",
@@ -856,7 +856,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "10% en Carrefour los miércoles sin tope — Cuenta DNI",
@@ -876,7 +876,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "15% en supermercados adheridos (mar y mié) — Cuenta DNI",
@@ -897,7 +897,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "10% en librerías los lunes y martes sin tope — Cuenta DNI",
@@ -917,7 +917,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "10% en farmacias y perfumerías (mié y jue) sin tope — Cuenta DNI",
@@ -937,7 +937,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
     {
         "title": "+5% adicional en supermercados para jubilados — Cuenta DNI",
@@ -957,7 +957,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.cuentadni.ar/beneficios",
-        "logo_url": "https://logo.clearbit.com/cuentadni.ar",
+        "logo_url": "https://i.pinimg.com/736x/50/d9/f5/50d9f5295dfa90d8cdb3aaa44287e0d9.jpg",
     },
 
     # ── BANCO PATAGONIA (Patagonia ON) — datos reales verificados (mayo 2026) ─
@@ -979,7 +979,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "50% en educación IT todos los días sin tope — Banco Patagonia",
@@ -999,7 +999,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "15% en Carrefour los miércoles — Banco Patagonia",
@@ -1019,7 +1019,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "50% en cines los viernes — Banco Patagonia",
@@ -1039,7 +1039,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "20% en Havanna todos los días — Banco Patagonia",
@@ -1059,7 +1059,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "20% en Farmacity los viernes — Banco Patagonia",
@@ -1079,7 +1079,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "20% en Get the Look los viernes — Banco Patagonia",
@@ -1099,7 +1099,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "15% en Adidas, Stock Center y Dexter los jueves — Banco Patagonia",
@@ -1119,7 +1119,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "25% en Pedidos Ya los jueves — Banco Patagonia",
@@ -1139,7 +1139,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
     {
         "title": "20–25% en combustible los jueves — Banco Patagonia",
@@ -1160,7 +1160,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
-        "logo_url": "https://logo.clearbit.com/bancopatagonia.com.ar",
+        "logo_url": "https://i.pinimg.com/236x/93/77/73/937773ce8b832fb110e5da731996b8d1.jpg",
     },
 
     # ── BANCO NACIÓN / BNA+ — datos reales verificados (mayo 2026) ──────────
