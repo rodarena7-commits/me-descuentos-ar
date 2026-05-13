@@ -34,6 +34,7 @@ const BRAND = {
   'Banco Ciudad':   { domain: 'bancociudad.com.ar',   color: 'bg-green-600',    text: 'text-white' },
   'ICBC':           { domain: 'icbc.com.ar',           color: 'bg-red-700',      text: 'text-white' },
   'Ripio':          { domain: 'ripio.com',             color: 'bg-indigo-500',   text: 'text-white' },
+  'AstroPay':       { domain: 'astropay.com',          color: 'bg-purple-600',   text: 'text-white' },
 }
 
 
@@ -166,11 +167,6 @@ export default function DiscountCard({ discount }) {
             {is_new && (
               <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                 Nuevo
-              </span>
-            )}
-            {is_limited_stock && (
-              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">
-                ⚡ Stock
               </span>
             )}
           </div>

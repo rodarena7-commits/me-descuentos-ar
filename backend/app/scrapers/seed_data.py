@@ -2091,6 +2091,75 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.mercadopago.com.ar/beneficios",
         "logo_url": "https://logo.clearbit.com/mercadopago.com",
     },
+    # ── ASTROPAY — datos reales verificados (2026) ───────────────────────────
+    # AstroPay: billetera multimoneda (ARS, USD, EUR). Cashback instantáneo.
+    # Tarjeta Local (pesos, física y virtual) + Tarjeta Global (virtual, multimoneda).
+    {
+        "title": "3% cashback en todas las compras presenciales — AstroPay",
+        "description": (
+            "3% de cashback instantáneo en cualquier compra presencial con "
+            "Tarjeta Local o Global AstroPay (física o NFC). "
+            "El reintegro se acredita automáticamente en tu billetera. "
+            "Tope $50.000 ARS por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 3.0,
+        "max_amount": 50000.0,
+        "source": "AstroPay",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.astropay.com/card",
+        "logo_url": "https://logo.clearbit.com/astropay.com",
+    },
+    {
+        "title": "5% cashback presencial para usuarios seleccionados — AstroPay",
+        "description": (
+            "Hasta 5% de cashback en compras presenciales con "
+            "Tarjeta Local o Global AstroPay. "
+            "Aplica a usuarios seleccionados según nivel AstroPoints. "
+            "Tope $50.000 ARS por mes. Cashback instantáneo en billetera."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 5.0,
+        "max_amount": 50000.0,
+        "source": "AstroPay",
+        "source_type": "fintech",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.astropay.com/card",
+        "logo_url": "https://logo.clearbit.com/astropay.com",
+    },
+    {
+        "title": "26% anual en pesos + 4.13% en dólares — Rendimiento AstroPay",
+        "description": (
+            "Tu saldo genera rendimientos diarios automáticos: "
+            "26% TNA en pesos argentinos y 4.13% TNA en dólares. "
+            "Sin plazo fijo, sin bloqueo — podés usar el dinero cuando quieras."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "AstroPay",
+        "source_type": "fintech",
+        "category": "servicios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.astropay.com/card",
+        "logo_url": "https://logo.clearbit.com/astropay.com",
+    },
+
     # ── RIPIO — datos reales verificados (2026) ─────────────────────────────
     # Ripio es una exchange/billetera crypto. El cashback se devuelve en UXD, ETH o BTC.
     # Tarjeta Visa prepaga, gratuita, sin costo de mantenimiento.
