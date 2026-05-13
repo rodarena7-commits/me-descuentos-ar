@@ -17,7 +17,7 @@ const TYPE_LABELS = {
 // Dominios para Google Favicons API como segundo intento
 const BRAND = {
   'Banco Galicia':  { domain: 'galicia.ar',         color: 'bg-red-600',      text: 'text-white' },
-  'Santander':      { domain: 'santander.com.ar',    color: 'bg-red-600',      text: 'text-white' },
+  'Santander':      { domain: 'santander.com.ar',    color: 'bg-red-700',      text: 'text-white' },
   'BBVA':           { domain: 'bbva.com.ar',         color: 'bg-blue-600',     text: 'text-white' },
   'Banco Nación':   { domain: 'bna.com.ar',          color: 'bg-sky-700',      text: 'text-white' },
   'Banco Macro':    { domain: 'macro.com.ar',        color: 'bg-yellow-500',   text: 'text-slate-900' },
@@ -25,6 +25,26 @@ const BRAND = {
   'Naranja X':      { domain: 'naranjax.com',        color: 'bg-orange-500',   text: 'text-white' },
   'Lemon':          { domain: 'lemon.me',            color: 'bg-lime-400',     text: 'text-slate-900' },
   'MODO':           { domain: 'modo.com.ar',         color: 'bg-indigo-600',   text: 'text-white' },
+}
+
+const CATEGORY_LABELS = {
+  supermercados:    'Supermercados',
+  combustible:      'Combustible',
+  farmacias:        'Farmacias',
+  gastronomia:      'Gastronomía',
+  indumentaria:     'Indumentaria',
+  viajes:           'Viajes',
+  electronica:      'Electrónica',
+  entretenimiento:  'Entretenimiento',
+  librerias:        'Librerías',
+  jugueterias:      'Jugueterías',
+  neumaticos:       'Neumáticos',
+  peluquerias:      'Peluquerías',
+  opticas:          'Ópticas',
+  transporte:       'Transporte',
+  librerias:        'Librerías',
+  todos:            'Todos',
+  varios:           'Varios',
 }
 
 function googleFavicon(domain) {
@@ -156,7 +176,7 @@ export default function DiscountCard({ discount }) {
           <div className="flex flex-wrap items-center gap-2 mt-2 text-xs">
             <span className="font-medium text-slate-400">{source}</span>
             {category && <span className="text-slate-600">·</span>}
-            {category && <span className="text-slate-500 capitalize">{category}</span>}
+            {category && <span className="text-slate-500">{CATEGORY_LABELS[category] ?? category}</span>}
             <DayBadge daysOfWeek={days_of_week} />
             <ExpiryBadge validUntil={valid_until} />
           </div>

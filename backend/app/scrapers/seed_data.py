@@ -198,22 +198,205 @@ SAMPLE_DISCOUNTS = [
         "logo_url": "https://logo.clearbit.com/galicia.ar",
     },
 
-    # ── OTROS BANCOS — datos de ejemplo (reemplazar con scrapers) ────────────
+    # ── SANTANDER — datos reales verificados (mayo 2026) ────────────────────
     {
-        "title": "20% reintegro en combustible con Santander",
-        "description": "Reintegro en YPF, Shell, Axion con tarjetas Santander.",
+        "title": "30% de reintegro en Coto los lunes — Santander",
+        "description": (
+            "Reintegro pagando con MODO desde la app Santander o app MODO "
+            "con tarjeta Santander Visa crédito o débito. Tope $15.000 por semana."
+        ),
         "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 15000.0,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/personas/beneficios",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "25% de reintegro en Carrefour los viernes — Santander",
+        "description": (
+            "Reintegro pagando con Visa Santander crédito o débito a través de MODO. "
+            "Tope $20.000 por mes. No aplica en electrodomésticos ni carne vacuna."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 20000.0,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/personas/beneficios",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "25% de descuento en Mostaza los miércoles — Super Miércoles",
+        "description": (
+            "Descuento en Mostaza todos los miércoles pagando con tarjetas Santander. "
+            "Programa Super Miércoles. Tope $15.000 mensual. Vigente hasta 25/06/2026."
+        ),
+        "discount_type": "descuento",
+        "percentage": 25.0,
+        "max_amount": 15000.0,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 6, 25),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/banco/online/personas/beneficios/volvieron-super-miercoles",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "15% en Yenny & El Ateneo los miércoles — Super Miércoles",
+        "description": (
+            "15% de descuento en Yenny y El Ateneo todos los miércoles con Santander. "
+            "Tope $20.000 mensual. Incluye 3 cuotas sin interés. Vigente hasta 25/06/2026."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": 20000.0,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "librerias",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 6, 25),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/banco/online/personas/beneficios/volvieron-super-miercoles",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "20% en jugueterías los miércoles sin tope — Super Miércoles",
+        "description": (
+            "20% de descuento en Mundo del Juguete los miércoles con Santander. "
+            "Sin tope de reintegro. Incluye 3 cuotas sin interés. Vigente hasta 25/06/2026."
+        ),
+        "discount_type": "descuento",
         "percentage": 20.0,
-        "max_amount": 2000.0,
+        "max_amount": None,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "jugueterias",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 6, 25),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/banco/online/personas/beneficios/volvieron-super-miercoles",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "20% en neumáticos los miércoles sin tope — Super Miércoles",
+        "description": (
+            "20% de descuento en Neumáticos Juan los miércoles con Santander. "
+            "Sin tope de reintegro. Incluye 3 cuotas sin interés. Vigente hasta 25/06/2026."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": None,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "neumaticos",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 6, 25),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/banco/online/personas/beneficios/volvieron-super-miercoles",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "10% en YPF los jueves — Santander Select (Visa Black/Platinum)",
+        "description": (
+            "10% de descuento en YPF los jueves con Visa Black o Platinum Santander Select "
+            "a través de la app YPF. Tope $7.500 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": 7500.0,
         "source": "Santander",
         "source_type": "banco",
         "category": "combustible",
-        "days_of_week": "todos",
-        "valid_until": _HOY + timedelta(days=15),
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
         "is_limited_stock": False,
-        "is_new": False,
+        "is_new": True,
         "is_active": True,
-        "url": "https://www.santander.com.ar/beneficios",
+        "url": "https://www.santander.com.ar/banco/online/landings/supercuenta-combustible",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "30% de descuento en Cabify (mar y vie) — Santander",
+        "description": (
+            "30% de descuento en Cabify los martes y viernes pagando con "
+            "tarjetas Santander. Tope $20.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 20000.0,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "viajes",
+        "days_of_week": "martes,viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/personas/beneficios",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "20% en farmacias los miércoles — Santander Visa Women",
+        "description": (
+            "20% de descuento en farmacias adheridas los miércoles con tarjeta "
+            "Santander Visa Women crédito o débito. Tope $3.000–$8.000 según tipo de tarjeta."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 8000.0,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/personas/beneficios",
+        "logo_url": "https://logo.clearbit.com/santander.com.ar",
+    },
+    {
+        "title": "50% en peluquerías (mar y vie) — Santander Visa Women",
+        "description": (
+            "50% de descuento en peluquerías adheridas los martes y viernes con "
+            "Santander Visa Women. Tope $3.000–$8.000 por mes según tipo de tarjeta."
+        ),
+        "discount_type": "descuento",
+        "percentage": 50.0,
+        "max_amount": 8000.0,
+        "source": "Santander",
+        "source_type": "banco",
+        "category": "peluquerias",
+        "days_of_week": "martes,viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.santander.com.ar/personas/beneficios",
         "logo_url": "https://logo.clearbit.com/santander.com.ar",
     },
     {
