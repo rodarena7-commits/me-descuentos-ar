@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth'
 import { doc, getDoc } from 'firebase/firestore'
-import { auth, db, googleProvider } from '../firebase'
+import { ref, set } from 'firebase/database'
+import { auth, db, rtdb, googleProvider } from '../firebase'
 
 const AuthContext = createContext(null)
 
@@ -16,6 +17,13 @@ export function AuthProvider({ children }) {
       if (firebaseUser) {
         const snap = await getDoc(doc(db, 'users', firebaseUser.uid))
         setProfile(snap.exists() ? snap.data() : null)
+        
+        // Registrar en RTDB para el contador de admin
+        try {
+          await set(ref(rtdb, `/registrations/${firebaseUser.uid}`), true)
+        } catch (err) {
+          console.error("Error setting registration:", err)
+        }
       } else {
         setProfile(null)
       }
