@@ -2077,6 +2077,254 @@ SAMPLE_DISCOUNTS = [
         "logo_url": "https://logo.clearbit.com/uala.com.ar",
     },
 
+    # ── BRUBANK — datos reales verificados (mayo 2026) ──────────────────────
+    # Brubank usa el sistema "Girá la ruedita": después de cada compra participante
+    # entrás a la app, tocás la compra y girás la rueda para activar el reintegro.
+    {
+        "title": "10% en YPF los lunes vía App YPF — Brubank Plan Plus",
+        "description": (
+            "10% de reintegro en YPF los lunes usando débito o crédito Visa Brubank "
+            "en la App YPF. Tope $4.000 por compra. Máx. 1 compra/semana y 4/mes. "
+            "Exclusivo Plan Plus. Activar girando la ruedita en la app Brubank."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 10.0,
+        "max_amount": 4000.0,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "combustible",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "20% en Burger King lunes y viernes — Brubank",
+        "description": (
+            "20% de reintegro en Burger King los lunes y viernes con "
+            "débito o crédito Brubank. Tope $2.000 por compra. "
+            "Máx. 1 compra/semana y 4 en mayo. Activar girando la ruedita."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 2000.0,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "lunes,viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "30% en Farmacity, Simplicity y Get The Look (vie–dom) — Brubank",
+        "description": (
+            "30% de reintegro los viernes, sábados y domingos en Farmacity, Simplicity, "
+            "Get The Look y The Food Market con débito o crédito Visa Brubank. "
+            "Girá la ruedita en la app para activar."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 4000.0,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "farmacias",
+        "days_of_week": "viernes,sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "30% en Coto los jueves — Brubank",
+        "description": (
+            "30% de descuento en Coto los jueves pagando con tarjeta Brubank. "
+            "Girá la ruedita en la app para activar el reintegro."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "30% en Rapanui (vie–dom) — Brubank",
+        "description": (
+            "30% de reintegro los viernes, sábados y domingos en Rapanui "
+            "con débito o crédito Visa Brubank. Girá la ruedita para activar."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "viernes,sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "50% en Cerini todos los días — Brubank",
+        "description": (
+            "50% de reintegro en Cerini (peluquería/estética) todos los días "
+            "con débito Visa Brubank. Tope $6.000 por compra. Máx. 1 compra por mes. "
+            "Girá la ruedita para activar."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 50.0,
+        "max_amount": 6000.0,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "peluquerias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": True,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "50% en Newman (cuota social) — Brubank",
+        "description": (
+            "50% de reintegro en el pago mensual de la cuota social de Newman "
+            "con débito o crédito Brubank. Todos los días."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 50.0,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "entretenimiento",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "45% en Educación IT todos los días — Brubank",
+        "description": (
+            "45% de descuento en cursos de Educación IT con débito o crédito Visa Brubank. "
+            "Todos los días. Código: BRUBEDUIT."
+        ),
+        "discount_type": "descuento",
+        "percentage": 45.0,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "educacion",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "Hasta 6 cuotas sin interés en Decathlon — Brubank",
+        "description": (
+            "Hasta 6 cuotas sin interés en Decathlon todos los días "
+            "con tarjeta de crédito Brubank."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "indumentaria",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "Hasta 6 cuotas en Dexter, Moov y Stock Center — Brubank",
+        "description": (
+            "Hasta 6 cuotas sin interés en Dexter, Moov y Stock Center "
+            "con tarjeta de crédito Brubank. Todos los días."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "indumentaria",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "Hasta 12 cuotas en Samsung, JBL y electro — Brubank Plan Ultra",
+        "description": (
+            "Hasta 12 cuotas sin interés en Samsung, JBL, Diggit, Ferbi y más "
+            "con tarjeta de crédito Brubank Plan Ultra. Todos los días."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+    {
+        "title": "Hasta 12 cuotas en Despegar y Aerolíneas — Brubank Plan Ultra",
+        "description": (
+            "Hasta 12 cuotas sin interés en Despegar y Aerolíneas Argentinas "
+            "(vuelos nacionales) con tarjeta de crédito Brubank Plan Ultra. Todos los días."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Brubank",
+        "source_type": "fintech",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.brubank.com/beneficios",
+        "logo_url": "https://logo.clearbit.com/brubank.com",
+    },
+
     # ── NARANJA X — datos reales verificados (mayo 2026) ────────────────────
     {
         "title": "25% en supermercados los martes — Naranja X Plan Turbo",
