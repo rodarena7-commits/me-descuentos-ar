@@ -1423,20 +1423,316 @@ SAMPLE_DISCOUNTS = [
         "logo_url": "https://logo.clearbit.com/macro.com.ar",
     },
 
-    # ── FINTECHS — datos de ejemplo ──────────────────────────────────────────
+    # ── MERCADOPAGO — datos reales verificados (mayo 2026) ──────────────────
+    # Supermercados
     {
-        "title": "10% de reintegro en todos los comercios — MercadoPago",
-        "description": "Reintegro pagando con saldo en cuenta de MercadoPago.",
-        "discount_type": "reintegro",
-        "percentage": 10.0,
-        "max_amount": 1000.0,
+        "title": "15% en Supermercado Día los miércoles sin tope — MercadoPago",
+        "description": (
+            "15% de descuento en Supermercado Día todos los miércoles "
+            "pagando con QR de MercadoPago. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": None,
         "source": "MercadoPago",
         "source_type": "fintech",
-        "category": "todos",
+        "category": "supermercados",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    {
+        "title": "15% en Chango Más los miércoles sin tope — MercadoPago",
+        "description": (
+            "15% de descuento en Chango Más, HiperChangoMás y Punto Mayorista "
+            "todos los miércoles pagando con QR de MercadoPago. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    {
+        "title": "Hasta 25% en supermercados (Carrefour, Coto, Vea) — MercadoPago",
+        "description": (
+            "Hasta 25% de descuento sin tope en supermercados adheridos "
+            "(Carrefour, Coto, Vea, Chango Más) pagando con QR o tarjeta MercadoPago."
+        ),
+        "discount_type": "descuento",
+        "percentage": 25.0,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "supermercados",
         "days_of_week": "todos",
-        "valid_until": _HOY + timedelta(days=7),
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Combustible
+    {
+        "title": "30% en combustible los lunes — MercadoPago",
+        "description": (
+            "30% de descuento en combustible todos los lunes "
+            "pagando con tarjeta de crédito MercadoPago. Tope $6.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 6000.0,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "combustible",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Gastronomía
+    {
+        "title": "30% en McDonald's los viernes — MercadoPago",
+        "description": (
+            "30% de descuento en McDonald's todos los viernes "
+            "pagando con QR o tarjeta MercadoPago. Tope $4.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 30.0,
+        "max_amount": 4000.0,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    {
+        "title": "15% en Burger King los miércoles — MercadoPago",
+        "description": (
+            "15% de descuento en Burger King todos los miércoles "
+            "pagando con QR de MercadoPago. Sin tope de reintegro."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Transporte
+    {
+        "title": "100% de reintegro en colectivo y subte — MercadoPago",
+        "description": (
+            "100% de reintegro en viajes de colectivo y subte pagando con QR "
+            "de MercadoPago en líneas habilitadas. Solo para usuarios que activan "
+            "la promo por primera vez en la app. Tope $8.000. Hasta 31/05/2026."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 100.0,
+        "max_amount": 8000.0,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "transporte",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
         "is_limited_stock": True,
-        "is_new": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Entretenimiento
+    {
+        "title": "2x1 en Cinemark — MercadoPago",
+        "description": (
+            "2x1 en entradas de Cinemark pagando con QR o tarjeta MercadoPago. "
+            "Consultá días y funciones habilitadas en la app."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "entretenimiento",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Viajes
+    {
+        "title": "Hasta 15% en vuelos y hoteles en Despegar — MercadoPago",
+        "description": (
+            "Hasta 15% de descuento en vuelos y hoteles nacionales e internacionales "
+            "en Despegar pagando con MercadoPago. Incluye cuotas sin interés. "
+            "Ofertas especiales durante Hot Sale."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    {
+        "title": "Cuotas sin interés en Flechabus — MercadoPago",
+        "description": (
+            "Cuotas sin interés en pasajes de Flechabus "
+            "pagando con tarjeta de crédito MercadoPago."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Indumentaria / Deportes
+    {
+        "title": "Cuotas y descuentos en Adidas (mejor los miércoles) — MercadoPago",
+        "description": (
+            "Financiación en cuotas sin interés en Adidas todos los días "
+            "con tarjeta MercadoPago, con mejores condiciones los miércoles."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "indumentaria",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Farmacias
+    {
+        "title": "Descuentos en farmacias (Dr Ahorro, Selma) — MercadoPago",
+        "description": (
+            "Descuentos sin tope de reintegro en Farmacias Dr Ahorro y Farmacias Selma "
+            "pagando con QR o tarjeta MercadoPago."
+        ),
+        "discount_type": "descuento",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "farmacias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Hogar / Construcción
+    {
+        "title": "3 y 6 cuotas sin interés en Easy — MercadoPago",
+        "description": (
+            "3 y 6 cuotas sin interés en Easy (construcción, decoración y hogar) "
+            "pagando con QR o tarjeta física MercadoPago."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "hogar",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Belleza / Cosmética
+    {
+        "title": "3 cuotas sin interés desde $55.000 en Natura — MercadoPago",
+        "description": (
+            "Hasta 3 cuotas sin interés en compras desde $55.000 en Natura "
+            "pagando con QR o tarjeta física MercadoPago."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "peluquerias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.mercadopago.com.ar/beneficios",
+        "logo_url": "https://logo.clearbit.com/mercadopago.com",
+    },
+    # Mercado Libre
+    {
+        "title": "Cuotas sin interés en Mercado Libre — MercadoPago",
+        "description": (
+            "3 cuotas sin interés en Mercado Libre y en comercios con QR MercadoPago "
+            "para compras desde $50.000. Gestión 100% desde la app."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "MercadoPago",
+        "source_type": "fintech",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
         "is_active": True,
         "url": "https://www.mercadopago.com.ar/beneficios",
         "logo_url": "https://logo.clearbit.com/mercadopago.com",

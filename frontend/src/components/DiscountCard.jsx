@@ -47,6 +47,7 @@ const CATEGORY_LABELS = {
   transporte:       'Transporte',
   servicios:        'Servicios públicos',
   educacion:        'Educación',
+  hogar:            'Hogar',
   todos:            'Todos',
   varios:           'Varios',
 }
