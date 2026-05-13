@@ -399,21 +399,299 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.santander.com.ar/personas/beneficios",
         "logo_url": "https://logo.clearbit.com/santander.com.ar",
     },
+    # ── BBVA — datos reales verificados (mayo 2026) ─────────────────────────
+    # Supermercados con QR MODO
     {
-        "title": "25% OFF en farmacias los miércoles — BBVA",
-        "description": "Descuento en Farmacity con BBVA.",
-        "discount_type": "descuento",
-        "percentage": 25.0,
-        "max_amount": 1500.0,
+        "title": "20% de reintegro en Día (vie y sáb) — BBVA",
+        "description": (
+            "Reintegro pagando con QR MODO desde la app BBVA en Supermercado Día. "
+            "Compra mínima $30.000. Tope $20.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 20000.0,
         "source": "BBVA",
         "source_type": "banco",
-        "category": "farmacias",
-        "days_of_week": "miercoles",
-        "valid_until": _HOY + timedelta(days=20),
+        "category": "supermercados",
+        "days_of_week": "viernes,sabado",
+        "valid_until": datetime(2026, 5, 31),
         "is_limited_stock": False,
-        "is_new": False,
+        "is_new": True,
         "is_active": True,
-        "url": "https://www.bbva.com.ar/beneficios",
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    {
+        "title": "20% de reintegro en Coto los martes — BBVA",
+        "description": (
+            "Reintegro pagando con QR MODO desde la app BBVA en Coto. "
+            "Compra mínima $60.000. Tope $25.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    {
+        "title": "20% de reintegro en Jumbo (mar y jue) — BBVA",
+        "description": (
+            "Reintegro pagando con QR MODO desde la app BBVA en Jumbo. "
+            "Compra mínima $100.000. Tope $25.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes,jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    {
+        "title": "20% de reintegro en Vea y Disco (vie–dom) — BBVA",
+        "description": (
+            "Reintegro pagando con QR MODO desde la app BBVA en Vea y Disco. "
+            "Compra mínima $100.000. Tope $25.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "viernes,sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    {
+        "title": "25% de reintegro en Carrefour — BBVA (cuenta sueldo)",
+        "description": (
+            "Hasta 25% de reintegro en Carrefour con Visa BBVA y MODO "
+            "para clientes que acreditan sueldo en BBVA. Tope $20.000 por semana."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 20000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    # Gastronomía
+    {
+        "title": "20% de reintegro en restaurantes todos los días — BBVA a la Carta",
+        "description": (
+            "Reintegro pagando con NFC (Apple Pay, Google Pay o MODO contactless) "
+            "en restaurantes adheridos: Kansas, Dandy, Burger54, Rock&Feller's, "
+            "La Parolaccia y más. Tope $50.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 50000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    {
+        "title": "20% de reintegro en heladerías — BBVA",
+        "description": (
+            "Reintegro en Lucciano's y Rapanue pagando con NFC o MODO. "
+            "Tope $15.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 15000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    # Indumentaria y Farmacias
+    {
+        "title": "20% de reintegro en indumentaria y farmacias — BBVA",
+        "description": (
+            "Reintegro en comercios de indumentaria y farmacias adheridas "
+            "con tarjetas BBVA. Incluye 18 cuotas sin interés. "
+            "Mínimo $75.000. Tope $15.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 15000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "indumentaria",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    # Servicios públicos (jubilados)
+    {
+        "title": "50% de reintegro en servicios públicos — BBVA jubilados",
+        "description": (
+            "Reintegro del 50% en pagos de luz, gas, agua, teléfono, cable e internet "
+            "mediante débito automático con tarjeta de crédito BBVA. "
+            "Tope mensual: $6.000–$36.000 según tipo de cuenta. Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 50.0,
+        "max_amount": 36000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "servicios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/personas/productos/jubilados.html",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    # NFC primeras compras
+    {
+        "title": "100% de reintegro en tus primeras 3 compras NFC — BBVA",
+        "description": (
+            "Reintegro del 100% en las primeras 3 compras pagando con NFC "
+            "(Apple Pay o Google Pay) con tarjeta de crédito BBVA. "
+            "Tope $10.000 por compra. Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 100.0,
+        "max_amount": 10000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "todos",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": True,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/personas/servicios-digitales/app-bbva/nfc.html",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    # Duty Free
+    {
+        "title": "20% de reintegro en Duty Free — BBVA",
+        "description": (
+            "Reintegro en tiendas Duty Free de aeropuertos pagando con "
+            "NFC o MODO con tarjetas BBVA. Tope $25.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 25000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    # Hot Sale 2026 (11-17 mayo)
+    {
+        "title": "20% de reintegro en electro y hogar — BBVA Hot Sale 2026",
+        "description": (
+            "Hot Sale (11–17/05): 20% de reintegro + hasta 18 cuotas sin interés "
+            "en Samsung, Frávega y electro/hogar adheridos pagando con MODO desde app BBVA. "
+            "Tope $30.000."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 30000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 17),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com.ar/beneficios/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    {
+        "title": "20% en vuelos a Miami y Cancún — BBVA Hot Sale 2026",
+        "description": (
+            "Hot Sale (11–17/05): 20% de descuento en vuelos Aerolíneas Argentinas "
+            "a Miami y Cancún con tarjetas BBVA. Hoteles Orlando/Miami 20% tope $145.000. "
+            "Hyatt Cancún 15%."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 145000.0,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 17),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com/es/ar/economia-y-finanzas/hot-sale-2026-con-bbva-viajes-turismo-electro-y-tecnologia/",
+        "logo_url": "https://logo.clearbit.com/bbva.com.ar",
+    },
+    {
+        "title": "Hasta 55% de descuento en Assist Card — BBVA Hot Sale 2026",
+        "description": (
+            "Hot Sale (11–17/05): hasta 55% de descuento en asistencia al viajero "
+            "Assist Card para viajes a México, USA y Canadá con tarjetas BBVA. "
+            "Incluye 12 cuotas sin interés."
+        ),
+        "discount_type": "descuento",
+        "percentage": 55.0,
+        "max_amount": None,
+        "source": "BBVA",
+        "source_type": "banco",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 17),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bbva.com/es/ar/economia-y-finanzas/hot-sale-2026-con-bbva-viajes-turismo-electro-y-tecnologia/",
         "logo_url": "https://logo.clearbit.com/bbva.com.ar",
     },
     # ── BANCO NACIÓN / BNA+ — datos reales verificados (mayo 2026) ──────────

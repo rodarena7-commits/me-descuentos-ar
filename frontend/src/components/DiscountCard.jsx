@@ -42,7 +42,7 @@ const CATEGORY_LABELS = {
   peluquerias:      'Peluquerías',
   opticas:          'Ópticas',
   transporte:       'Transporte',
-  librerias:        'Librerías',
+  servicios:        'Servicios públicos',
   todos:            'Todos',
   varios:           'Varios',
 }
