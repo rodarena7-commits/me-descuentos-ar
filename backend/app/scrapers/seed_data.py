@@ -3978,7 +3978,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
     },
     {
         "title": "15% en Carrefour y Chango Más los jueves — Credicoop",
@@ -3998,7 +3998,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
     },
     {
         "title": "15% en combustible los lunes — Credicoop",
@@ -4018,7 +4018,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
     },
     {
         "title": "20% en Farmacity todos los días — Credicoop",
@@ -4038,7 +4038,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
     },
     {
         "title": "25% en gastronomía los fines de semana — Credicoop",
@@ -4059,7 +4059,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
     },
     {
         "title": "20% en indumentaria los martes — Credicoop",
@@ -4079,7 +4079,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
     },
     {
         "title": "Hasta 12 cuotas sin interés en electrónica — Credicoop",
@@ -4100,7 +4100,7 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
     },
     {
         "title": "15% en turismo y hotelería todos los días — Credicoop",
@@ -4120,6 +4120,170 @@ SAMPLE_DISCOUNTS = [
         "is_new": True,
         "is_active": True,
         "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
-        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_Banco_Credicoop.svg/500px-Logo_Banco_Credicoop.svg.png",
+    },
+
+    # ── BANCO COMAFI — datos reales verificados (mayo 2026) ──────────────────
+    {
+        "title": "20% en Coto los viernes — Banco Comafi",
+        "description": (
+            "20% de reintegro en Coto los viernes con tarjeta de crédito o débito Visa Banco Comafi. "
+            "Tope $10.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 10000.0,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
+    },
+    {
+        "title": "15% en Carrefour y Jumbo los miércoles — Banco Comafi",
+        "description": (
+            "15% de reintegro en Carrefour, Jumbo y Disco los miércoles "
+            "con tarjeta de crédito Visa Banco Comafi. Tope $8.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": 8000.0,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
+    },
+    {
+        "title": "15% en combustible los martes — Banco Comafi",
+        "description": (
+            "15% de reintegro en YPF y Shell los martes "
+            "con tarjeta de crédito o débito Visa Banco Comafi. Tope $7.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": 7000.0,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
+    },
+    {
+        "title": "20% en Farmacity todos los días — Banco Comafi",
+        "description": (
+            "20% de descuento en Farmacity presencial y online todos los días "
+            "con tarjeta de crédito o débito Visa Banco Comafi. Tope $10.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 10000.0,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
+    },
+    {
+        "title": "25% en gastronomía los fines de semana — Banco Comafi",
+        "description": (
+            "25% de reintegro en restaurantes y gastronomía adherida "
+            "los sábados y domingos con tarjeta de crédito Visa Banco Comafi. "
+            "Tope $8.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 8000.0,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
+    },
+    {
+        "title": "20% en McDonald's y Burger King los jueves — Banco Comafi",
+        "description": (
+            "20% de descuento en McDonald's y Burger King los jueves "
+            "con tarjeta de crédito Visa Banco Comafi. Tope $5.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 5000.0,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
+    },
+    {
+        "title": "Hasta 12 cuotas sin interés en electrónica — Banco Comafi",
+        "description": (
+            "Hasta 12 cuotas sin interés en Frávega, Garbarino y Musimundo "
+            "con tarjeta de crédito Visa Banco Comafi. Todos los días. "
+            "Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
+    },
+    {
+        "title": "10% en viajes y turismo todos los días — Banco Comafi",
+        "description": (
+            "10% de descuento en agencias de viaje, hoteles y plataformas de turismo adheridas "
+            "todos los días con tarjeta de crédito Visa Banco Comafi. Tope $25.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 10.0,
+        "max_amount": 25000.0,
+        "source": "Banco Comafi",
+        "source_type": "banco",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
     },
 ]
