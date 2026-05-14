@@ -25,21 +25,13 @@ const cards = [
     border: 'border-amber-500/30',
     text: 'text-amber-400',
   },
-  {
-    key: 'limited_stock',
-    label: 'Stock limitado',
-    icon: '⚡',
-    gradient: 'from-red-600/20 to-red-600/5',
-    border: 'border-red-500/30',
-    text: 'text-red-400',
-  },
 ]
 
 export default function StatsBar() {
   const stats = useStats()
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+    <div className="grid grid-cols-3 gap-3 mb-6">
       {cards.map(({ key, label, icon, gradient, border, text }) => (
         <div
           key={key}

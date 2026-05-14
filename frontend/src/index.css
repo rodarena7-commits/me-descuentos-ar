@@ -6,11 +6,47 @@
   padding: 0;
 }
 
+html {
+  /* Prevent iOS Safari from adjusting font sizes */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Fill available height for Safari mobile */
+  height: -webkit-fill-available;
+}
+
 body {
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   background-color: #020617;
   color: #e2e8f0;
   -webkit-font-smoothing: antialiased;
+  /* Remove tap highlight on Samsung/Xiaomi/iOS */
+  -webkit-tap-highlight-color: transparent;
+  /* Reduce 300ms tap delay on mobile */
+  touch-action: manipulation;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+/* Prevent iOS auto-zoom on input/select focus (triggers when font-size < 16px) */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Fallback for browsers without backdrop-filter support (older Samsung/Xiaomi) */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  header {
+    background-color: rgba(2, 6, 23, 0.97) !important;
+  }
+  .backdrop-blur-sm,
+  .backdrop-blur-md {
+    background-color: rgba(15, 23, 42, 0.97) !important;
+  }
 }
 
 ::-webkit-scrollbar {

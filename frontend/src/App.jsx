@@ -154,17 +154,17 @@ export default function App() {
         {/* ── SECCIÓN DESCUENTOS (homepage) ── */}
         {!isMarcas && (<>
         {/* Hero + Search */}
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+        <div className="mb-8 flex flex-col items-center text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 w-full">
             Ahorro Inteligente{' '}
             <span className="text-violet-400">— AI</span>
           </h1>
-          <p className="text-slate-400 text-sm md:text-base mb-6">
+          <p className="text-slate-400 text-sm md:text-base mb-6 w-full">
             Todos los descuentos, promos y reintegros de bancos y billeteras de Argentina
           </p>
 
           {/* Search bar */}
-          <div className="relative max-w-2xl mx-auto">
+          <div className="relative w-full max-w-2xl">
             <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
               <svg className="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
