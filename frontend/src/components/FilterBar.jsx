@@ -24,6 +24,17 @@ const DAY_OPTIONS = [
   { value: 'domingo', label: 'Domingo' },
 ]
 
+const PERCENTAGE_OPTIONS = [
+  { value: '', label: '% Cualquiera' },
+  { value: '10', label: '10% o más' },
+  { value: '15', label: '15% o más' },
+  { value: '20', label: '20% o más' },
+  { value: '25', label: '25% o más' },
+  { value: '30', label: '30% o más' },
+  { value: '40', label: '40% o más' },
+  { value: '50', label: '50% o más' },
+]
+
 const QUICK_FILTERS = [
   { key: 'is_new', label: '🆕 Nuevos', activeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' },
   { key: 'expiring_soon', label: '⏰ Por vencerse', activeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/50' },
@@ -34,7 +45,6 @@ const selectClass =
 
 export default function FilterBar({ filters, onChange }) {
   const sources = useSources()
-  const categories = useCategories()
 
   function set(key, value) {
     onChange({ ...filters, [key]: value })
@@ -62,7 +72,7 @@ export default function FilterBar({ filters, onChange }) {
         ))}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
         <select className={selectClass} value={filters.discount_type || ''} onChange={e => set('discount_type', e.target.value)}>
           {TYPE_OPTIONS.map(o => <option key={o.value} value={o.value} className="bg-slate-800">{o.label}</option>)}
         </select>
@@ -87,17 +97,20 @@ export default function FilterBar({ filters, onChange }) {
           <option value="electronica" className="bg-slate-800">Electrónica</option>
           <option value="entretenimiento" className="bg-slate-800">Entretenimiento</option>
           <option value="viajes" className="bg-slate-800">Viajes</option>
-          <option value="farmacias" className="bg-slate-800">Farmacias</option>
           <option value="librerias" className="bg-slate-800">Librerías</option>
           <option value="servicios" className="bg-slate-800">Servicios públicos</option>
           <option value="educacion" className="bg-slate-800">Educación</option>
           <option value="hogar" className="bg-slate-800">Hogar</option>
           <option value="neumaticos" className="bg-slate-800">Neumáticos</option>
-          <option value="todos" className="bg-slate-800">Todos los rubros</option>
+          <option value="varios" className="bg-slate-800">Varios</option>
         </select>
 
         <select className={selectClass} value={filters.day || ''} onChange={e => set('day', e.target.value)}>
           {DAY_OPTIONS.map(o => <option key={o.value} value={o.value} className="bg-slate-800">{o.label}</option>)}
+        </select>
+
+        <select className={selectClass} value={filters.min_percentage || ''} onChange={e => set('min_percentage', e.target.value)}>
+          {PERCENTAGE_OPTIONS.map(o => <option key={o.value} value={o.value} className="bg-slate-800">{o.label}</option>)}
         </select>
       </div>
     </div>

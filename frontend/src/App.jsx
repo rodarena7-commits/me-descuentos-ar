@@ -46,15 +46,22 @@ export default function App() {
   const { discounts, loading: discLoading, error } = useDiscounts(filters)
   const onlineCount = usePresence()
 
-  // Client-side search filter
+  // Client-side search + percentage filter
   const filtered = useMemo(() => {
-    if (!search.trim()) return discounts
-    const q = search.toLowerCase()
-    return discounts.filter(d =>
-      [d.title, d.description, d.source, d.category]
-        .some(f => f?.toLowerCase().includes(q))
-    )
-  }, [discounts, search])
+    let result = discounts
+    if (search.trim()) {
+      const q = search.toLowerCase()
+      result = result.filter(d =>
+        [d.title, d.description, d.source, d.category]
+          .some(f => f?.toLowerCase().includes(q))
+      )
+    }
+    if (filters.min_percentage) {
+      const min = parseFloat(filters.min_percentage)
+      result = result.filter(d => d.percentage != null && d.percentage >= min)
+    }
+    return result
+  }, [discounts, search, filters.min_percentage])
 
   // Reset page when filters, search or perPage change
   useEffect(() => { setPage(1) }, [filters, search, perPage])

@@ -3,6 +3,12 @@ import { useState, useEffect, useCallback } from 'react'
 const BASE = import.meta.env.VITE_API_URL ?? ''
 const API = `${BASE}/api/discounts`
 
+// Keys that the backend API accepts — client-only keys like min_percentage stay out
+const API_KEYS = new Set([
+  'discount_type', 'source', 'source_type', 'category',
+  'day', 'is_limited_stock', 'is_new', 'expiring_soon', 'skip', 'limit',
+])
+
 export function useDiscounts(filters = {}) {
   const [discounts, setDiscounts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -14,7 +20,7 @@ export function useDiscounts(filters = {}) {
     try {
       const params = new URLSearchParams()
       Object.entries(filters).forEach(([k, v]) => {
-        if (v !== null && v !== undefined && v !== '') params.append(k, v)
+        if (API_KEYS.has(k) && v !== null && v !== undefined && v !== '') params.append(k, v)
       })
       const res = await fetch(`${API}?${params}`)
       if (!res.ok) throw new Error('Error al cargar descuentos')
