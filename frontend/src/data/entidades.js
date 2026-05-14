@@ -14,6 +14,7 @@ export const ENTIDADES = [
   { id: 'ciudad',      name: 'Banco Ciudad',     tipo: 'Banco',    source: 'Banco Ciudad',    logo: gFav('bancociudad.com.ar') },
   { id: 'supervielle', name: 'Supervielle',      tipo: 'Banco',    source: 'Supervielle',     logo: gFav('supervielle.com.ar') },
   { id: 'hsbc',        name: 'HSBC',             tipo: 'Banco',    source: 'HSBC',            logo: gFav('hsbc.com.ar') },
+  { id: 'credicoop',  name: 'Credicoop',        tipo: 'Banco',    source: 'Credicoop',       logo: gFav('bancocredicoop.coop') },
 
   // ── Fintechs ─────────────────────────────────────────────────────────────
   { id: 'mercadopago', name: 'MercadoPago',      tipo: 'Fintech',  source: 'MercadoPago',     logo: gFav('mercadopago.com') },

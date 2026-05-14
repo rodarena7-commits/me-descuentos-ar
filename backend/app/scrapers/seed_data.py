@@ -3958,4 +3958,168 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
         "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
     },
+
+    # ── CREDICOOP — datos reales verificados (mayo 2026) ─────────────────────
+    {
+        "title": "20% en Coto los miércoles — Credicoop",
+        "description": (
+            "20% de reintegro en Coto los miércoles con tarjeta de crédito o débito Visa Credicoop. "
+            "Tope $12.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 12000.0,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
+    {
+        "title": "15% en Carrefour y Chango Más los jueves — Credicoop",
+        "description": (
+            "15% de reintegro en Carrefour e hipermercados Chango Más los jueves "
+            "con tarjeta de crédito Visa Credicoop. Tope $10.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": 10000.0,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
+    {
+        "title": "15% en combustible los lunes — Credicoop",
+        "description": (
+            "15% de reintegro en YPF, Shell y Axion los lunes "
+            "con tarjeta de crédito Visa Credicoop. Tope $8.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": 8000.0,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
+    {
+        "title": "20% en Farmacity todos los días — Credicoop",
+        "description": (
+            "20% de descuento en Farmacity presencial y online todos los días "
+            "con tarjeta de crédito o débito Visa Credicoop. Tope $12.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 12000.0,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
+    {
+        "title": "25% en gastronomía los fines de semana — Credicoop",
+        "description": (
+            "25% de reintegro en restaurantes, bares y gastronomía adherida "
+            "los sábados y domingos con tarjeta de crédito Visa Credicoop. "
+            "Tope $8.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 8000.0,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "sabado,domingo",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
+    {
+        "title": "20% en indumentaria los martes — Credicoop",
+        "description": (
+            "20% de descuento los martes en Adidas, Dexter, Moov y tiendas de indumentaria adheridas "
+            "con tarjeta de crédito Visa Credicoop. Tope $20.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 20000.0,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "indumentaria",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
+    {
+        "title": "Hasta 12 cuotas sin interés en electrónica — Credicoop",
+        "description": (
+            "Hasta 12 cuotas sin interés en Frávega, Garbarino, Musimundo y Megatone "
+            "con tarjeta de crédito Visa Credicoop. Todos los días. "
+            "Vigente hasta 30/06/2026."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
+    {
+        "title": "15% en turismo y hotelería todos los días — Credicoop",
+        "description": (
+            "15% de descuento en agencias de viaje, hoteles y plataformas de turismo adheridas "
+            "todos los días con tarjeta de crédito Visa Credicoop. Tope $30.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": 30000.0,
+        "source": "Credicoop",
+        "source_type": "banco",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.bancocredicoop.coop/Personas/Beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://bancocredicoop.coop&size=128",
+    },
 ]
