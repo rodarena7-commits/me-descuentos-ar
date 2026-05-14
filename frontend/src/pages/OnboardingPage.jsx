@@ -29,7 +29,7 @@ const DAYS = [
 const BANKS = [
   'Banco Galicia', 'Santander', 'BBVA', 'Banco Nación (BNA+)',
   'Banco Macro', 'Banco Patagonia', 'Cuenta DNI (Banco Provincia)',
-  'ICBC', 'Brubank', 'Banco Ciudad', 'Credicoop', 'Banco Supervielle',
+  'HSBC', 'ICBC', 'Brubank', 'Banco Ciudad', 'Credicoop', 'Banco Supervielle',
 ]
 
 const FINTECHS = [

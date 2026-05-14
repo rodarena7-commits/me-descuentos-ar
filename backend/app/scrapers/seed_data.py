@@ -3775,4 +3775,187 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.binance.com/es/fee/schedule",
         "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://binance.com&size=128",
     },
+
+    # ── HSBC — datos reales verificados (mayo 2026) ──────────────────────────
+    {
+        "title": "25% en Coto los martes — HSBC",
+        "description": (
+            "25% de reintegro en Coto los martes con tarjeta de débito o crédito HSBC. "
+            "Tope $12.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 25.0,
+        "max_amount": 12000.0,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "martes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "20% en Carrefour los jueves — HSBC",
+        "description": (
+            "20% de reintegro en Carrefour (supermercado e hipermercado) los jueves "
+            "con tarjeta de crédito Visa o Mastercard HSBC. Tope $10.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 10000.0,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "supermercados",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "15% en combustible los miércoles — HSBC",
+        "description": (
+            "15% de reintegro en YPF, Shell y Axion los miércoles "
+            "con tarjeta de crédito HSBC. Tope $8.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": 8000.0,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "combustible",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "20% en Farmacity todos los días — HSBC",
+        "description": (
+            "20% de descuento en Farmacity presencial y online todos los días "
+            "con tarjeta de crédito o débito HSBC. Tope $15.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 15000.0,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "farmacias",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "30% en McDonald's los viernes — HSBC",
+        "description": (
+            "30% de reintegro en McDonald's todos los viernes "
+            "con tarjeta de crédito Visa o Mastercard HSBC. Tope $6.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 30.0,
+        "max_amount": 6000.0,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "viernes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "20% en PedidosYa los lunes — HSBC",
+        "description": (
+            "20% de descuento en PedidosYa todos los lunes "
+            "pagando con tarjeta de crédito HSBC. Tope $5.000 por mes."
+        ),
+        "discount_type": "descuento",
+        "percentage": 20.0,
+        "max_amount": 5000.0,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "gastronomia",
+        "days_of_week": "lunes",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "Hasta 12 cuotas sin interés en electrónica — HSBC",
+        "description": (
+            "Hasta 12 cuotas sin interés en Frávega, Garbarino, Musimundo y Megatone "
+            "con tarjeta de crédito HSBC. Todos los días."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "electronica",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/cuotas-sin-interes/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "Hasta 6 cuotas sin interés en indumentaria — HSBC",
+        "description": (
+            "Hasta 6 cuotas sin interés en Adidas, Nike, Dexter y Falabella "
+            "con tarjeta de crédito HSBC. Todos los días."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "indumentaria",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 6, 30),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/cuotas-sin-interes/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
+    {
+        "title": "15% en viajes y turismo todos los días — HSBC",
+        "description": (
+            "15% de descuento en agencias de viaje, hoteles y aerolíneas adheridas "
+            "todos los días con tarjeta de crédito HSBC. Tope $40.000 por mes. "
+            "Incluye Despegar, Almundo y aerolíneas nacionales."
+        ),
+        "discount_type": "descuento",
+        "percentage": 15.0,
+        "max_amount": 40000.0,
+        "source": "HSBC",
+        "source_type": "banco",
+        "category": "viajes",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 5, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.hsbc.com.ar/tarjetas/beneficios/",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://hsbc.com.ar&size=128",
+    },
 ]

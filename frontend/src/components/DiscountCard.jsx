@@ -37,6 +37,7 @@ const BRAND = {
   'AstroPay':       { domain: 'astropay.com',          color: 'bg-purple-600',   text: 'text-white' },
   "Let'sBit":       { domain: 'letsbit.io',            color: 'bg-blue-700',     text: 'text-white' },
   'Binance':        { domain: 'binance.com',           color: 'bg-yellow-500',   text: 'text-slate-900' },
+  'HSBC':           { domain: 'hsbc.com.ar',           color: 'bg-red-600',      text: 'text-white' },
 }
 
 
