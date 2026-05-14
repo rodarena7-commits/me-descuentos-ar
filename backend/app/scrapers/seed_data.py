@@ -3668,4 +3668,111 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.modo.com.ar/promos",
         "logo_url": "https://logo.clearbit.com/modo.com.ar",
     },
+
+    # ── BINANCE — datos reales verificados (mayo 2026) ───────────────────────
+    {
+        "title": "~5% APR en USDT — Simple Earn Flexible (Binance)",
+        "description": (
+            "Rendimiento diario en USDT guardado en Simple Earn modo Flexible. "
+            "Sin plazo mínimo de bloqueo, retiro disponible en cualquier momento. "
+            "Tasa aproximada 4–6% APR variable según demanda del mercado."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 5.0,
+        "max_amount": None,
+        "source": "Binance",
+        "source_type": "fintech",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.binance.com/es/earn",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://binance.com&size=128",
+    },
+    {
+        "title": "~4.5% APR en USDC — Simple Earn Flexible (Binance)",
+        "description": (
+            "Rendimiento diario en USDC con Simple Earn Flexible de Binance. "
+            "Sin bloqueo, retiro inmediato. Tasa variable aprox. 3.5–5% APR. "
+            "Ideal para ahorrar en dólares digitales desde Argentina."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 4.5,
+        "max_amount": None,
+        "source": "Binance",
+        "source_type": "fintech",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.binance.com/es/earn",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://binance.com&size=128",
+    },
+    {
+        "title": "0% comisión en pagos con Binance Pay",
+        "description": (
+            "Enviá y recibí cualquier criptomoneda entre usuarios de Binance sin "
+            "ningún costo de transacción. Compatible con comercios adheridos globales "
+            "y usuarios en Argentina. Solo necesitás la app Binance."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Binance",
+        "source_type": "fintech",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.binance.com/es/binance-pay",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://binance.com&size=128",
+    },
+    {
+        "title": "0% comisión en el mercado P2P — compra con ARS",
+        "description": (
+            "Comprá y vendé USDT, BTC, BNB y más directamente con pesos argentinos "
+            "en el mercado P2P de Binance. Transferencia bancaria, Mercado Pago o Ualá. "
+            "Sin comisión para el comprador ni el vendedor."
+        ),
+        "discount_type": "promocion",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Binance",
+        "source_type": "fintech",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://p2p.binance.com/es/trade/all-payments/USDT?fiat=ARS",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://binance.com&size=128",
+    },
+    {
+        "title": "25% de descuento en comisiones de trading — usando BNB",
+        "description": (
+            "Activá el pago de comisiones con BNB en la app Binance y obtenés "
+            "25% de descuento en todas las operaciones de spot. "
+            "Ejemplo: en vez de 0.10%, pagás 0.075% por operación."
+        ),
+        "discount_type": "descuento",
+        "percentage": 25.0,
+        "max_amount": None,
+        "source": "Binance",
+        "source_type": "fintech",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://www.binance.com/es/fee/schedule",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://binance.com&size=128",
+    },
 ]
