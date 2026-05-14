@@ -7,6 +7,8 @@ import UserMenu from './components/UserMenu'
 import OnlineCounter from './components/OnlineCounter'
 import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
+import EntidadesPage from './pages/EntidadesPage'
+import EntidadDetailPage from './pages/EntidadDetailPage'
 import { useDiscounts } from './hooks/useDiscounts'
 import { usePresence } from './hooks/usePresence'
 import { useAuth } from './contexts/AuthContext'
@@ -36,6 +38,7 @@ export default function App() {
   const navigate = useNavigate()
   const location = useLocation()
   const isMarcas = location.pathname.startsWith('/marcas')
+  const isEntidades = location.pathname.startsWith('/entidades')
   const [filters, setFilters] = useState({})
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
@@ -91,12 +94,22 @@ export default function App() {
               <button
                 onClick={() => navigate('/')}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
-                  !isMarcas
+                  !isMarcas && !isEntidades
                     ? 'bg-violet-600/20 text-violet-300'
                     : 'text-slate-500 hover:text-slate-300'
                 }`}
               >
                 Descuentos
+              </button>
+              <button
+                onClick={() => navigate('/entidades')}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                  isEntidades
+                    ? 'bg-violet-600/20 text-violet-300'
+                    : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                Bancos & Fintechs
               </button>
               <button
                 onClick={() => navigate('/marcas')}
@@ -121,8 +134,8 @@ export default function App() {
         <div className="sm:hidden px-4 pb-4 flex items-center gap-2">
           <button
             onClick={() => navigate('/')}
-            className={`flex-1 flex justify-center items-center px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-              !isMarcas
+            className={`flex-1 flex justify-center items-center px-2 py-2 rounded-lg text-xs font-medium transition-all ${
+              !isMarcas && !isEntidades
                 ? 'bg-violet-600/20 text-violet-300'
                 : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'
             }`}
@@ -130,8 +143,18 @@ export default function App() {
             Descuentos
           </button>
           <button
+            onClick={() => navigate('/entidades')}
+            className={`flex-1 flex justify-center items-center px-2 py-2 rounded-lg text-xs font-medium transition-all ${
+              isEntidades
+                ? 'bg-violet-600/20 text-violet-300'
+                : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'
+            }`}
+          >
+            Entidades
+          </button>
+          <button
             onClick={() => navigate('/marcas')}
-            className={`flex-1 flex justify-center items-center px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+            className={`flex-1 flex justify-center items-center px-2 py-2 rounded-lg text-xs font-medium transition-all ${
               isMarcas
                 ? 'bg-violet-600/20 text-violet-300'
                 : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'
@@ -151,8 +174,16 @@ export default function App() {
           </Routes>
         )}
 
+        {/* ── SECCIÓN ENTIDADES (bancos, fintechs, exchanges) ── */}
+        {isEntidades && (
+          <Routes>
+            <Route path="/entidades" element={<EntidadesPage />} />
+            <Route path="/entidades/:slug" element={<EntidadDetailPage />} />
+          </Routes>
+        )}
+
         {/* ── SECCIÓN DESCUENTOS (homepage) ── */}
-        {!isMarcas && (<>
+        {!isMarcas && !isEntidades && (<>
         {/* Hero + Search */}
         <div className="mb-8 flex flex-col items-center text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 w-full">
@@ -308,7 +339,7 @@ export default function App() {
             )}
           </>
         )}
-        </>)}
+        </>) }
       </main>
 
       <OnlineCounter count={onlineCount} />
