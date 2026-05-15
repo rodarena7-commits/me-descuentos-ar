@@ -10,6 +10,7 @@ import LoadingScreen from './components/LoadingScreen'
 import InstallPrompt from './components/InstallPrompt'
 import AppLogo from './components/AppLogo'
 import ChatBot from './components/ChatBot'
+import WhatsAppButton from './components/WhatsAppButton'
 import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
 import EntidadesPage from './pages/EntidadesPage'
@@ -358,6 +359,7 @@ export default function App() {
       <MaintenanceBanner />
       <InstallPrompt />
       <ChatBot />
+      <WhatsAppButton />
       {/* Solo aparece en la carga inicial, no en cambios de filtro */}
       {!isMarcas && !isEntidades && (
         <LoadingScreen show={discLoading && !initialLoaded} />
