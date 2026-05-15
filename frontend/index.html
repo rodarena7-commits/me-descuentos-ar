@@ -3,28 +3,25 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Favicon: favicon.png es el PNG real -->
+    <!-- favicon.png = PNG real para el ícono de pestaña del navegador -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
 
-    <!-- PWA manifest -->
+    <!-- PWA -->
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- iOS / Apple home screen icon -->
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <!-- iOS: app.png para el ícono de pantalla de inicio -->
+    <link rel="apple-touch-icon" href="/app.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Ahorro IA" />
 
-    <!-- Android / Chrome -->
+    <!-- Android -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#7c3aed" />
 
-    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no" />
-
-    <!-- SEO -->
     <meta name="description" content="Todos los descuentos, promos y reintegros de bancos y fintechs de Argentina" />
 
     <title>Ahorro Inteligente (AI) — Descuentos Argentina</title>
@@ -32,8 +29,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <!-- Registro del Service Worker -->
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

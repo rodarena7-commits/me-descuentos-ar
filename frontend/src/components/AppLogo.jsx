@@ -1,19 +1,12 @@
 import { useState } from 'react'
 
-// app.png = JPEG con extensión .png (los browsers lo muestran igual)
-// favicon.png = PNG real, fallback si app.png falla
-// Gradient "AI" = último recurso
-
 export default function AppLogo({ className = 'w-9 h-9', textSize = 'text-xs' }) {
   const [src, setSrc] = useState('/app.png')
   const [failed, setFailed] = useState(false)
 
   function handleError() {
-    if (src === '/app.png') {
-      setSrc('/favicon.png')
-    } else {
-      setFailed(true)
-    }
+    if (src === '/app.png') setSrc('/favicon.png')
+    else setFailed(true)
   }
 
   if (!failed) {
