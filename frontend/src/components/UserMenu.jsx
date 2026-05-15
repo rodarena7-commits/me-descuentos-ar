@@ -42,18 +42,16 @@ function useAdminStats(isAdmin) {
   return { allUsers, onlineUids, error, fsLoading }
 }
 
-// ── Modal de usuarios — fetchea directo de Firestore ─────────────────────────
-function UsersModal({ title, filterUids, onClose }) {
+// ── Lista inline dentro del menú ─────────────────────────────────────────────
+function UserListInline({ filterUids, onClose }) {
   const [users, setUsers]     = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
     getDocs(collection(db, 'users'))
       .then(snap => {
         const all = []
         snap.forEach(d => all.push({ uid: d.id, ...d.data() }))
-        // Si filterUids está definido → solo mostrar esos UIDs (online)
         const result = filterUids
           ? all.filter(u => filterUids.includes(u.uid))
           : all
@@ -62,98 +60,62 @@ function UsersModal({ title, filterUids, onClose }) {
         )
         setUsers(result)
       })
-      .catch(err => console.error('UsersModal fetch error:', err))
+      .catch(err => console.error('UserList fetch error:', err))
       .finally(() => setLoading(false))
   }, [])
 
   return (
-    <>
-      {/* Overlay */}
-      <div
-        className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
-        onClick={onClose}
-      />
-
-      {/* Modal centrado */}
-      <div
-        className="fixed inset-0 z-[70] flex items-end justify-center px-4 pb-8 pointer-events-none"
-      >
-        <div
-          className="w-full max-w-md bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-violet-500/10 flex flex-col pointer-events-auto"
-          style={{ maxHeight: '80vh', animation: 'scale-in 0.25s cubic-bezier(0.34,1.56,0.64,1) forwards' }}
-          onClick={e => e.stopPropagation()}
+    <div className="border-t border-slate-800">
+      {/* Cabecera con X */}
+      <div className="flex items-center justify-between px-4 py-2.5">
+        <p className="text-[11px] text-slate-400 font-medium uppercase tracking-wide">
+          {loading ? 'Cargando...' : `${users.length} ${users.length === 1 ? 'usuario' : 'usuarios'}`}
+        </p>
+        <button
+          onClick={onClose}
+          className="w-6 h-6 flex items-center justify-center rounded-md text-slate-500 hover:text-white hover:bg-slate-700 transition-all"
         >
-          {/* Header */}
-          <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800">
-            <div>
-              <h3 className="text-white font-semibold text-base">{title}</h3>
-              {!loading && (
-                <p className="text-slate-500 text-xs mt-0.5">
-                  {users.length} {users.length === 1 ? 'usuario' : 'usuarios'}
-                </p>
-              )}
-            </div>
-            <button
-              onClick={onClose}
-              className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Lista */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
-          {loading && (
-            <div className="space-y-2 mt-2">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 bg-slate-800/40 rounded-xl animate-pulse">
-                  <div className="w-9 h-9 rounded-full bg-slate-700 flex-shrink-0" />
-                  <div className="flex-1 space-y-1.5">
-                    <div className="h-3 bg-slate-700 rounded w-3/5" />
-                    <div className="h-2.5 bg-slate-700 rounded w-4/5" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {!loading && users.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-4xl mb-3">👤</p>
-              <p className="text-slate-400 text-sm">No hay usuarios para mostrar</p>
-            </div>
-          )}
-
-          {!loading && users.map(u => (
-            <div key={u.uid} className="flex items-center gap-3 p-3 bg-slate-800/40 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
-              {u.photoURL ? (
-                <img src={u.photoURL} alt={u.displayName}
-                  className="w-9 h-9 rounded-full flex-shrink-0 border border-slate-700" />
-              ) : (
-                <div className="w-9 h-9 rounded-full bg-violet-600/30 border border-violet-500/30 flex items-center justify-center text-violet-400 font-bold text-sm flex-shrink-0">
-                  {(u.displayName || u.email || '?')[0].toUpperCase()}
-                </div>
-              )}
-              <div className="flex-1 min-w-0">
-                <p className="text-slate-200 text-sm font-medium truncate">
-                  {u.nombre || u.displayName || '—'}
-                </p>
-                <p className="text-slate-500 text-xs truncate">{u.email}</p>
-                {u.edad && (
-                  <p className="text-slate-600 text-[10px]">{u.edad} años</p>
-                )}
-              </div>
-              {u.location && (
-                <span className="text-[10px] text-slate-500 flex-shrink-0">📍 {u.location}</span>
-              )}
-            </div>
-          ))}
-          </div>
-        </div>
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
-    </>
+
+      {/* Lista de usuarios */}
+      <div className="px-3 pb-3 space-y-1.5 max-h-56 overflow-y-auto">
+        {loading && [...Array(3)].map((_, i) => (
+          <div key={i} className="flex items-center gap-2.5 p-2 animate-pulse">
+            <div className="w-7 h-7 rounded-full bg-slate-700 flex-shrink-0" />
+            <div className="flex-1 space-y-1">
+              <div className="h-2.5 bg-slate-700 rounded w-3/5" />
+              <div className="h-2 bg-slate-700 rounded w-4/5" />
+            </div>
+          </div>
+        ))}
+
+        {!loading && users.length === 0 && (
+          <p className="text-slate-500 text-xs text-center py-4">Sin usuarios para mostrar</p>
+        )}
+
+        {!loading && users.map(u => (
+          <div key={u.uid} className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-slate-800/60 transition-colors">
+            {u.photoURL ? (
+              <img src={u.photoURL} alt="" className="w-7 h-7 rounded-full flex-shrink-0 border border-slate-700" />
+            ) : (
+              <div className="w-7 h-7 rounded-full bg-violet-600/30 flex items-center justify-center text-violet-400 font-bold text-xs flex-shrink-0">
+                {(u.displayName || u.email || '?')[0].toUpperCase()}
+              </div>
+            )}
+            <div className="flex-1 min-w-0">
+              <p className="text-slate-300 text-xs font-medium truncate">
+                {u.nombre || u.displayName || '—'}
+              </p>
+              <p className="text-slate-500 text-[10px] truncate">{u.email}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
@@ -225,7 +187,7 @@ export default function UserMenu() {
         </button>
 
         {open && (
-          <div className="absolute right-0 top-full mt-2 w-72 bg-slate-900 border border-slate-800 rounded-xl shadow-xl z-50 overflow-hidden">
+          <div className="absolute right-0 top-full mt-2 w-72 bg-slate-900 border border-slate-800 rounded-xl shadow-xl z-50 overflow-hidden max-h-[85vh] overflow-y-auto">
 
             {/* Profile header */}
             <div className="flex items-center gap-3 p-4 border-b border-slate-800">
@@ -355,27 +317,18 @@ export default function UserMenu() {
                 Cerrar sesión
               </button>
             </div>
+
+            {/* Lista de usuarios inline — debajo de Cerrar sesión */}
+            {modal === 'registered' && (
+              <UserListInline filterUids={null} onClose={() => setModal(null)} />
+            )}
+            {modal === 'online' && (
+              <UserListInline filterUids={onlineUids} onClose={() => setModal(null)} />
+            )}
+
           </div>
         )}
       </div>
-
-      {/* Modal de usuarios registrados — todos los perfiles de Firestore */}
-      {modal === 'registered' && (
-        <UsersModal
-          title="Usuarios registrados"
-          filterUids={null}
-          onClose={() => setModal(null)}
-        />
-      )}
-
-      {/* Modal de usuarios online — solo los UIDs de RTDB /presence */}
-      {modal === 'online' && (
-        <UsersModal
-          title="Usuarios online ahora"
-          filterUids={onlineUids}
-          onClose={() => setModal(null)}
-        />
-      )}
     </>
   )
 }
