@@ -6,6 +6,7 @@ import DiscountCard from './components/DiscountCard'
 import UserMenu from './components/UserMenu'
 import OnlineCounter from './components/OnlineCounter'
 import MaintenanceBanner from './components/MaintenanceBanner'
+import LoadingScreen from './components/LoadingScreen'
 import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
 import EntidadesPage from './pages/EntidadesPage'
@@ -44,7 +45,13 @@ export default function App() {
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
   const [perPage, setPerPage] = useState(20)
+  const [initialLoaded, setInitialLoaded] = useState(false)
   const { discounts, loading: discLoading, error } = useDiscounts(filters)
+
+  // Marcar primera carga completada para no volver a mostrar el loading screen
+  useEffect(() => {
+    if (!discLoading && !initialLoaded) setInitialLoaded(true)
+  }, [discLoading])
   const onlineCount = usePresence()
 
   // Client-side search + percentage filter
@@ -348,6 +355,10 @@ export default function App() {
 
       <OnlineCounter count={onlineCount} />
       <MaintenanceBanner />
+      {/* Solo aparece en la carga inicial, no en cambios de filtro */}
+      {!isMarcas && !isEntidades && (
+        <LoadingScreen show={discLoading && !initialLoaded} />
+      )}
 
       <footer className="border-t border-slate-800/50 mt-16 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center space-y-2">
