@@ -136,6 +136,18 @@ body {
   to   { transform: translateX(0);    opacity: 1; }
 }
 
+/* Install prompt: mobile sube, desktop entra desde abajo-derecha */
+@keyframes prompt-in {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@media (min-width: 640px) {
+  @keyframes prompt-in {
+    from { transform: translateY(32px) scale(0.95); opacity: 0; }
+    to   { transform: translateY(0)    scale(1);    opacity: 1; }
+  }
+}
+
 /* ─────────────────────────────────────────────────────────────────────────── */
 
 ::-webkit-scrollbar {
