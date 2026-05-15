@@ -70,36 +70,41 @@ function UsersModal({ title, filterUids, onClose }) {
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Panel lateral */}
-      <div className="fixed top-0 right-0 bottom-0 z-[70] w-full max-w-sm bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col"
-        style={{ animation: 'slide-left 0.3s ease forwards' }}
+      {/* Modal centrado */}
+      <div
+        className="fixed inset-0 z-[70] flex items-center justify-center px-4 pointer-events-none"
       >
-        {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800">
-          <div>
-            <h3 className="text-white font-semibold text-base">{title}</h3>
-            {!loading && (
-              <p className="text-slate-500 text-xs mt-0.5">
-                {users.length} {users.length === 1 ? 'usuario' : 'usuarios'}
-              </p>
-            )}
+        <div
+          className="w-full max-w-md bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-violet-500/10 flex flex-col pointer-events-auto"
+          style={{ maxHeight: '80vh', animation: 'scale-in 0.25s cubic-bezier(0.34,1.56,0.64,1) forwards' }}
+          onClick={e => e.stopPropagation()}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800">
+            <div>
+              <h3 className="text-white font-semibold text-base">{title}</h3>
+              {!loading && (
+                <p className="text-slate-500 text-xs mt-0.5">
+                  {users.length} {users.length === 1 ? 'usuario' : 'usuarios'}
+                </p>
+              )}
+            </div>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
 
-        {/* Lista */}
-        <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
+          {/* Lista */}
+          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
           {loading && (
             <div className="space-y-2 mt-2">
               {[...Array(5)].map((_, i) => (
@@ -145,6 +150,7 @@ function UsersModal({ title, filterUids, onClose }) {
               )}
             </div>
           ))}
+          </div>
         </div>
       </div>
     </>
