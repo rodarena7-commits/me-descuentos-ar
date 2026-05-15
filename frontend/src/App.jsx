@@ -50,6 +50,12 @@ export default function App() {
   const [page, setPage] = useState(1)
   const [perPage, setPerPage] = useState(20)
   const [initialLoaded, setInitialLoaded] = useState(false)
+  const [showStats, setShowStats] = useState(true)
+  const [showFilters, setShowFilters] = useState(false)
+
+  const activeFiltersCount = Object.entries(filters).filter(
+    ([, v]) => v !== null && v !== undefined && v !== '' && v !== false
+  ).length
   const { discounts, loading: discLoading, error } = useDiscounts(filters)
 
   // Marcar primera carga completada para no volver a mostrar el loading screen
@@ -106,37 +112,40 @@ export default function App() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            {/* Nav tabs */}
+            {/* Nav tabs — desktop */}
             <nav className="hidden sm:flex items-center gap-1">
               <button
                 onClick={() => navigate('/')}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                className={`flex flex-col items-center px-3 py-1.5 rounded-xl font-medium transition-all gap-0.5 ${
                   !isMarcas && !isEntidades
                     ? 'bg-violet-600/20 text-violet-300'
                     : 'text-slate-500 hover:text-slate-300'
                 }`}
               >
-                Descuentos
+                <span className="text-xl leading-none">%</span>
+                <span className="text-xs">Descuentos</span>
               </button>
               <button
                 onClick={() => navigate('/entidades')}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                className={`flex flex-col items-center px-3 py-1.5 rounded-xl font-medium transition-all gap-0.5 ${
                   isEntidades
                     ? 'bg-violet-600/20 text-violet-300'
                     : 'text-slate-500 hover:text-slate-300'
                 }`}
               >
-                Bancos & Fintechs
+                <span className="text-xl leading-none">🏦</span>
+                <span className="text-xs">Entidades</span>
               </button>
               <button
                 onClick={() => navigate('/marcas')}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                className={`flex flex-col items-center px-3 py-1.5 rounded-xl font-medium transition-all gap-0.5 ${
                   isMarcas
                     ? 'bg-violet-600/20 text-violet-300'
                     : 'text-slate-500 hover:text-slate-300'
                 }`}
               >
-                Multi Marcas
+                <span className="text-xl leading-none">🌍</span>
+                <span className="text-xs">Multi Marcas</span>
               </button>
             </nav>
             <div className="flex items-center gap-2 text-xs text-slate-500">
@@ -148,36 +157,39 @@ export default function App() {
         </div>
         
         {/* Mobile nav tabs */}
-        <div className="sm:hidden px-4 pb-4 flex items-center gap-2">
+        <div className="sm:hidden px-4 pb-3 flex items-stretch gap-2">
           <button
             onClick={() => navigate('/')}
-            className={`flex-1 flex justify-center items-center px-2 py-2 rounded-lg text-xs font-medium transition-all ${
+            className={`flex-1 flex flex-col justify-center items-center gap-0.5 px-2 py-2 rounded-xl font-medium transition-all ${
               !isMarcas && !isEntidades
                 ? 'bg-violet-600/20 text-violet-300'
-                : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'
+                : 'text-slate-500 bg-slate-900/50'
             }`}
           >
-            Descuentos
+            <span className="text-lg leading-none">%</span>
+            <span className="text-[10px]">Descuentos</span>
           </button>
           <button
             onClick={() => navigate('/entidades')}
-            className={`flex-1 flex justify-center items-center px-2 py-2 rounded-lg text-xs font-medium transition-all ${
+            className={`flex-1 flex flex-col justify-center items-center gap-0.5 px-2 py-2 rounded-xl font-medium transition-all ${
               isEntidades
                 ? 'bg-violet-600/20 text-violet-300'
-                : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'
+                : 'text-slate-500 bg-slate-900/50'
             }`}
           >
-            Entidades
+            <span className="text-lg leading-none">🏦</span>
+            <span className="text-[10px]">Entidades</span>
           </button>
           <button
             onClick={() => navigate('/marcas')}
-            className={`flex-1 flex justify-center items-center px-2 py-2 rounded-lg text-xs font-medium transition-all ${
+            className={`flex-1 flex flex-col justify-center items-center gap-0.5 px-2 py-2 rounded-xl font-medium transition-all ${
               isMarcas
                 ? 'bg-violet-600/20 text-violet-300'
-                : 'text-slate-500 hover:text-slate-300 bg-slate-900/50'
+                : 'text-slate-500 bg-slate-900/50'
             }`}
           >
-            Multi Marcas
+            <span className="text-lg leading-none">🌍</span>
+            <span className="text-[10px]">Multi Marcas</span>
           </button>
         </div>
       </header>
@@ -239,8 +251,43 @@ export default function App() {
           </div>
         </div>
 
-        <StatsBar />
-        <FilterBar filters={filters} onChange={setFilters} />
+        {showStats && <StatsBar onClose={() => setShowStats(false)} />}
+
+        {/* Botón toggle de filtros */}
+        <div className="flex items-center gap-2 mb-3">
+          <button
+            onClick={() => setShowFilters(f => !f)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border transition-all ${
+              showFilters
+                ? 'bg-violet-600/20 text-violet-300 border-violet-500/50'
+                : 'bg-slate-800/60 text-slate-400 border-slate-700 hover:border-slate-500 hover:text-slate-300'
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L13 13.414V19a1 1 0 01-.553.894l-4 2A1 1 0 017 21v-7.586L3.293 6.707A1 1 0 013 6V4z" />
+            </svg>
+            Filtros
+            {activeFiltersCount > 0 && (
+              <span className="bg-violet-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                {activeFiltersCount}
+              </span>
+            )}
+            <svg className={`w-3 h-3 transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {activeFiltersCount > 0 && (
+            <button
+              onClick={() => setFilters({})}
+              className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+            >
+              Limpiar filtros
+            </button>
+          )}
+        </div>
+
+        {showFilters && <FilterBar filters={filters} onChange={setFilters} />}
 
         {discLoading && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
