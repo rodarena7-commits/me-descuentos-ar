@@ -42,8 +42,29 @@ function useAdminStats(isAdmin) {
   return { allUsers, onlineUids, error, fsLoading }
 }
 
-// ── Modal de usuarios — recibe la lista ya resuelta ──────────────────────────
-function UsersModal({ title, users, loading, onClose }) {
+// ── Modal de usuarios — fetchea directo de Firestore ─────────────────────────
+function UsersModal({ title, filterUids, onClose }) {
+  const [users, setUsers]     = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setLoading(true)
+    getDocs(collection(db, 'users'))
+      .then(snap => {
+        const all = []
+        snap.forEach(d => all.push({ uid: d.id, ...d.data() }))
+        // Si filterUids está definido → solo mostrar esos UIDs (online)
+        const result = filterUids
+          ? all.filter(u => filterUids.includes(u.uid))
+          : all
+        result.sort((a, b) =>
+          (a.displayName || a.email || '').localeCompare(b.displayName || b.email || '')
+        )
+        setUsers(result)
+      })
+      .catch(err => console.error('UsersModal fetch error:', err))
+      .finally(() => setLoading(false))
+  }, [])
 
   return (
     <>
@@ -336,18 +357,16 @@ export default function UserMenu() {
       {modal === 'registered' && (
         <UsersModal
           title="Usuarios registrados"
-          users={allUsers}
-          loading={fsLoading}
+          filterUids={null}
           onClose={() => setModal(null)}
         />
       )}
 
-      {/* Modal de usuarios online — los que están en RTDB /presence */}
+      {/* Modal de usuarios online — solo los UIDs de RTDB /presence */}
       {modal === 'online' && (
         <UsersModal
           title="Usuarios online ahora"
-          users={onlineUsers}
-          loading={fsLoading}
+          filterUids={onlineUids}
           onClose={() => setModal(null)}
         />
       )}
