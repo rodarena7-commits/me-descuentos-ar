@@ -1,0 +1,29 @@
+{
+  "name": "Ahorro Inteligente (AI)",
+  "short_name": "Ahorro IA",
+  "description": "Todos los descuentos, promos y reintegros de bancos y fintechs de Argentina",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020617",
+  "theme_color": "#7c3aed",
+  "lang": "es-AR",
+  "categories": ["finance", "shopping"],
+  "icons": [
+    {
+      "src": "/app.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "related_applications": []
+}

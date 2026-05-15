@@ -7,6 +7,7 @@ import UserMenu from './components/UserMenu'
 import OnlineCounter from './components/OnlineCounter'
 import MaintenanceBanner from './components/MaintenanceBanner'
 import LoadingScreen from './components/LoadingScreen'
+import InstallPrompt from './components/InstallPrompt'
 import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
 import EntidadesPage from './pages/EntidadesPage'
@@ -355,6 +356,7 @@ export default function App() {
 
       <OnlineCounter count={onlineCount} />
       <MaintenanceBanner />
+      <InstallPrompt />
       {/* Solo aparece en la carga inicial, no en cambios de filtro */}
       {!isMarcas && !isEntidades && (
         <LoadingScreen show={discLoading && !initialLoaded} />
