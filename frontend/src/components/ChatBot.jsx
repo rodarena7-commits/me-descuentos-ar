@@ -125,7 +125,7 @@ export default function ChatBot() {
         <>
             {/* ── Ventana de chat ── */}
             {open && (
-                <div className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-6 sm:w-[380px] z-40 flex flex-col bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-violet-500/10 overflow-hidden"
+                <div className="fixed bottom-16 left-4 right-4 sm:left-auto sm:right-4 sm:w-[360px] z-40 flex flex-col bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-violet-500/10 overflow-hidden"
                     style={{ maxHeight: '70vh', animation: 'slide-up 0.3s ease forwards' }}
                 >
                     {/* Header */}
@@ -204,25 +204,24 @@ export default function ChatBot() {
                 </div>
             )}
 
-            {/* ── Botón flotante ── */}
+            {/* ── Botón flotante ── esquina inferior derecha */}
             <button
                 onClick={() => setOpen(o => !o)}
-                className="fixed bottom-4 left-4 z-40 w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-700 shadow-xl shadow-violet-500/40 flex items-center justify-center hover:scale-110 active:scale-95 transition-transform"
+                className="fixed bottom-4 right-4 z-40 w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-700 shadow-lg shadow-violet-500/40 flex items-center justify-center hover:scale-110 active:scale-95 transition-transform"
                 aria-label="Abrir asistente de descuentos"
             >
                 {open ? (
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 ) : (
                     <>
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
-                        {/* Badge "nuevo" */}
                         {shown && !open && (
-                            <span className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-slate-900 animate-pulse" />
+                            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-slate-900 animate-pulse" />
                         )}
                     </>
                 )}
