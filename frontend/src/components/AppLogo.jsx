@@ -1,14 +1,24 @@
 import { useState } from 'react'
 
 export default function AppLogo({ className = 'w-9 h-9', textSize = 'text-xs' }) {
-  const [ok, setOk] = useState(true)
+  // Intenta app.png primero; si falla, usa favicon.svg; si falla, muestra "AI"
+  const [src, setSrc] = useState('/app.png')
+  const [failed, setFailed] = useState(false)
 
-  if (ok) {
+  function handleError() {
+    if (src === '/app.png') {
+      setSrc('/favicon.svg')
+    } else {
+      setFailed(true)
+    }
+  }
+
+  if (!failed) {
     return (
       <img
-        src="/app.png"
+        src={src}
         alt="Ahorro Inteligente"
-        onError={() => setOk(false)}
+        onError={handleError}
         className={`${className} rounded-xl object-cover shadow-lg shadow-violet-500/20`}
       />
     )
