@@ -125,7 +125,7 @@ export default function ChatBot() {
         <>
             {/* ── Ventana de chat ── */}
             {open && (
-                <div className="fixed bottom-16 left-4 right-4 sm:left-auto sm:right-4 sm:w-[360px] z-40 flex flex-col bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-violet-500/10 overflow-hidden"
+                <div className="fixed bottom-16 left-4 right-4 sm:left-auto sm:right-4 sm:w-[360px] z-50 flex flex-col bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-violet-500/10 overflow-hidden"
                     style={{ maxHeight: '70vh', animation: 'slide-up 0.3s ease forwards' }}
                 >
                     {/* Header */}
