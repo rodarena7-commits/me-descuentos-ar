@@ -5,6 +5,7 @@ import FilterBar from './components/FilterBar'
 import DiscountCard from './components/DiscountCard'
 import UserMenu from './components/UserMenu'
 import OnlineCounter from './components/OnlineCounter'
+import MaintenanceBanner from './components/MaintenanceBanner'
 import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
 import EntidadesPage from './pages/EntidadesPage'
@@ -346,6 +347,7 @@ export default function App() {
       </main>
 
       <OnlineCounter count={onlineCount} />
+      <MaintenanceBanner />
 
       <footer className="border-t border-slate-800/50 mt-16 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center space-y-2">

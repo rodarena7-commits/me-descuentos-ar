@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from app.database import engine, SessionLocal
 from app.models import discount as discount_model
 from app.routers import discounts
+from app.routers import admin
 from app.scrapers.seed_data import SAMPLE_DISCOUNTS
 
 
@@ -44,6 +45,7 @@ app.add_middleware(
 )
 
 app.include_router(discounts.router)
+app.include_router(admin.router)
 
 
 @app.get("/")

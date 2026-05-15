@@ -1,0 +1,50 @@
+name: Weekly Discount Scraper
+
+on:
+  schedule:
+    # Todos los domingos a las 04:00 UTC = 01:00 AM Argentina (UTC-3)
+    - cron: '0 4 * * 0'
+  # Permite ejecutarlo manualmente desde GitHub Actions si hace falta
+  workflow_dispatch:
+
+jobs:
+  run-scraper:
+    name: Actualizar descuentos
+    runs-on: ubuntu-latest
+    timeout-minutes: 360  # 6 horas máximo (ventana de mantenimiento completa)
+
+    steps:
+      - name: Disparar scraper en el backend
+        run: |
+          echo "Iniciando scraper semanal — $(date)"
+
+          HTTP_STATUS=$(curl -s -o /tmp/response.json -w "%{http_code}" \
+            -X POST "${{ secrets.BACKEND_URL }}/api/admin/run-scraper" \
+            -H "Authorization: Bearer ${{ secrets.SCRAPER_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --max-time 60)
+
+          echo "HTTP Status: $HTTP_STATUS"
+          echo "Response: $(cat /tmp/response.json)"
+
+          if [ "$HTTP_STATUS" -eq 202 ]; then
+            echo "✅ Scraper iniciado correctamente en el servidor"
+          else
+            echo "❌ Error al iniciar el scraper (HTTP $HTTP_STATUS)"
+            exit 1
+          fi
+
+      - name: Esperar finalización (60 min)
+        run: |
+          echo "Esperando 60 minutos para que el scraper finalice..."
+          sleep 3600
+
+      - name: Verificar estado del servidor
+        run: |
+          HTTP_STATUS=$(curl -s -o /tmp/status.json -w "%{http_code}" \
+            "${{ secrets.BACKEND_URL }}/api/admin/scraper-status" \
+            -H "Authorization: Bearer ${{ secrets.SCRAPER_TOKEN }}" \
+            --max-time 30)
+
+          echo "Estado del servidor: $(cat /tmp/status.json)"
+          echo "✅ Ciclo de actualización semanal completado — $(date)"
