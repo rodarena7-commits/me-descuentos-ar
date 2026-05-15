@@ -7,59 +7,43 @@ import { useAuth } from '../contexts/AuthContext'
 
 const ADMIN_EMAIL = 'rodrigo.n.arena@hotmail.com'
 
-// ── Hook: escucha UIDs en RTDB ────────────────────────────────────────────────
+// ── Hook: carga usuarios de Firestore + online de RTDB ───────────────────────
 function useAdminStats(isAdmin) {
-  const [registeredUids, setRegisteredUids] = useState([])
-  const [onlineUids, setOnlineUids]         = useState([])
-  const [error, setError]                   = useState(null)
+  const [allUsers, setAllUsers]   = useState([])   // todos los perfiles de Firestore
+  const [onlineUids, setOnlineUids] = useState([]) // UIDs activos en RTDB /presence
+  const [fsLoading, setFsLoading] = useState(true)
+  const [error, setError]         = useState(null)
 
   useEffect(() => {
     if (!isAdmin) return
 
-    const unsubReg = onValue(
-      ref(rtdb, '/registrations'),
-      snap => {
-        setRegisteredUids(snap.val() ? Object.keys(snap.val()) : [])
+    // 1. Cargar TODOS los perfiles de Firestore /users
+    getDocs(collection(db, 'users'))
+      .then(snap => {
+        const users = []
+        snap.forEach(d => users.push({ uid: d.id, ...d.data() }))
+        users.sort((a, b) => (a.displayName || a.email || '').localeCompare(b.displayName || b.email || ''))
+        setAllUsers(users)
         setError(null)
-      },
-      err => setError(err.code),
-    )
+      })
+      .catch(err => setError(err.code || err.message))
+      .finally(() => setFsLoading(false))
 
+    // 2. Escuchar online en RTDB /presence
     const unsubPres = onValue(
       ref(rtdb, '/presence'),
       snap => setOnlineUids(snap.val() ? Object.keys(snap.val()) : []),
       () => {},
     )
 
-    return () => { unsubReg(); unsubPres() }
+    return () => unsubPres()
   }, [isAdmin])
 
-  return { registeredUids, onlineUids, error }
+  return { allUsers, onlineUids, error, fsLoading }
 }
 
-// ── Carga perfiles de Firestore por UIDs ──────────────────────────────────────
-async function fetchProfiles(uids) {
-  if (!uids.length) return []
-  const snap = await getDocs(collection(db, 'users'))
-  const all = {}
-  snap.forEach(d => { all[d.id] = d.data() })
-  return uids
-    .map(uid => ({ uid, ...all[uid] }))
-    .filter(u => u.email)
-    .sort((a, b) => (a.displayName || '').localeCompare(b.displayName || ''))
-}
-
-// ── Modal de usuarios ─────────────────────────────────────────────────────────
-function UsersModal({ title, uids, onClose }) {
-  const [users, setUsers]     = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setLoading(true)
-    fetchProfiles(uids)
-      .then(setUsers)
-      .finally(() => setLoading(false))
-  }, [uids.join(',')])
+// ── Modal de usuarios — recibe la lista ya resuelta ──────────────────────────
+function UsersModal({ title, users, loading, onClose }) {
 
   return (
     <>
@@ -155,7 +139,10 @@ export default function UserMenu() {
   const menuRef = useRef(null)
 
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase()
-  const { registeredUids, onlineUids, error: rtdbError } = useAdminStats(isAdmin)
+  const { allUsers, onlineUids, error, fsLoading } = useAdminStats(isAdmin)
+
+  // Usuarios online = los que están en /presence Y tienen perfil en Firestore
+  const onlineUsers = allUsers.filter(u => onlineUids.includes(u.uid))
 
   // Estado reactivo: ¿la app ya está instalada como PWA?
   const [appInstalled, setAppInstalled] = useState(
@@ -239,12 +226,14 @@ export default function UserMenu() {
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider mb-2 font-medium">
                   Panel de administración
                 </p>
-                {rtdbError ? (
+                {error ? (
                   <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-2.5">
                     <p className="text-[10px] text-red-400 text-center">
-                      ⚠️ Configurá las reglas de Firebase RTDB
+                      ⚠️ Error al cargar datos: {error}
                     </p>
-                    <p className="text-[9px] text-red-400/60 text-center mt-0.5">{rtdbError}</p>
+                    <p className="text-[9px] text-red-400/60 text-center mt-0.5">
+                      Revisá las reglas de Firestore
+                    </p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-2 gap-2">
@@ -254,7 +243,7 @@ export default function UserMenu() {
                       className="bg-slate-800/60 rounded-lg p-2.5 text-center hover:bg-slate-700/60 hover:border-violet-500/40 border border-transparent transition-all group cursor-pointer"
                     >
                       <p className="text-lg font-bold text-violet-400 tabular-nums group-hover:text-violet-300">
-                        {registeredUids.length}
+                        {fsLoading ? '…' : allUsers.length}
                       </p>
                       <p className="text-[10px] text-slate-500 group-hover:text-slate-400">Registrados</p>
                       <p className="text-[9px] text-violet-600 group-hover:text-violet-400 mt-0.5">ver lista →</p>
@@ -343,20 +332,22 @@ export default function UserMenu() {
         )}
       </div>
 
-      {/* Modal de usuarios registrados */}
+      {/* Modal de usuarios registrados — todos los perfiles de Firestore */}
       {modal === 'registered' && (
         <UsersModal
           title="Usuarios registrados"
-          uids={registeredUids}
+          users={allUsers}
+          loading={fsLoading}
           onClose={() => setModal(null)}
         />
       )}
 
-      {/* Modal de usuarios online */}
+      {/* Modal de usuarios online — los que están en RTDB /presence */}
       {modal === 'online' && (
         <UsersModal
           title="Usuarios online ahora"
-          uids={onlineUids}
+          users={onlineUsers}
+          loading={fsLoading}
           onClose={() => setModal(null)}
         />
       )}
