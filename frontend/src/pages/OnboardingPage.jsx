@@ -126,9 +126,18 @@ export default function OnboardingPage() {
       onboardingComplete: true,
       createdAt: new Date().toISOString(),
     }
-    await setDoc(doc(db, 'users', user.uid), profile)
-    await set(ref(rtdb, `/registrations/${user.uid}`), true)
+    // Actualizar estado local inmediatamente para que la UI responda
     setProfile(profile)
+    // Guardar en Firebase con timeout de 5s — si falla igual navegamos
+    try {
+      await Promise.race([
+        Promise.all([
+          setDoc(doc(db, 'users', user.uid), profile),
+          set(ref(rtdb, `/registrations/${user.uid}`), true),
+        ]),
+        new Promise(resolve => setTimeout(resolve, 5000)),
+      ])
+    } catch (_) {}
     navigate('/')
   }
 

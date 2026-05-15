@@ -3,20 +3,26 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- favicon.png = PNG real para el ícono de pestaña del navegador -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <!-- ── Favicon para todos los navegadores y SO ── -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
 
-    <!-- PWA -->
+    <!-- Windows 10 / Edge pinned tiles -->
+    <meta name="msapplication-TileImage" content="/app.png" />
+    <meta name="msapplication-TileColor" content="#7c3aed" />
+    <meta name="msapplication-config" content="none" />
+
+    <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- iOS: app.png para el ícono de pantalla de inicio -->
+    <!-- iOS / Apple home screen -->
     <link rel="apple-touch-icon" href="/app.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Ahorro IA" />
 
-    <!-- Android -->
+    <!-- Android / Chrome -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#7c3aed" />
 
@@ -29,11 +35,29 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
     <script>
+      // ── Capturar beforeinstallprompt ANTES de que React monte ──────────────
+      // Si el evento llega antes que los componentes React estén listos lo perdemos.
+      // Lo guardamos en window.__pwaPrompt para que InstallPrompt lo lea al montar.
+      window.__pwaPrompt = null;
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        window.__pwaPrompt = e;
+        // Notificar a React si ya está escuchando
+        window.dispatchEvent(new CustomEvent('pwa-prompt-ready'));
+      });
+
+      window.addEventListener('appinstalled', function() {
+        window.__pwaPrompt = null;
+        window.dispatchEvent(new CustomEvent('pwa-app-installed'));
+      });
+
+      // ── Service Worker ──────────────────────────────────────────────────────
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {})
-        })
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').catch(function() {});
+        });
       }
     </script>
   </body>

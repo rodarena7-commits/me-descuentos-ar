@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 
-const FIRST_VISIT_KEY = 'app-install-shown'   // se marca en la primera visita
-const NEVER_KEY       = 'install-never-show'   // el usuario dijo "no mostrar más"
-const SESSION_KEY     = 'install-skipped'      // omitido esta sesión
+const FIRST_VISIT_KEY = 'app-install-shown'
+const NEVER_KEY       = 'install-never-show'
+const SESSION_KEY     = 'install-skipped'
 
 function isIOS() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
@@ -13,30 +13,24 @@ function isStandalone() {
 }
 
 export default function InstallPrompt() {
+  // Lee window.__pwaPrompt que fue capturado en index.html antes de que React montara
+  const [prompt, setPrompt]   = useState(() => window.__pwaPrompt || null)
   const [visible, setVisible] = useState(false)
-  const [prompt, setPrompt]   = useState(null)    // deferredPrompt nativo de Chrome
-  const [ios, setIos]         = useState(false)
+  const [ios]                 = useState(isIOS)
   const timerRef              = useRef(null)
 
   useEffect(() => {
-    if (isStandalone()) return   // ya está instalada como app
+    if (isStandalone()) return
 
-    const iosDevice = isIOS()
-    setIos(iosDevice)
+    // Si beforeinstallprompt llega DESPUÉS de que React montara
+    const onReady = () => setPrompt(window.__pwaPrompt)
+    window.addEventListener('pwa-prompt-ready', onReady)
 
-    // ── Captura el prompt nativo si Chrome lo ofrece ─────────────────────────
-    const onBeforeInstall = e => {
-      e.preventDefault()
-      setPrompt(e)
-      window.__pwaPrompt = e
-    }
-    window.addEventListener('beforeinstallprompt', onBeforeInstall)
-    window.addEventListener('appinstalled', () => {
-      setVisible(false)
-      setPrompt(null)
-    })
+    // Si el usuario instala desde fuera de nuestra UI
+    const onInstalled = () => { setPrompt(null); setVisible(false) }
+    window.addEventListener('pwa-app-installed', onInstalled)
 
-    // ── Trigger manual desde el menú de perfil ───────────────────────────────
+    // Trigger manual desde perfil
     const onManual = () => {
       localStorage.removeItem(NEVER_KEY)
       sessionStorage.removeItem(SESSION_KEY)
@@ -44,14 +38,9 @@ export default function InstallPrompt() {
     }
     window.addEventListener('show-install-prompt', onManual)
 
-    // ── Mostrar automáticamente ──────────────────────────────────────────────
-    const neverShow   = localStorage.getItem(NEVER_KEY)
-    const sessionSkip = sessionStorage.getItem(SESSION_KEY)
-
-    if (!neverShow && !sessionSkip) {
-      const firstVisit = !localStorage.getItem(FIRST_VISIT_KEY)
-      if (firstVisit) {
-        // Primera vez que entra: guardar marca y mostrar a los 4 segundos
+    // Auto-mostrar en primera visita
+    if (!localStorage.getItem(NEVER_KEY) && !sessionStorage.getItem(SESSION_KEY)) {
+      if (!localStorage.getItem(FIRST_VISIT_KEY)) {
         localStorage.setItem(FIRST_VISIT_KEY, '1')
         timerRef.current = setTimeout(() => setVisible(true), 4000)
       }
@@ -59,23 +48,25 @@ export default function InstallPrompt() {
 
     return () => {
       clearTimeout(timerRef.current)
-      window.removeEventListener('beforeinstallprompt', onBeforeInstall)
-      window.removeEventListener('appinstalled', () => {})
+      window.removeEventListener('pwa-prompt-ready', onReady)
+      window.removeEventListener('pwa-app-installed', onInstalled)
       window.removeEventListener('show-install-prompt', onManual)
     }
   }, [])
 
-  // ── Acciones ─────────────────────────────────────────────────────────────
+  // ── Instalar (Android/Chrome con prompt nativo) ──────────────────────────
   async function handleInstall() {
-    if (prompt) {
-      await prompt.prompt()
-      const { outcome } = await prompt.userChoice
+    const p = prompt || window.__pwaPrompt
+    if (!p) return
+    try {
+      await p.prompt()
+      const { outcome } = await p.userChoice
       if (outcome === 'accepted') {
-        setVisible(false)
-        setPrompt(null)
         window.__pwaPrompt = null
+        setPrompt(null)
+        setVisible(false)
       }
-    }
+    } catch (_) {}
   }
 
   function handleSkip() {
@@ -90,9 +81,11 @@ export default function InstallPrompt() {
 
   if (!visible) return null
 
+  const hasNativePrompt = !!(prompt || window.__pwaPrompt)
+
   return (
     <>
-      {/* Overlay en mobile */}
+      {/* Overlay mobile */}
       <div
         className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm sm:hidden"
         onClick={handleSkip}
@@ -105,7 +98,6 @@ export default function InstallPrompt() {
                    sm:bottom-6 sm:right-6 sm:left-auto sm:rounded-2xl sm:w-[360px]"
         style={{ animation: 'prompt-in 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards' }}
       >
-        {/* Handle mobile */}
         <div className="w-10 h-1 bg-slate-700 rounded-full mx-auto mt-4 mb-1 sm:hidden" />
 
         <div className="px-6 pt-5 pb-7 sm:px-5 sm:pt-5 sm:pb-5">
@@ -144,8 +136,8 @@ export default function InstallPrompt() {
             ))}
           </div>
 
-          {/* ── Android / Chrome con prompt nativo ── */}
-          {!ios && prompt && (
+          {/* Botón instalar (solo si el browser ofrece el prompt nativo) */}
+          {!ios && hasNativePrompt && (
             <button
               onClick={handleInstall}
               className="w-full py-3.5 rounded-2xl bg-violet-600 hover:bg-violet-500 active:bg-violet-700 text-white font-bold text-base transition-all shadow-lg shadow-violet-500/30 mb-3"
@@ -154,49 +146,45 @@ export default function InstallPrompt() {
             </button>
           )}
 
-          {/* ── Android / Chrome sin prompt nativo (instrucciones) ── */}
-          {!ios && !prompt && (
+          {/* Instrucciones Android (sin prompt nativo) */}
+          {!ios && !hasNativePrompt && (
             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-4 mb-4">
-              <p className="text-slate-300 text-sm font-semibold mb-2">
+              <p className="text-slate-300 text-sm font-semibold mb-3">
                 Cómo instalar en Android:
               </p>
-              <div className="space-y-2">
-                {[
-                  <>Tocá el menú <strong className="text-slate-200">⋮</strong> de Chrome</>,
-                  <>Elegí <strong className="text-slate-200">"Agregar a pantalla de inicio"</strong></>,
-                  <>Confirmá tocando <strong className="text-slate-200">"Agregar"</strong></>,
-                ].map((step, i) => (
-                  <div key={i} className="flex items-center gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-violet-600/30 text-violet-400 text-[10px] font-bold flex items-center justify-center flex-shrink-0">
-                      {i + 1}
-                    </span>
-                    <span className="text-slate-400 text-sm">{step}</span>
-                  </div>
-                ))}
-              </div>
+              {[
+                <>Tocá el menú <strong className="text-slate-200">⋮</strong> de Chrome</>,
+                <>Elegí <strong className="text-slate-200">"Agregar a pantalla de inicio"</strong></>,
+                <>Confirmá tocando <strong className="text-slate-200">"Agregar"</strong></>,
+              ].map((step, i) => (
+                <div key={i} className="flex items-center gap-2.5 mb-2">
+                  <span className="w-5 h-5 rounded-full bg-violet-600/30 text-violet-400 text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <span className="text-slate-400 text-sm">{step}</span>
+                </div>
+              ))}
             </div>
           )}
 
-          {/* ── iOS / Safari ── */}
+          {/* Instrucciones iOS */}
           {ios && (
             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-4 mb-4">
-              <p className="text-slate-300 text-sm font-semibold mb-2">
+              <p className="text-slate-300 text-sm font-semibold mb-3">
                 Cómo instalar en iPhone / iPad:
               </p>
-              <div className="space-y-2">
-                {[
-                  <>Tocá <strong className="text-slate-200">Compartir ⬆️</strong> en Safari</>,
-                  <>Elegí <strong className="text-slate-200">"Agregar a inicio"</strong></>,
-                  <>Tocá <strong className="text-slate-200">"Agregar"</strong> — ¡listo!</>,
-                ].map((step, i) => (
-                  <div key={i} className="flex items-center gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-violet-600/30 text-violet-400 text-[10px] font-bold flex items-center justify-center flex-shrink-0">
-                      {i + 1}
-                    </span>
-                    <span className="text-slate-400 text-sm">{step}</span>
-                  </div>
-                ))}
-              </div>
+              {[
+                <>Tocá <strong className="text-slate-200">Compartir ⬆️</strong> en Safari</>,
+                <>Elegí <strong className="text-slate-200">"Agregar a inicio"</strong></>,
+                <>Tocá <strong className="text-slate-200">"Agregar"</strong> — ¡listo!</>,
+              ].map((step, i) => (
+                <div key={i} className="flex items-center gap-2.5 mb-2">
+                  <span className="w-5 h-5 rounded-full bg-violet-600/30 text-violet-400 text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <span className="text-slate-400 text-sm">{step}</span>
+                </div>
+              ))}
             </div>
           )}
 

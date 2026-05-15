@@ -157,6 +157,22 @@ export default function UserMenu() {
   const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase()
   const { registeredUids, onlineUids, error: rtdbError } = useAdminStats(isAdmin)
 
+  // Estado reactivo: ¿la app ya está instalada como PWA?
+  const [appInstalled, setAppInstalled] = useState(
+    () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true
+  )
+  useEffect(() => {
+    const mq = window.matchMedia('(display-mode: standalone)')
+    const onChange = e => setAppInstalled(e.matches)
+    mq.addEventListener('change', onChange)
+    const onInstalled = () => setAppInstalled(true)
+    window.addEventListener('pwa-app-installed', onInstalled)
+    return () => {
+      mq.removeEventListener('change', onChange)
+      window.removeEventListener('pwa-app-installed', onInstalled)
+    }
+  }, [])
+
   useEffect(() => {
     function handler(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) setOpen(false)
@@ -299,8 +315,8 @@ export default function UserMenu() {
                 Editar perfil
               </button>
 
-              {/* Instalar app — visible si no está en modo standalone */}
-              {!window.matchMedia('(display-mode: standalone)').matches && !window.navigator.standalone && (
+              {/* Instalar app — solo visible si la app NO está instalada */}
+              {!appInstalled && (
                 <button
                   onClick={() => {
                     setOpen(false)
