@@ -24,7 +24,13 @@ export function useDiscounts(filters = {}) {
       })
       const res = await fetch(`${API}?${params}`)
       if (!res.ok) throw new Error('Error al cargar descuentos')
-      setDiscounts(await res.json())
+      const data = await res.json()
+      // Mezclar para que no aparezcan siempre los mismos bancos primero
+      for (let i = data.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [data[i], data[j]] = [data[j], data[i]]
+      }
+      setDiscounts(data)
     } catch (e) {
       setError(e.message)
     } finally {

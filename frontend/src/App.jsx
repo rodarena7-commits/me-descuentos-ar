@@ -213,10 +213,10 @@ export default function App() {
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              placeholder="¿Qué descuento estás buscando?"
-              className="w-full bg-slate-800 border-2 border-violet-500/50 rounded-2xl pl-12 pr-12 py-4 text-slate-100 text-base placeholder-slate-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20 transition-all shadow-lg shadow-violet-500/10"
+              placeholder="¿Qué estás buscando?"
+              className="w-full bg-slate-800 border-2 border-violet-500/50 rounded-2xl px-12 py-4 text-slate-100 text-base placeholder-slate-500 text-center focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20 transition-all shadow-lg shadow-violet-500/10"
             />
-            {search ? (
+            {search && (
               <button
                 onClick={() => setSearch('')}
                 className="absolute inset-y-0 right-4 flex items-center text-slate-400 hover:text-white transition-colors"
@@ -225,10 +225,6 @@ export default function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-            ) : (
-              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                <span className="text-xs text-slate-500 bg-slate-700 px-1.5 py-0.5 rounded font-mono">⌘K</span>
-              </div>
             )}
           </div>
         </div>
