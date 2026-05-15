@@ -76,7 +76,7 @@ function UsersModal({ title, filterUids, onClose }) {
 
       {/* Modal centrado */}
       <div
-        className="fixed inset-0 z-[70] flex items-center justify-center px-4 pointer-events-none"
+        className="fixed inset-0 z-[70] flex items-end justify-center px-4 pb-8 pointer-events-none"
       >
         <div
           className="w-full max-w-md bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-violet-500/10 flex flex-col pointer-events-auto"
