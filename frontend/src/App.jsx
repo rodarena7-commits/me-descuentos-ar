@@ -8,6 +8,7 @@ import OnlineCounter from './components/OnlineCounter'
 import MaintenanceBanner from './components/MaintenanceBanner'
 import LoadingScreen from './components/LoadingScreen'
 import InstallPrompt from './components/InstallPrompt'
+import AppLogo from './components/AppLogo'
 import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
 import EntidadesPage from './pages/EntidadesPage'
@@ -94,9 +95,7 @@ export default function App() {
       <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-700 flex items-center justify-center text-white font-black text-xs tracking-tight shadow-lg shadow-violet-500/30">
-              AI
-            </div>
+            <AppLogo className="w-9 h-9" />
             <div>
               <span className="text-white font-bold text-lg">Ahorro Inteligente</span>
               <span className="text-slate-500 text-sm ml-2 hidden sm:inline">

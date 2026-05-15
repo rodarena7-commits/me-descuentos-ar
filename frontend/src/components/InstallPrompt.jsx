@@ -19,29 +19,44 @@ export default function InstallPrompt() {
   const [imgOk, setImgOk]                   = useState(true)
 
   useEffect(() => {
-    // No mostrar si: ya instalada, marcada como "nunca", o saltada esta sesión
-    if (isStandalone())                          return
-    if (localStorage.getItem(NEVER_KEY))         return
-    if (sessionStorage.getItem(SESSION_KEY))     return
-
     const iosDevice = isIOS()
     setIos(iosDevice)
 
-    if (iosDevice) {
-      const t = setTimeout(() => setVisible(true), 5000)
-      return () => clearTimeout(t)
+    // Listener para mostrar desde el perfil (botón manual)
+    const manualHandler = () => {
+      localStorage.removeItem(NEVER_KEY)
+      sessionStorage.removeItem(SESSION_KEY)
+      setVisible(true)
+    }
+    window.addEventListener('show-install-prompt', manualHandler)
+
+    // Flujo automático: no mostrar si ya instalada, "nunca", o saltada
+    if (!isStandalone() && !localStorage.getItem(NEVER_KEY) && !sessionStorage.getItem(SESSION_KEY)) {
+      if (iosDevice) {
+        const t = setTimeout(() => setVisible(true), 5000)
+        return () => {
+          clearTimeout(t)
+          window.removeEventListener('show-install-prompt', manualHandler)
+        }
+      }
+
+      const handler = e => {
+        e.preventDefault()
+        setDeferredPrompt(e)
+        // Guardar globalmente para que UserMenu pueda acceder
+        window.__pwaPrompt = e
+        const t = setTimeout(() => setVisible(true), 4000)
+        return () => clearTimeout(t)
+      }
+      window.addEventListener('beforeinstallprompt', handler)
+      window.addEventListener('appinstalled', () => setVisible(false))
+      return () => {
+        window.removeEventListener('beforeinstallprompt', handler)
+        window.removeEventListener('show-install-prompt', manualHandler)
+      }
     }
 
-    const handler = e => {
-      e.preventDefault()
-      setDeferredPrompt(e)
-      const t = setTimeout(() => setVisible(true), 4000)
-      return () => clearTimeout(t)
-    }
-
-    window.addEventListener('beforeinstallprompt', handler)
-    window.addEventListener('appinstalled', () => setVisible(false))
-    return () => window.removeEventListener('beforeinstallprompt', handler)
+    return () => window.removeEventListener('show-install-prompt', manualHandler)
   }, [])
 
   // Instalar (Android/Chrome)

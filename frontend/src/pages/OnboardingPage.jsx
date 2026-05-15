@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import AppLogo from '../components/AppLogo'
 import { useNavigate } from 'react-router-dom'
 import { doc, setDoc } from 'firebase/firestore'
 import { ref, set } from 'firebase/database'
@@ -147,9 +148,7 @@ export default function OnboardingPage() {
       <div className="w-full max-w-lg">
         {/* Header */}
         <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-700 flex items-center justify-center text-white font-black text-sm">
-            AI
-          </div>
+          <AppLogo className="w-10 h-10" />
           <div>
             <p className="text-slate-400 text-xs">Paso {step} de {TOTAL_STEPS}</p>
             <p className="text-white font-semibold text-sm">Configurando tu perfil</p>

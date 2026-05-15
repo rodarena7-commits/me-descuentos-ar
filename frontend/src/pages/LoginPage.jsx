@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import AppLogo from '../components/AppLogo'
 import { useNavigate } from 'react-router-dom'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../firebase'
@@ -33,9 +34,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="flex flex-col items-center mb-10">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-700 flex items-center justify-center text-white font-black text-2xl shadow-xl shadow-violet-500/30 mb-4">
-            AI
-          </div>
+          <AppLogo className="w-16 h-16 mb-4" textSize="text-2xl" />
           <h1 className="text-2xl font-bold text-white">Ahorro Inteligente</h1>
           <p className="text-slate-400 text-sm mt-1 text-center">
             Todos los descuentos de Argentina en un solo lugar
