@@ -9,6 +9,7 @@ import MaintenanceBanner from './components/MaintenanceBanner'
 import LoadingScreen from './components/LoadingScreen'
 import InstallPrompt from './components/InstallPrompt'
 import AppLogo from './components/AppLogo'
+import ChatBot from './components/ChatBot'
 import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
 import EntidadesPage from './pages/EntidadesPage'
@@ -356,6 +357,7 @@ export default function App() {
       <OnlineCounter count={onlineCount} />
       <MaintenanceBanner />
       <InstallPrompt />
+      <ChatBot />
       {/* Solo aparece en la carga inicial, no en cambios de filtro */}
       {!isMarcas && !isEntidades && (
         <LoadingScreen show={discLoading && !initialLoaded} />
