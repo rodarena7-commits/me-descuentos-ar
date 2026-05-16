@@ -40,7 +40,7 @@ function Skeleton() {
 }
 
 export default function App() {
-  const { user, loading } = useAuth()
+  const { user, loading, profile } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
   const isMarcas = location.pathname.startsWith('/marcas')
@@ -51,6 +51,14 @@ export default function App() {
   const [perPage, setPerPage] = useState(20)
   const [initialLoaded, setInitialLoaded] = useState(false)
   const [showStats, setShowStats] = useState(true)
+  const [ignoreProfileFilter, setIgnoreProfileFilter] = useState(false)
+
+  // Mapeo de nombres del onboarding → source exacto en la DB
+  const ENTITY_NAME_MAP = {
+    'Banco Nación (BNA+)': 'Banco Nación',
+    'Cuenta DNI (Banco Provincia)': 'Cuenta DNI',
+  }
+  const normalizeEntity = n => ENTITY_NAME_MAP[n] || n
   const [showFilters, setShowFilters] = useState(false)
 
   const activeFiltersCount = Object.entries(filters).filter(
@@ -64,9 +72,28 @@ export default function App() {
   }, [discLoading])
   const onlineCount = usePresence()
 
-  // Client-side search + percentage filter
+  // Client-side search + percentage + profile entity filter
   const filtered = useMemo(() => {
     let result = discounts
+
+    // 1. Filtro por entidades del perfil del usuario
+    if (!ignoreProfileFilter && profile) {
+      const userEntities = [
+        ...(profile.banks || []),
+        ...(profile.fintechs || []),
+        ...(profile.exchanges || []),
+      ].map(normalizeEntity)
+
+      if (userEntities.length > 0) {
+        result = result.filter(d =>
+          d.source && userEntities.some(e =>
+            d.source.toLowerCase() === e.toLowerCase()
+          )
+        )
+      }
+    }
+
+    // 2. Búsqueda por texto
     if (search.trim()) {
       const q = search.toLowerCase()
       result = result.filter(d =>
@@ -74,12 +101,15 @@ export default function App() {
           .some(f => f?.toLowerCase().includes(q))
       )
     }
+
+    // 3. Filtro por porcentaje mínimo
     if (filters.min_percentage) {
       const min = parseFloat(filters.min_percentage)
       result = result.filter(d => d.percentage != null && d.percentage >= min)
     }
+
     return result
-  }, [discounts, search, filters.min_percentage])
+  }, [discounts, search, filters.min_percentage, profile, ignoreProfileFilter])
 
   // Reset page when filters, search or perPage change
   useEffect(() => { setPage(1) }, [filters, search, perPage])
@@ -252,6 +282,30 @@ export default function App() {
         </div>
 
         {showStats && <StatsBar onClose={() => setShowStats(false)} />}
+
+        {/* Banner filtro por perfil */}
+        {profile && !ignoreProfileFilter && [...(profile.banks||[]),...(profile.fintechs||[]),...(profile.exchanges||[])].length > 0 && (
+          <div className="flex items-center justify-between px-4 py-2.5 mb-4 bg-violet-500/10 border border-violet-500/20 rounded-xl text-xs">
+            <span className="text-violet-400">✓ Mostrando descuentos de tus entidades seleccionadas</span>
+            <button
+              onClick={() => setIgnoreProfileFilter(true)}
+              className="text-slate-500 hover:text-slate-300 transition-colors ml-3 flex-shrink-0"
+            >
+              Ver todos
+            </button>
+          </div>
+        )}
+        {ignoreProfileFilter && (
+          <div className="flex items-center justify-between px-4 py-2.5 mb-4 bg-slate-800/60 border border-slate-700 rounded-xl text-xs">
+            <span className="text-slate-400">Mostrando todos los descuentos</span>
+            <button
+              onClick={() => setIgnoreProfileFilter(false)}
+              className="text-violet-400 hover:text-violet-300 transition-colors ml-3 flex-shrink-0"
+            >
+              Volver a mis entidades
+            </button>
+          </div>
+        )}
 
         {/* Botón toggle de filtros */}
         <div className="flex items-center gap-2 mb-3">

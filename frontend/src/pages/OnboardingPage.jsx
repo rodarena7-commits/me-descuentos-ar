@@ -37,10 +37,14 @@ const BANKS = [
 
 const FINTECHS = [
   'MercadoPago', 'Naranja X', 'Lemon', 'MODO', 'Ualá',
-  'Personal Pay', 'Binance', 'Ripio', 'AstroPay', "Let'sBit", 'Bimo', 'Prex',
+  'Personal Pay', 'Buepp', 'Bimo', 'Prex',
 ]
 
-const TOTAL_STEPS = 6
+const EXCHANGES = [
+  'Binance', 'Ripio', 'AstroPay', "Let'sBit",
+]
+
+const TOTAL_STEPS = 7
 
 const inputClass =
   'w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm placeholder-slate-600 focus:outline-none focus:border-violet-500 transition-colors'
@@ -97,6 +101,8 @@ export default function OnboardingPage() {
   const [banks, setBanks] = useState([])
   // Step 6
   const [fintechs, setFintechs] = useState([])
+  // Step 7
+  const [exchanges, setExchanges] = useState([])
 
   function toggle(list, setList, value) {
     setList(prev => prev.includes(value) ? prev.filter(x => x !== value) : [...prev, value])
@@ -123,6 +129,7 @@ export default function OnboardingPage() {
       shoppingDays: days,
       banks,
       fintechs,
+      exchanges,
       onboardingComplete: true,
       createdAt: new Date().toISOString(),
     }
@@ -150,7 +157,8 @@ export default function OnboardingPage() {
     : step === 3 ? items.length > 0
     : step === 4 ? days.length > 0
     : step === 5 ? banks.length > 0
-    : fintechs.length > 0
+    : step === 6 ? fintechs.length > 0
+    : exchanges.length > 0
 
   return (
     <div className="min-h-screen bg-[#020617] flex flex-col items-center justify-center px-4 py-8">
@@ -317,6 +325,24 @@ export default function OnboardingPage() {
               </div>
             </div>
           )}
+
+          {/* Step 7 — Exchanges / Crypto */}
+          {step === 7 && (
+            <div>
+              <h2 className="text-lg font-bold text-white mb-1">¿Qué exchanges de crypto usás?</h2>
+              <p className="text-slate-400 text-sm mb-5">Seleccioná todos los que uses.</p>
+              <div className="grid grid-cols-2 gap-2">
+                {EXCHANGES.map(e => (
+                  <CheckChip key={e} label={e}
+                    selected={exchanges.includes(e)}
+                    onToggle={() => toggle(exchanges, setExchanges, e)} />
+                ))}
+              </div>
+              <p className="text-slate-600 text-xs mt-4 text-center">
+                Si no usás ninguno, podés saltear este paso.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Navigation */}
@@ -338,13 +364,23 @@ export default function OnboardingPage() {
               Siguiente
             </button>
           ) : (
-            <button
-              onClick={finish}
-              disabled={!canNext || saving}
-              className="flex-1 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold transition-all text-sm disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              {saving ? 'Guardando...' : '¡Listo, empezar!'}
-            </button>
+            <>
+              {/* En el último paso (exchanges), se puede omitir */}
+              <button
+                onClick={finish}
+                disabled={saving}
+                className="flex-1 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium border border-slate-700 transition-all disabled:opacity-40"
+              >
+                Omitir
+              </button>
+              <button
+                onClick={finish}
+                disabled={saving}
+                className="flex-1 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold transition-all text-sm disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                {saving ? 'Guardando...' : '¡Listo, empezar!'}
+              </button>
+            </>
           )}
         </div>
 
