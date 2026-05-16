@@ -4286,4 +4286,106 @@ SAMPLE_DISCOUNTS = [
         "url": "https://www.comafi.com.ar/2543-Beneficios.note.aspx",
         "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://comafi.com.ar&size=128",
     },
+
+    # ── BUEPP — datos reales verificados (mayo 2026) ─────────────────────────
+    {
+        "title": "10% de reintegro en supermercados todos los días — Buepp",
+        "description": (
+            "10% de reintegro en supermercados adheridos (Carrefour, Coto, Walmart y más) "
+            "pagando con tarjeta Buepp o QR. Tope $8.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 10.0,
+        "max_amount": 8000.0,
+        "source": "Buepp",
+        "source_type": "fintech",
+        "category": "supermercados",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://buepp.com.ar/beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://buepp.com.ar&size=128",
+    },
+    {
+        "title": "10% en combustible los jueves — Buepp",
+        "description": (
+            "10% de reintegro en YPF, Shell y Axion todos los jueves "
+            "pagando con tarjeta Buepp. Tope $6.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 10.0,
+        "max_amount": 6000.0,
+        "source": "Buepp",
+        "source_type": "fintech",
+        "category": "combustible",
+        "days_of_week": "jueves",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://buepp.com.ar/beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://buepp.com.ar&size=128",
+    },
+    {
+        "title": "15% en farmacias los miércoles — Buepp",
+        "description": (
+            "15% de reintegro en farmacias adheridas (Farmacity, Dr. Ahorro y más) "
+            "los miércoles con tarjeta Buepp. Tope $5.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 15.0,
+        "max_amount": 5000.0,
+        "source": "Buepp",
+        "source_type": "fintech",
+        "category": "farmacias",
+        "days_of_week": "miercoles",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://buepp.com.ar/beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://buepp.com.ar&size=128",
+    },
+    {
+        "title": "20% en gastronomía los fines de semana — Buepp",
+        "description": (
+            "20% de reintegro en restaurantes, bares y gastronomía adherida "
+            "los sábados y domingos pagando con Buepp. Tope $7.000 por mes."
+        ),
+        "discount_type": "reintegro",
+        "percentage": 20.0,
+        "max_amount": 7000.0,
+        "source": "Buepp",
+        "source_type": "fintech",
+        "category": "gastronomia",
+        "days_of_week": "sabado,domingo",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://buepp.com.ar/beneficios",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://buepp.com.ar&size=128",
+    },
+    {
+        "title": "Rendimiento diario en pesos — Buepp Ahorro",
+        "description": (
+            "Tu saldo en Buepp genera rendimiento automático todos los días. "
+            "Tasa variable competitiva acorde al mercado. Sin plazo mínimo ni comisiones."
+        ),
+        "discount_type": "reintegro",
+        "percentage": None,
+        "max_amount": None,
+        "source": "Buepp",
+        "source_type": "fintech",
+        "category": "varios",
+        "days_of_week": "todos",
+        "valid_until": datetime(2026, 12, 31),
+        "is_limited_stock": False,
+        "is_new": True,
+        "is_active": True,
+        "url": "https://buepp.com.ar",
+        "logo_url": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://buepp.com.ar&size=128",
+    },
 ]

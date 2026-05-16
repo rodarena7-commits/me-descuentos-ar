@@ -39,6 +39,7 @@ const BRAND = {
   'Binance':        { domain: 'binance.com',           color: 'bg-yellow-500',   text: 'text-slate-900' },
   'HSBC':           { domain: 'hsbc.com.ar',           color: 'bg-red-600',      text: 'text-white' },
   'Credicoop':      { domain: 'bancocredicoop.coop',   color: 'bg-blue-800',     text: 'text-white' },
+  'Buepp':          { domain: 'buepp.com.ar',           color: 'bg-cyan-500',     text: 'text-white' },
   'Banco Comafi':   { domain: 'comafi.com.ar',         color: 'bg-orange-600',   text: 'text-white' },
 }
 

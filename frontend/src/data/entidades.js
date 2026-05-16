@@ -25,6 +25,7 @@ export const ENTIDADES = [
   { id: 'brubank',     name: 'Brubank',          tipo: 'Fintech',  source: 'Brubank',         logo: gFav('brubank.com') },
   { id: 'personalpay', name: 'Personal Pay',     tipo: 'Fintech',  source: 'Personal Pay',    logo: 'https://i.pinimg.com/1200x/e1/b2/3a/e1b23a9f6ea1a8a548e3937d6cd4e795.jpg' },
   { id: 'lemon',       name: 'Lemon',            tipo: 'Fintech',  source: 'Lemon',           logo: gFav('lemon.me') },
+  { id: 'buepp',       name: 'Buepp',            tipo: 'Fintech',  source: 'Buepp',           logo: gFav('buepp.com.ar') },
 
   // ── Exchanges / Crypto ───────────────────────────────────────────────────
   { id: 'binance',     name: 'Binance',          tipo: 'Exchange', source: 'Binance',         logo: gFav('binance.com') },
