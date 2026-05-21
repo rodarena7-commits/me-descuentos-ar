@@ -15,6 +15,7 @@ import MarcasPage from './pages/MarcasPage'
 import MarcaDetailPage from './pages/MarcaDetailPage'
 import EntidadesPage from './pages/EntidadesPage'
 import EntidadDetailPage from './pages/EntidadDetailPage'
+import InversionPage from './pages/InversionPage'
 import { useDiscounts } from './hooks/useDiscounts'
 import { usePresence } from './hooks/usePresence'
 import { useAuth } from './contexts/AuthContext'
@@ -45,6 +46,7 @@ export default function App() {
   const location = useLocation()
   const isMarcas = location.pathname.startsWith('/marcas')
   const isEntidades = location.pathname.startsWith('/entidades')
+  const isInversion = location.pathname.startsWith('/inversion')
   const [filters, setFilters] = useState({})
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
@@ -177,6 +179,17 @@ export default function App() {
                 <span className="text-xl leading-none">🌍</span>
                 <span className="text-xs">Multi Marcas</span>
               </button>
+              <button
+                onClick={() => navigate('/inversion')}
+                className={`flex flex-col items-center px-3 py-1.5 rounded-xl font-medium transition-all gap-0.5 ${
+                  isInversion
+                    ? 'bg-violet-600/20 text-violet-300'
+                    : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                <span className="text-xl leading-none">📈</span>
+                <span className="text-xs">Inversión</span>
+              </button>
             </nav>
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse" />
@@ -221,6 +234,17 @@ export default function App() {
             <span className="text-lg leading-none">🌍</span>
             <span className="text-[10px]">Multi Marcas</span>
           </button>
+          <button
+            onClick={() => navigate('/inversion')}
+            className={`flex-1 flex flex-col justify-center items-center gap-0.5 px-2 py-2 rounded-xl font-medium transition-all ${
+              isInversion
+                ? 'bg-violet-600/20 text-violet-300'
+                : 'text-slate-500 bg-slate-900/50'
+            }`}
+          >
+            <span className="text-lg leading-none">📈</span>
+            <span className="text-[10px]">Inversión</span>
+          </button>
         </div>
       </header>
 
@@ -241,8 +265,11 @@ export default function App() {
           </Routes>
         )}
 
+        {/* ── SECCIÓN INVERSIÓN ── */}
+        {isInversion && <InversionPage />}
+
         {/* ── SECCIÓN DESCUENTOS (homepage) ── */}
-        {!isMarcas && !isEntidades && (<>
+        {!isMarcas && !isEntidades && !isInversion && (<>
         {/* Hero + Search */}
         <div className="mb-8 flex flex-col items-center text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 w-full">
@@ -462,7 +489,7 @@ export default function App() {
       <ChatBot />
       <WhatsAppButton />
       {/* Solo aparece en la carga inicial, no en cambios de filtro */}
-      {!isMarcas && !isEntidades && (
+      {!isMarcas && !isEntidades && !isInversion && (
         <LoadingScreen show={discLoading && !initialLoaded} />
       )}
 
